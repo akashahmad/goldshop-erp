@@ -1,63 +1,101 @@
 /* button with white background */
 .btn-Wh{
-   background-color: #e4f3fa;
-   border: 2px solid #e4f3fa;
-   color: #1e91cc;
-   padding: 8px 35px 8px 35px;
-   border-radius: 6px;
-   margin-left: 20px;
-   font-size: 17px;
-}
-
-/*  transparent  button */
-/*   div outside button */
-
-
-.btn-transparent{
-    background-color:#2094cf ;
-    border:1px solid white;
-    padding: 6px 40px 6px 40px;
-    border-radius:6px;
-    color:  #e8e8e8;
-    opacity: 85%;
-    font-size: 17px
-}
-
-
-/* font-family Montserrat */
-
-.fnt-mont{
-    font-family: 'Montserrat', sans-serif;
-}
-
-
-/* font-family poppins */
-.fnt-poppins{
-    font-family: 'Poppins', sans-serif;
-}
-
-/* font-size Small */
-
-.font-sm{
-    font-size: 16px;
-}
-
-.font-md{
-    font-size: 18px;
-}
-
-.font-lg{
-    font-size: 36px;
-}
-
-/* 
----------------------- */
-/* example */
-
-
-
-
-
-
-
-
+    background-color: #e4f3fa;
+    border: 2px solid #e4f3fa;
+    color: #1e91cc;
+    padding: 8px 35px 8px 35px;
+    border-radius: 6px;
+    margin-left: 20px;
+    font-size: 17px;
+ }
+ 
+ /*  transparent  button */
+ /*   div outside button */
+ 
+ 
+ .btn-transparent{
+     background-color:#2094cf ;
+     border:1px solid white;
+     padding: 6px 40px 6px 40px;
+     border-radius:6px;
+     color:  #e8e8e8;
+     opacity: 85%;
+     font-size: 17px
+ }
+ 
+ 
+ /* font-family Montserrat */
+ 
+ .fnt-mont{
+     font-family: 'Montserrat', sans-serif;
+ }
+ 
+ 
+ /* font-family poppins */
+ .fnt-poppins{
+     font-family: 'Poppins', sans-serif;
+ }
+ 
+ /* font-size Small */
+ 
+ .font-sm{
+     font-size: 16px;
+ }
+ 
+ .font-md{
+     font-size: 18px;
+ }
+ 
+ .font-lg{
+     font-size: 36px;
+ }
+ 
+ /* blue button */
+ 
+ .btn-blue{
+     background-color: #279fdc ;
+     border:1px solid #279fdc ;
+     padding: 6px 40px 6px 40px;
+     border-radius:6px;
+     color:  #e8e8e8;
+     opacity: 85%;
+     font-size: 17px
+ }
+ 
+ /* white button of model */
+ .btn-white-model{
+     background-color: #ffffff ;
+     border:1px solid #ffffff ;
+     padding: 6px 40px 6px 40px;
+     border-radius:6px;
+     color:  #e8e8e8;
+     opacity: 85%;
+     font-size: 17px
+ }
+ 
+  /* input of model  */
+  
+ .input-of-model{
+     width: 423px;
+     height: 40px;
+     background-color: #ffffff;
+     border-radius: 6px;
+     border: 1px solid #e8e8e8;
+ }
+ 
+ /* input-postbody-model */
+ .input-postbody-model {
+     width: 423px;
+     height: 102px;
+     background-color: #ffffff;
+     border-radius: 6px;
+     border: 1px solid #e8e8e8;
+ }
+ /* opacity */
+ 
+ .opacity85{
+     opacity: 85%;
+ }
+ .opacity32{
+     opacity: 32%;
+ }
