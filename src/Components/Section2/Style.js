@@ -124,6 +124,7 @@ a.nav-link {
     border-bottom-right-radius: 40px;
 }
 .dashboard-column-cards-one {
+    // color: rgba(255, 255, 255, 0.85);
     margin-left: 43px;
     float: left;
     padding: 0 0px;
@@ -166,7 +167,8 @@ a.nav-link {
   /* Style the counter cards */
   
   .card-data {
-    opacity: 85%;
+      color:rgba(255, 255, 255, 0.85);
+    // opacity: 85%;
     padding:0px;
     text-align: center;
     background-color:#2094cf ;
@@ -231,11 +233,11 @@ a.nav-link {
     opacity:50%;
   }
   .card-amount{
-      color: white;
+      color: rgba(255, 255, 255, 0.85);
       font-size:18px;
   }
   .cardone {
-      color: white;
+    color: rgba(255, 255, 255, 0.85);
     /* justify-content: space-around; */
     display: flex;
     /* justify-content: space-around; */
@@ -276,11 +278,13 @@ a.nav-link {
     padding-top: 20px;
 }
 .navbottom-customer {
+    background-color: transparent;
     padding-left: 60px;
     color: #ffffff;
     font-size: 24px;
     font-size: 18;
-}
+    border: none;
+
 
 `}</style>
 

@@ -12,12 +12,7 @@
 /*  transparent  button */
 /*   div outside button */
 
-.div-btn-tran{
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 4%;
-    margin-top:39px;
-}
+
 .btn-transparent{
     background-color:#2094cf ;
     border:1px solid white;
@@ -27,6 +22,7 @@
     opacity: 85%;
     font-size: 17px
 }
+
 
 /* font-family Montserrat */
 
@@ -53,3 +49,15 @@
 .font-lg{
     font-size: 36px;
 }
+
+/* 
+---------------------- */
+/* example */
+
+
+
+
+
+
+
+

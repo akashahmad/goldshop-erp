@@ -101,19 +101,16 @@ export default()=>{
 <nav class="navbar navbar-expand-lg navbar-button-section2">
                 <div class="container-fluid navbar-bottom">
                 <div className="button-div-white">
-                    <a href="#" className="navbottom-customer">
+                    <p className="navbottom-customer">
                         Customers
                         {/* <span>Toggle Sidebar</span> */}
-                    </a></div>
+                    </p></div>
 
-                    <div class="collapse navbar-collapse div-viewall" >
-                     
-                           <button type="button" className="btn-viewall">View All</button>
-                     
+                    <div class="collapse navbar-collapse div-viewall" >             
+                           <button type="button" className="btn-viewall">View All</button>                     
                     </div>
                 </div>
             </nav>
-
 </div>
 <Section3/>
 <Style/>
