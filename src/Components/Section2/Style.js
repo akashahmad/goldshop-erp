@@ -172,7 +172,7 @@ a.nav-link {
     padding:0px;
     text-align: center;
     background-color:#2094cf ;
-    border:0.8px solid #ffffff;
+    border:0.8px solid #e8e8e8;
     min-height: 25vh;
     max-height: 40vh;
     border-radius: 6px;

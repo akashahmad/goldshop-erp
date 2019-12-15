@@ -70,7 +70,7 @@ return(
 
 
 ul.list-unstyled.components.logout{
-    min-height: 45vh;
+    min-height: 40vh;
     max-height: 60vh;
     display: flex;
     flex-direction: column;
