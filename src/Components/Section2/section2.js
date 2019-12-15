@@ -1,8 +1,8 @@
 import React from 'react'
 import Style from './Style'
 import Section3 from '../Section3/section3'
-import Image1 from '../../assects/images/s.png'
-import Image2 from '../../assects/images/profile.png'
+import Image1 from '../../assects/images/magnifying-glass.png'
+import Image2 from '../../assects/images/layer-6.png'
 
 export default()=>{
     return(
@@ -13,11 +13,11 @@ export default()=>{
 
             <nav class="navbar-section2-dashboard navbar-expand-lg ">
                 <div class="container-fluid navbar-top">
-                <div className="button-div-white">
-                    <button type="button" id="sidebarCollapse" className="btntoggle btn1">
+                {/* <div className="button-div-white">
+                    <button type="button" className=" btn1">
                         Add Customer
                         {/* <span>Toggle Sidebar</span> */}
-                    </button></div>
+                    {/* </button></div> */} 
                     {/* <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button> */}
@@ -35,12 +35,13 @@ export default()=>{
                                 </a>
                             </li>
                             <div class="vertical-line-inside-navbar"></div>
-                            <li class="nav-item text-navbar-search">
+                            <li class="nav-item text-navbar-top">
                                 <a class="nav-link " href="#">Ahmed Wali</a>
                             </li>
                             <li class="nav-item text-navbar-search">
                             <a class="nav-link " href="#">
                                     <img className="person-image-navbar" src={Image2} alt=""/>
+                                    
                                 </a>
                             </li>
                         </ul></div>
@@ -99,24 +100,13 @@ export default()=>{
 </div>
 <nav class="navbar navbar-expand-lg navbar-button-section2">
                 <div class="container-fluid navbar-bottom">
-                <div class="link_button " >
-                        <ul class="nav navbar-nav ml-auto ">
-                            {/* <li class="nav-item active">
-                                <a class="nav-link" href="#"><div id="google_translate_element"></div></a>
-                            </li> */}
-                            <li class="nav-item ">
-                                <a class="nav-link " href="#">Pakistani</a>
-                            </li>
-                            <li class="nav-item navbar-bottom-data">
-                                <a class="nav-link" href="#">Doller</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Afghani</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div className="button-div-white">
+                    <a href="#" className="navbottom-customer">
+                        Customers
+                        {/* <span>Toggle Sidebar</span> */}
+                    </a></div>
 
-                    <div class="collapse navbar-collapse div-viewall" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse div-viewall" >
                      
                            <button type="button" className="btn-viewall">View All</button>
                      

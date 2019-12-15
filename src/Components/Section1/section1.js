@@ -4,6 +4,7 @@ import Image from '../../assects/images/dashboard.png'
 import Image3 from '../../assects/images/customer.png'
 import Image4 from '../../assects/images/setting.png'
 import Image5 from '../../assects/images/logout1.png'
+import ImageBell from '../../assects/images/bell.png'
 
 export default()=>{
     return(
@@ -17,16 +18,16 @@ export default()=>{
             <ul class="list-unstyled components ">
               
                 <li>
-                       <div className="image-div active"> 
+                       <div className="image-div "> 
                        
-                       <img className="image_icon" src={Image} alt=""/>    
+                       <img className="image_icon active" src={Image} alt=""/>    
                              <a href="#" >DashBoard</a></div> 
                     
                 </li>
               
                 <li className="cus">
                
-                <div className="image-div"> <img className="image_icon" src={Image3} alt=""/>    
+                <div className="image-div"> <img className="image_icon" src={Image3} alt=""/>  
                              <a href="#" className="sidenav-customer">Customers</a></div> 
                 </li>
                 
@@ -34,11 +35,15 @@ export default()=>{
                 <div className="image-div"> <img className="image_icon" src={Image4} alt=""/>    
                              <a href="#" className="sidenav-setting">Setting</a></div> 
                 </li> 
+                <li>
+                <div className="image-div"> <img className="image_icon" src={ImageBell} alt=""/>    
+                             <a href="#" className="sidenav-setting">Notifications</a></div> 
+                </li>
             </ul>
             <ul class="list-unstyled components logout">
 
             <li>
-            <div className="image-div"> <img className="image_icon" src={Image5} alt=""/>    
+            <div className="image-div-logout"> <img className="image_icon" src={Image5} alt=""/>    
                              <a href="#" className="sidenav-setting">Log Out</a></div> 
                 </li>
             </ul>

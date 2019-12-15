@@ -3,6 +3,9 @@ import React from 'react'
 export default ()=>{
 return(
 <style js="true">{`
+.body{
+    font-family: 'Open Sans', sans-serif;
+}
 .wrapper {
     display: flex;
 }
@@ -12,11 +15,7 @@ return(
     width: 100%;
     align-items: stretch;
 }
-.line2 {
-    width: 77%;
-    height: 0px;
-    background-color: white;
-}
+
 #sidebar {
     background-color: #f8f9fd;
 
@@ -27,25 +26,15 @@ return(
     transition: all 0.3s;
 }
 .logo-section1{
+    font-weight: 900;
    font-size:36px;
     color: rgba(39, 159, 221, 0.78);
+    // opacity: 0.78;
   
 }
-.download1 {
-    border: 2px solid #ffc02b;
-    background-color: #ffc02b;
-    padding-left: 17px;
-    padding-right: 17px;
-    /* padding: 7px; */
-    padding-top: 7px;
-    padding-bottom: 7px;
-    font-weight: 700;
-    border-radius: 10px;
-}
 
-#sidebar.active {
-    margin-left: -250px;
-}
+
+
 
 #sidebar .sidebar-header {
     margin-top:49px;
@@ -61,14 +50,8 @@ return(
     /* border-bottom: 1px solid #292a2e; */
 }
 
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
 
 #sidebar ul li a {
-    
-    opacity:55%;
     padding: 25px;
     font-size:18px;
     display: block;
@@ -80,66 +63,29 @@ return(
      color: #1e93ce;
     // background: #fff;
     text-decoration:none;
+    opacity:100%;
    
 }
 
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #fff;
-    /* background: #292a2e; */
-}
 
-a[data-toggle="collapse"] {
-    position: relative;
-}
-
-.dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
-
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #6d7fcc;
-}
-
-ul.CTAs {
-    padding: 20px;
-}
-
-ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
-a.download {
-    background: #fff;
-    color: #7386D5;
-}
-
-a.article,
-a.article:hover {
-    background: #6d7fcc !important;
-    color: #fff !important;
-}
 
 ul.list-unstyled.components.logout{
-    min-height: 35vh;
-    max-height: 40vh;
+    min-height: 45vh;
+    max-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
   }
+  .image-div-logout {
+    margin-left: 1%;
+    border-left:5px solid transparent;
+    padding-left: 50px;
+    display: flex;
+    // justify-content: safe;
+}
   .image-div {
     margin-left: 1%;
-    border-left:3px solid transparent;
+    border-left:5px solid transparent;
     padding-left: 50px;
     display: flex;
     // justify-content: safe;
@@ -150,7 +96,8 @@ ul.list-unstyled.components.logout{
 .image_icon{
     height: 30px;
     margin-top: 21px;
-    opacity:0.32;
+    opacity: 50%;
+
 }
 .sidenav-customer{
 margin-left:-7px;

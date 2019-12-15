@@ -4,7 +4,74 @@ export default ()=>{
 return(
 <style js="true">{`
 
+// .container {
+// 	width: 180px;
+// 	margin: 0 auto;
+// }
+// #s {
+//     background-color: #29a1df;
+//     width: 22px;
+//     height: 22px;
+//     font-size: 14px;
+//     // color: #888;
+//     line-height: 24px;
+//     border: 0;
+//     -webkit-border-radius: 50px;
+//     -moz-border-radius: 50px;
+//     border-radius: 50px;
+//     position: relative;
+//     z-index: 5;
+//     -webkit-transition: .3s ease;
+//     -moz-transition: .3s ease;
+//     -ms-transition: .3s ease;
+//     -o-transition: .3s ease;
+//     transition: .3s ease;
+// }
 
+// #s:focus {
+
+//     outline: none;
+//     width: 180px;
+// }
+
+// #sw {
+  
+//     float: right;
+//     /* z-index: 4; */
+//     position: relative;
+//     padding: 2px;
+//     line-height: 0;
+//     -webkit-border-radius: 100px;
+//     -moz-border-radius: 100px;
+//     border-radius: 100px;
+//     background: lightblue;
+//     /* display: inline-block; */
+//     /* -webkit-transition: .6s ease; */
+//     -moz-transition: .6s ease;
+//     -ms-transition: .6s ease;
+//     -o-transition: .6s ease;
+//     transition: .6s ease;
+//     opacity: 1;
+// }
+
+
+// #sw:after {
+ 
+//     content: '';
+//     display: block;
+//     position: absolute;
+//     width: 3px;
+//     height: 12px;
+//     background: lightblue;
+//     bottom: -5px;
+//     right: -2px;
+//     border-radius: 0 0 5px 5px;
+//     -webkit-transform: rotate(-45deg);
+//     -moz-transform: rotate(-45deg);
+//     -ms-transform: rotate(-45deg);
+//     -o-transform: rotate(-45deg);
+//     transform: rotate(-45deg);
+// }
 .Header-section2
 {
     padding:0;
@@ -16,11 +83,15 @@ return(
     padding:2%;
   
 }
+ul.navbar-topnav-list.navbar-nav.ml-auto {
+    display: flex;
+    align-items: center;
+}
 .navbar-top{
-    margin-top: 26px;
+    margin-top: 18px;
     padding-right: 4%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 a.nav-link {
     color: white;
@@ -29,18 +100,19 @@ a.nav-link {
 .vertical-line-inside-navbar{
     border-left: 1.5px solid white;
     height: 28px;
-    margin-top: 9px;
+    margin-top: 3px;
     padding-left: 6px;
     opacity:50%;
 }
 .image-search{
+    // margin-top: 6px;
     padding-right: 15px;
 }
 .text-navbar-search{
     padding-left:15px;
 }
 .person-image-navbar{
-    height:33px;
+    height:50px;
 }
 .dashboard-content-homepage {
     width: 100%;
@@ -79,7 +151,7 @@ a.nav-link {
   display:flex;
   justify-content:space-around;
   color: #d0e2ee;
-  margin-top: 66px;
+  margin-top: 40px;
   }
   
   /* Clear floats after the columns */
@@ -95,18 +167,18 @@ a.nav-link {
   
   .card-data {
     opacity: 85%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding:0px;
     text-align: center;
     background-color:#2094cf ;
-    border:1px solid white;
+    border:0.8px solid #ffffff;
     min-height: 25vh;
     max-height: 40vh;
     border-radius: 6px;
   }
  
 .card-heading{
-   margin-top: 5px;
+    padding-top: 2px;
+   margin-top: 7px;
 }
 
     .card-top {
@@ -127,9 +199,7 @@ a.nav-link {
    padding: 8px 35px 8px 35px;
    border-radius: 6px;
    margin-left: 20px;
-   background-color:#ffffff;
    font-size: 17px;
-
 }
 
 .div-viewall{
@@ -139,13 +209,14 @@ a.nav-link {
     margin-top:39px;
 }
 .btn-viewall{
+    margin-bottom: 20px;
     background-color:#2094cf ;
     border:1px solid white;
-    padding: 8px 40px 8px 40px;
+    padding: 6px 40px 6px 40px;
     border-radius:6px;
     color:  #e8e8e8;
-    opacity: 85%;
     font-size: 17px;
+    color:rgba(255, 255, 255, 0.85);
 }
 .card-recieved {
     min-height: 15vh;
@@ -172,6 +243,9 @@ a.nav-link {
     min-height: 25vh;
     justify-content: center;
 }
+.navbar-bottom{
+    padding-top:10px;
+}
 .navbar-bottom-data{
     margin-left: 66px;
     margin-right: 66px;
@@ -184,20 +258,29 @@ a.nav-link {
 .navbar-button-section2{
     padding:0;
 }
-.nav-link::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 5px;
-    background: white;
-    transition: width .3s;
+// .nav-link::after {
+//     content: '';
+//     display: block;
+//     width: 0;
+//     height: 5px;
+//     background: white;
+//     transition: width .3s;
+// }
+
+// .nav-link:hover::after {
+//     width: 100%;
+//     //transition: width .3s;
+// } 
+
+.button-div-white {
+    padding-top: 20px;
 }
-
-.nav-link:hover::after {
-    width: 100%;
-    //transition: width .3s;
-} 
-
+.navbottom-customer {
+    padding-left: 60px;
+    color: #ffffff;
+    font-size: 24px;
+    font-size: 18;
+}
 
 `}</style>
 
