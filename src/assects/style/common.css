@@ -1,0 +1,55 @@
+/* button with white background */
+.btn-Wh{
+   background-color: #e4f3fa;
+   border: 2px solid #e4f3fa;
+   color: #1e91cc;
+   padding: 8px 35px 8px 35px;
+   border-radius: 6px;
+   margin-left: 20px;
+   font-size: 17px;
+}
+
+/*  transparent  button */
+/*   div outside button */
+
+.div-btn-tran{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 4%;
+    margin-top:39px;
+}
+.btn-transparent{
+    background-color:#2094cf ;
+    border:1px solid white;
+    padding: 6px 40px 6px 40px;
+    border-radius:6px;
+    color:  #e8e8e8;
+    opacity: 85%;
+    font-size: 17px
+}
+
+/* font-family Montserrat */
+
+.fnt-mont{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* font-family poppins */
+.fnt-poppins{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* font-size Small */
+
+.font-sm{
+    font-size: 16px;
+}
+
+.font-md{
+    font-size: 18px;
+}
+
+.font-lg{
+    font-size: 36px;
+}
