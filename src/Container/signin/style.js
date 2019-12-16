@@ -8,9 +8,10 @@ export default()=>(
     }
 
     .login-background-color .login-form {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
         width: 450px;
         height: 605px;
-        border-radius: 4px;
         webkit-backdrop-filter: blur(30px);
         backdrop-filter: blur(30px);
         box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.16);
@@ -20,12 +21,13 @@ export default()=>(
       
     
 .login-background-color .login-picture{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
     width: 450px;
     height: 605px;
     object-fit: contain;
     webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
-    border-radius: 4px;
     box-shadow: 1px 6px 6px 0 rgba(0, 0, 0, 0.16);
     position: relative;
     opacity:0.5;
@@ -61,7 +63,7 @@ margin-left: 74px;
     opacity: 78%;
     margin-left: -33px;
     padding-left: 12px;
-    height: 60px;
+    height: 50px;
     background-color: #ffffff;
     border: 1px solid;
     font-size: 20px;
@@ -107,7 +109,24 @@ form.input-form {
     opacity: 78%;
     margin-left: 10px;
 }       
-      
+.signin-checkbox {
+    display: flex;
+    // justify-content: space-between;
+    padding-left: 0px;
+    padding-right: 30px;
+    padding-top: 7%;
+}
+.signin-button-div {
+    padding-right: 48px;
+    padding-top: 17%;
+    display: flex;
+    justify-content: center;
+}
+.signin-forgrt-password {
+    justify-content: flex-end;
+    flex: 2;
+    display: flex;
+}
     `}
 
     </style>

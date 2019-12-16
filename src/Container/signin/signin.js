@@ -26,7 +26,17 @@ export default ()=>{
                     <Form.Control className="input-text flirt" type="text" name="User"  placeholder="User name">
                     </Form.Control>
                     <Form.Control className="input-text signin-input"  type="password" name="password"  placeholder="Password"/>
-                    <button className="btn-sign">Sign In</button>
+
+                    <div class="custom-control custom-checkbox signin-checkbox">
+                        <input id="checked" class="custom-control-input" type="checkbox"  />
+                        
+                        <label for="checked" class="custom-control-label"></label>
+                        <div className="checkbox-data">Remember me</div>
+                         <div className="signin-forgrt-password"><a href="#">Forgot password?</a></div>
+
+                    </div>
+                   <div className="signin-button-div"><button className="btn-blue btn-signin-padding">Sign In</button></div> 
+
               </form>
             </div>
          </div>
