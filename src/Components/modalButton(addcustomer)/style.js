@@ -3,84 +3,42 @@ export default ()=>{
 
 return(
 <style js="true">{`
-.textarea {
-    resize: none;
-  }
-.modalCross-addgold{
-font-size:38px;
-margin-top:24px;
-margin-right: 40px;
+.label-radio-modal{
+    margin-left: 129px!important;
 }
- /*!!!!!!!!!!!!!!!!!!!!!!!!MODAL FIELDS!!!!!!!!!!!!!!!!!!!!!!!!!*/ 
-.label-radio-modal-addgold{
-    margin-left: 180px!important;
-}
-.input-of-modal-addgold{
+.input-of-modal{
     width: 423px;
     height: 40px;
     border-radius: 6px;
     border: solid 1px #e8e8e8;
     background-color: #ffffff;
-    margin-left: 140px;
+    margin-left: 88px;
     padding-left: 10px;
 }
-.input-postbody-modal-addgold{
+.input-postbody-modal{
     width: 423px;
     height: 102px;
     border-radius: 6px;
     border: solid 1px #e8e8e8;
     background-color: #ffffff;
-    margin-left: 140px;
+    margin-left: 88px;
     padding-left: 10px;
 }
 .font-24{
     font-size:24px;
 }
-.model-header-addgold{
-margin-left: 19%;
-
+.model-header .modalCross{
+margin-left: 45%;
+font-size: 38px;
 }
-
-// .model-addgold{
-//   position: relative;
-//   display: flex;
-//   flex-direction: column;
-//   width: 719px;
-//   pointer-events: auto;
-//   background-color: #fff;
-//   background-clip: padding-box;
-//   border: 1px solid rgba(0,0,0,.2);
-//   border-radius: .3rem;
-//   outline: 0;
-//   margin-top: -31px;
-//   margin-left: 74%;
-// }
-
 .modal-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width:719px!important;
-  pointer-events: auto;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.2);
-  border-radius: .3rem;
-  outline: 0;
-  margin-top: -31px;
-  margin-left: 74%;
+    margin-left: 99%;
+    margin-top: -6%;
+    min-height: 110vh;
+    width: 610px;
 }
-
-
-
-// .model-content {
-//     margin-left: 74%;
-//     margin-top: -6%;
-//     min-height: 110vh;
-//     width: 719px;
-// }
-.model-Money-Label-addgold{
-    margin-left: 139px;
+.model-Money-Label{
+    margin-left: 88px;
     margin-top: 12px;
 }
 /*!!!!!!!!!!!!!!!!!!!!!Radio Button!!!!!!!!!!!!!!!!!!!!!*/
@@ -102,9 +60,9 @@ margin-left: 19%;
   }
   
   /* Create a custom radio button */
-  .checkmark-addgold {
+  .checkmark {
     position: absolute;
-    margin-left: 137px;
+    margin-left: 86px;
     height: 25px;
     width: 25px;
     background-color: #eee;
