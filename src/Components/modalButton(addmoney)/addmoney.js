@@ -1,129 +1,138 @@
-import React,{useState} from 'react'
-import {Modal,Button, CloseButton} from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Modal, Button, CloseButton } from 'react-bootstrap'
 import DatePicker from 'react-datepicker'
 import Style from './style'
 import '../../assects/style/common.css'
 
-export default()=>{
+
+export default () => {
     const [show, setShow] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
     const [modal, setModal] = useState(false);
-    const openModal=()=>{
+    const openModal = () => {
         setModal(true);
     }
-    
-    return(
+
+    return (
         <>
-         <button id="myBtn" onClick={() => {
+            <button id="myBtn" onClick={() => {
                 openModal();
             }}>Open Modal</button>
 
 
-            {modal&&<div className="modal-addgold">
+            {modal&&<div className="modal-addmoney">
                 <div className="modal-content">
-               
-                    <div className="model-header mt-4">
-                        <div className="d-flex flex-column ml-5">
-                        <CloseButton className="modalCross" variant="secondary" onClick={()=>{setModal(false)}} />
-                            <h6 className="fnt-poppins font-24 mt-3">Add Gold</h6>
-                            
+
+                    <div className="model-header">
+                        <div className="d-flex flex-row ml-5 justify-content-around">
+                            <h6 className="fnt-poppins font-24 mt-3">Add Money</h6>
+                            <CloseButton className="modalCross" variant="secondary" onClick={()=>{setModal(false)}} />
                         </div>
                     </div>
 
-                    <div className="modal-body-addgold">
+                    <div className="modal-body-addmoney">
                         <form>
                             <div>
                                 <label className="model-Money-Label fnt-poppin font-sm">Date</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addgold" type="date"></input>
+                                <input className="input-of-modal input-modal-addmoney" type="date"></input>
                                 {/* <DatePicker selected={startDate} onChange={date => setStartDate(date)} /> */}
                             </div>
                             <div>
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Bill Number</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addgold" placeholder="0001" type="number"></input>
+                                <input className="input-of-modal input-modal-addmoney" placeholder="0001" type="number"></input>
                             </div>
 
                             <div className="d-flex flex-column">
-                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Description</label>
-                                </div>
-                            <div>    
-                                <textarea className="input-postbody-modal" placeholder="Description" ></textarea>
+                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Currency Type</label>
                             </div>
 
-                            <div className="d-flex modal-radiobtn-addgold">
+                            <div className="d-flex modal-radiobtn-addmoney">
                             <div className="radios">
                             <div className="d-flex radio">
-                            <input type="radio" id="radio1" name="auto"/>
+                            <input type="radio" id="radio1" name="currencytype"/>
                             <label for="radio1">
                             <div className="checker"></div>
                                
                             </label>
-                            <div><label>Automatic</label></div>
+                            <div><label className="fnt-poppins">USD</label></div>
                             
                             </div>
                             </div>
                             </div>
 
-                            <div className="d-flex modal-radiobtn-addgold">
+                            <div className="d-flex modal-radiobtn-addmoney">
                             <div className="radios">
                             <div className="d-flex radio">
-                            <input type="radio" id="radio2" name="auto"/>
+                            <input type="radio" id="radio2" name="currencytype"/>
                             <label for="radio2">
                             <div className="checker"></div>
                                
                             </label>
-                            <div><label>Manual</label></div>
+                            <div><label className="fnt-poppins">PKR</label></div>
                             
                             </div>
                             </div>
                             </div>
-                            
-                            <div className="d-flex flex-column">
-                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Pure Weight</label>
-                            </div>
-                            <div>    
-                                <input className="input-of-modal input-modal-addgold" placeholder="" type="text"></input>
-                            </div>
 
-                            <div className="d-flex flex-column">
-                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Gold Type</label>
-                            </div>
-
-                            <div className="d-flex modal-radiobtn-addgold">
+                            <div className="d-flex modal-radiobtn-addmoney">
                             <div className="radios">
                             <div className="d-flex radio">
-                            <input type="radio" id="radio3" name="goldtype"/>
+                            <input type="radio" id="radio3" name="currencytype"/>
                             <label for="radio3">
                             <div className="checker"></div>
                                
                             </label>
-                            <div><label>Sent</label></div>
+                            <div><label className="fnt-poppins">Afghani</label></div>
                             
                             </div>
                             </div>
                             </div>
 
-                            <div className="d-flex modal-radiobtn-addgold">
+                            <div className="d-flex flex-column">
+                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Amount</label>
+                                <input className="input-of-modal input-modal-addmoney" placeholder="$00.00" type="number"></input>
+                            </div>
+
+                            <div className="d-flex flex-column">
+                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Type</label>
+                            </div>
+
+                            <div className="d-flex modal-radiobtn-addmoney">
                             <div className="radios">
                             <div className="d-flex radio">
-                            <input type="radio" id="radio4" name="goldtype"/>
+                            <input type="radio" id="radio4" name="type"/>
                             <label for="radio4">
                             <div className="checker"></div>
                                
                             </label>
-                            <div><label>Received</label></div>
+                            <div><label className="fnt-poppins">Sent</label></div>
+                            
+                            </div>
+                            </div>
+                            </div>
+                            <div className="d-flex modal-radiobtn-addmoney">
+                            <div className="radios">
+                            <div className="d-flex radio">
+                            <input type="radio" id="radio5" name="type"/>
+                            <label for="radio5">
+                            <div className="checker"></div>
+                               
+                            </label>
+                            <div><label className="fnt-poppins">Received</label></div>
                             
                             </div>
                             </div>
                             </div>
 
-                          
-                            
+                            <div className="d-flex flex-column">
+                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Details</label>
+                                <input className="input-postbody-modal" placeholder="" type="textarea"></input>
+                            </div>
 
                             <div className="d-flex justify-content-center mt-5 mb-5">
                                 <button className="btn-white-model" onClick={()=>{setModal(false)}}>Cancel</button>
@@ -136,8 +145,7 @@ export default()=>{
                 
             </div>}
 
-      <Style/>
-    
+            <Style />
         </>
     );
 }
