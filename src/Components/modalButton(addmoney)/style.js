@@ -14,24 +14,22 @@ input[type=number]::-webkit-inner-spin-button {
 .font-24{
         font-size:24px;
     }
-    .modal-addgold .model-header h6{
-      margin-left: 7%;
-    }
-    .modal-addgold .model-header .modalCross{
-        margin-left: 87%;
+
+    .modal-addmoney .model-header .modalCross{
+        margin-left: 45%;
         font-size: 38px;
         }
 
-.modal-addgold .modal-body-addgold .model-Money-Label{
+.modal-addmoney .modal-body-addmoney .model-Money-Label{
     margin-left: 88px;
     margin-top: 12px;
 }
-.input-modal-addgold{
+.input-modal-addmoney{
     margin-left: 88px;
 }
 
 /* The Modal (background) */
-.modal-addgold {
+.modal-addmoney {
   display:block; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -47,11 +45,11 @@ input[type=number]::-webkit-inner-spin-button {
 
 /* Modal Content */
 
-.modal-addgold .modal-content {
+.modal-addmoney .modal-content {
     background-color: #fefefe;
     padding: 20px;
     border: 1px solid #888;
-    width: 40%;
+    width: 37%;
     float: right;
     margin-top: -6%;
 }
@@ -73,7 +71,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 
 
-.modal-body-addgold .input-postbody-modal{
+.modal-body-addmoney .input-postbody-modal{
     width: 423px;
     height: 102px;
     border-radius: 6px;
@@ -83,66 +81,55 @@ input[type=number]::-webkit-inner-spin-button {
     padding-left: 10px;
 }
 
-
-  .modal-body-addgold .label-radio-modal{
-    margin-left: 129px!important;
-    }
-
-
-
-/*NEW RADIO*/
-
-
-.modal-radiobtn-addgold{
+/*!!!!!!!!!!!!!!!!!!!!!!!RADIO BUTTON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.modal-radiobtn-addmoney{
   margin-left:13%;
 }
-.radio input {
+.modal-radiobtn-addmoney .radio input {
   position: absolute;
   pointer-events: none;
   visibility: hidden;
 }
-.radio input:focus + label {
+.modal-radiobtn-addmoney .radio input:focus + label {
   background: transparent;
 }
-.radio input:focus + label .checker {
+.modal-radiobtn-addmoney .radio input:focus + label .checker {
   border-color: #279fdc;
 }
-.radio input:checked + label .checker {
+.modal-radiobtn-addmoney .radio input:checked + label .checker {
   box-shadow: inset 0 0 0 4px #279fdc;
 }
-.radio label {
+.modal-radiobtn-addmoney .radio label {
   display: flex;
   align-items: center;
   height: 28px;
   border-radius: 16px;
   margin: 0px;
+  margin-right: -11px;
+  margin-top: 3px;
   padding: 0 8px 0 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.radio label:hover {
+.modal-radiobtn-addmoney .radio label:hover {
   background: transparent;
 }
-.radio label:hover .checker {
+.modal-radiobtn-addmoney .radio label:hover .checker {
   box-shadow: inset 0 0 0 2px #179599;
 }
-.radio .checker {
+.modal-radiobtn-addmoney .radio .checker {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   margin-right: 8px;
+  
   box-shadow: inset 0 0 0 1px #d1d4db;
   transition: box-shadow 0.3s ease;
 }
 
-
-
-
-
-
-
-
-
+  .modal-body-addmoney .label-radio-modal{
+    margin-left: 129px!important;
+    }
 `}
 
 
