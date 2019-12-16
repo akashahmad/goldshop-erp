@@ -92,7 +92,6 @@ form.input-form {
     margin-left: 85px;
     margin-top: 8px;
     border: none;
-    
     font-size: 20px;
     font-weight: normal;
     font-stretch: normal;
