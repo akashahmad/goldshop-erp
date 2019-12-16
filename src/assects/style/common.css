@@ -65,10 +65,10 @@
  /* white button of model */
  .btn-white-model{
      background-color: #ffffff ;
-     border:1px solid #ffffff ;
+     border:1px solid #e8e8e8;
      padding: 6px 40px 6px 40px;
      border-radius:6px;
-     color:  #e8e8e8;
+     color: #7a7a7a;
      opacity: 85%;
      font-size: 17px
  }
