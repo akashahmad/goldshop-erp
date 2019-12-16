@@ -1,6 +1,6 @@
 import React from 'react'
 import {BrowserRouter , Route , Switch } from 'react-router-dom'
-import LOGIN from './Container/login/login'
+import signin from './Container/signin/signin'
 import Home from './Container/Homepage/Homepage'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assects/style/common.css'
@@ -13,7 +13,7 @@ export default()=>{
     <BrowserRouter>
         <Switch>
           <Route path={"/home"} component={Home} />
-          <Route path={"/login"} component={LOGIN}/>
+          <Route path={"/signin"} component={signin}/>
         </Switch>
     </BrowserRouter>
      </>

@@ -2,37 +2,42 @@ import React from 'react'
 export default()=>(
     <style js="true">{`
      
-    body {
-        margin: 0px;
-        padding: 0px;
-    }
     .login-background-color {
-        background-color: #f5f5f5;
+        background-color: #fcfcfc;
         min-height: 820px;
     }
 
     .login-background-color .login-form {
-        width: 431px;
+        width: 450px;
         height: 605px;
-        border-radius: 24px;
+        border-radius: 8px;
         webkit-backdrop-filter: blur(30px);
         backdrop-filter: blur(30px);
-        box-shadow: 10px 10px 6px 0 rgba(0, 0, 0, 0.16);
+        box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.16);
         background-color: #ffffff;
         margin-left: -5px;
     }
       
     
 .login-background-color .login-picture{
-    width: 431px;
+    width: 450px;
     height: 605px;
     object-fit: contain;
     webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
-    box-shadow: 10px 10px 6px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    box-shadow: 1px 6px 6px 0 rgba(0, 0, 0, 0.16);
     position: relative;
-    z-index: 1;
+    opacity:0.5;
+    background-color:#1e91cc;
 }
+.login-picture .background-image{
+    background-image:url('../../assects/images/Group30.png');
+}
+.input-text.signin-input{
+    margin-top: 9%;
+}
+
 .login-background-color .login {
     display: flex;
     justify-content: center;
@@ -49,32 +54,32 @@ font-style: normal;
 line-height: 1.24;
 letter-spacing: normal;
 text-align: left;
-color: #1485bf;
+color: #091022;
 margin-top: 65px;
 margin-left: 74px;
 }
 .input-text {
-    width: 288px;
+    opacity: 78%;
+    margin-left: -33px;
+    padding-left: 12px;
     height: 60px;
-    background-color: #f1f1f1;
-    font-family: CenturyGothic;
+    background-color: #ffffff;
+    border: 1px solid;
     font-size: 20px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
-    text-align: left;
     color: #b1b1b1;
     border: none;
+    border: 1px solid #e8e8e8;
 }
 ::placeholder {
-    color: #b1b1b1!important;
-  }
+    color:#091022!important;
+    
+}
 .flirt.form-control {
     margin-top: 72px;
+    
 }
 form.input-form {
+    
     margin-left: 75px;
 }
 .btn-sign
@@ -95,7 +100,14 @@ form.input-form {
     letter-spacing: normal;
     color: #e1dfdf;
 }
-        
+.login .login-picture .image-portion h1 {
+    text-align: center;
+    padding-top: 45%;
+    color: #ffffff;
+    font-size: 57px;
+    opacity: 78%;
+    margin-left: 10px;
+}       
       
     `}
 

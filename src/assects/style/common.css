@@ -1,5 +1,6 @@
 /* button with white background */
-.btn-Wh{
+
+.div-btn-white-wrapper .btn-Wh{
     background-color: #e4f3fa;
     border: 2px solid #e4f3fa;
     color: #1e91cc;
@@ -7,7 +8,7 @@
     border-radius: 6px;
     margin-left: 20px;
     font-size: 17px;
- }
+}
  
  /*  transparent  button */
  /*   div outside button */

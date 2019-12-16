@@ -116,11 +116,6 @@ export default()=>{
 <Section3/>
 <Style/>
 </div>
-
-
-
-
-
 </>
 
 
