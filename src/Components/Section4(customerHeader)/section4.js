@@ -48,12 +48,14 @@ export default()=>{
                
             </nav>
             <div className="div-customer">
-<div>jifihjfdjifdsjjdsf</div>
-<div>jifihjfdjifdsjjdsf</div>
-<div>jifihjfdjifdsjjdsf</div>
+                <div className="customer_heading">Customers</div>
+                <div className="customer-heading-para">Control Panel</div>
+                <div className="div-btn-white-wrapper btn-white-customer">
+                 <button className="btn-Wh btn-white-customer"> Add Customers</button>
+                 </div>
 
 
-</div>
+            </div>
 </div>
 
 <Style/>

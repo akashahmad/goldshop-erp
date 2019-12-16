@@ -18,7 +18,7 @@ export default()=>{
           <Route path={"/home"} component={Home} />
           <Route path={"/signin"} component={signin}/>
           <Route path={"/section4"} component={Section4} />
-          <Route path={"/login"} component={LOGIN}/>
+       
           <Route path={"/model"} component={Model}/>
           <Route path={"/addgold"} component={Addgold}/>
         </Switch>

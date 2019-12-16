@@ -26,7 +26,7 @@ return(
     transition: all 0.3s;
 }
 .logo-section1{
-    font-weight: 900;
+    font-weight: 700;
    font-size:36px;
     color: rgba(39, 159, 221, 0.78);
     // opacity: 0.78;

@@ -54,7 +54,26 @@ a.nav-link {
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
 }
-
+.div-customer {
+    display: flex;
+    padding-left: 66px;
+    flex-direction: column;
+}
+.customer_heading {
+    line-height: 74px;
+    color: #ffffff;
+    font-size: 36px;
+}
+.customer-heading-para {
+    /* line-height: 74px; */
+    color: #ffffff;
+    font-size: 24px;
+}
+.btn-white-customer {
+    padding-bottom: 6%;
+    margin-left: -20px;
+    padding-top: 40px;
+}
 `}</style>
 
 
