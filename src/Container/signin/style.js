@@ -10,7 +10,7 @@ export default()=>(
     .login-background-color .login-form {
         width: 450px;
         height: 605px;
-        border-radius: 8px;
+        border-radius: 4px;
         webkit-backdrop-filter: blur(30px);
         backdrop-filter: blur(30px);
         box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.16);
@@ -25,7 +25,7 @@ export default()=>(
     object-fit: contain;
     webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
-    border-radius: 8px;
+    border-radius: 4px;
     box-shadow: 1px 6px 6px 0 rgba(0, 0, 0, 0.16);
     position: relative;
     opacity:0.5;
@@ -43,10 +43,9 @@ export default()=>(
     justify-content: center;
     padding-top: 6%;
 }
-.Sign-in {
+.input-form .Sign-in {
 width: 168px;
 height: 60px;
-font-family: CenturyGothic;
 font-size: 49px;
 font-weight: bold;
 font-stretch: normal;

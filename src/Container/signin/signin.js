@@ -25,9 +25,7 @@ export default ()=>{
                  <h2 className="Sign-in">Sign in</h2>
                     <Form.Control className="input-text flirt" type="text" name="User"  placeholder="User name">
                     </Form.Control>
-
                     <Form.Control className="input-text signin-input"  type="password" name="password"  placeholder="Password"/>
-
                     <button className="btn-sign">Sign In</button>
               </form>
             </div>
