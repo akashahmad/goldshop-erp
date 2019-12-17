@@ -4,7 +4,7 @@ import '../../assects/style/common.css'
 export default ()=>{
     return(
         <>
-          
+         
         
         </>
     );

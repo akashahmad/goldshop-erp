@@ -9,6 +9,10 @@ import CustomerDetailsInfo from '../src/Components/customerDetails(customerInfo)
 import Addgold from './Components/modalButton(addgold)/addgold'
 import Addmoney from './Components/modalButton(addmoney)/addmoney'
 import Addcustomer from './Components/modalButton(addcustomer)/addcustomer'
+import Popup from './Components/popup/popup'
+import Editcustomer from './Components/modalButton(editcustomer)/editcustomer'
+import Editmoney from './Components/modalButton(editmoneyinfo)/editmoneyinfo'
+import Editgold from './Components/modalButton(editgoldinfo)/editgold'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assects/style/common.css'
 import './assects/style/style.css'
@@ -27,6 +31,10 @@ export default()=>{
           <Route path={"/addcustomer"} component={Addcustomer}/>
           <Route path={"/customerDetails"} component={CustomerDetails}/>
           <Route path={"/info"} component={CustomerDetailsInfo}/>
+          <Route path={"/popup"} component={Popup}/>
+          <Route path={"/editcustomer"} component={Editcustomer}/>
+          <Route path={"/editmoney"} component={Editmoney}/>
+          <Route path={"/editgold"} component={Editgold}/>
         </Switch>
     </BrowserRouter>
      </>
