@@ -21,6 +21,8 @@ import './assects/style/common.css'
 import './assects/style/style.css'
 
 
+// pages 
+import cutomerPage from './Container/CustomerPage/customer'
 
 export default()=>{
   return(
@@ -42,6 +44,12 @@ export default()=>{
           <Route path={"/editcustomer"} component={Editcustomer}/>
           <Route path={"/editmoney"} component={Editmoney}/>
           <Route path={"/editgold"} component={Editgold}/>
+        
+        {/* --------------Pages------------------------ */}
+        <Route path={"/customerpage"} component={cutomerPage}/>
+        
+        
+        
         </Switch>
     </BrowserRouter>
      </>

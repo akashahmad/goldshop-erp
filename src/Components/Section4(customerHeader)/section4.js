@@ -2,6 +2,7 @@ import React from 'react'
 import Style from './Style'
 import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
+import Table from '../../Components/Table/table'
 
 export default()=>{
     return(
@@ -57,7 +58,7 @@ export default()=>{
 
             </div>
 </div>
-
+<Table/>
 <Style/>
 </div>
 
