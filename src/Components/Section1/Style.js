@@ -83,6 +83,9 @@ ul.list-unstyled.components.logout{
     display: flex;
     // justify-content: safe;
 }
+.image-div-logout:hover {
+    border-left-color: #1e93ce;
+}
   .image-div {
     margin-left: 1%;
     border-left:5px solid transparent;
