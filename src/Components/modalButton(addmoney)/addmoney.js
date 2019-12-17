@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Modal, Button, CloseButton } from 'react-bootstrap'
-import DatePicker from 'react-datepicker'
+import Datepicker from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css";
 import Style from './style'
 import '../../assects/style/common.css'
 
@@ -13,7 +14,9 @@ export default () => {
     const openModal = () => {
         setModal(true);
     }
-
+    const handleChange = date => {
+        setStartDate(date);
+        }
     return (
         <>
             <button id="myBtn" onClick={() => {
@@ -26,7 +29,7 @@ export default () => {
 
                     <div className="model-header">
                         <div className="d-flex flex-row ml-5 justify-content-around">
-                            <h6 className="fnt-poppins font-24 mt-3">Add Money</h6>
+                            <h6 className="fnt-poppins font-24 mt-3 ml-2">Add Money</h6>
                             <CloseButton className="modalCross" variant="secondary" onClick={()=>{setModal(false)}} />
                         </div>
                     </div>
@@ -34,11 +37,10 @@ export default () => {
                     <div className="modal-body-addmoney">
                         <form>
                             <div>
-                                <label className="model-Money-Label fnt-poppin font-sm">Date</label>
+                            <label className="model-Money-Label fnt-poppin font-sm">Date</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addmoney" type="date"></input>
-                                {/* <DatePicker selected={startDate} onChange={date => setStartDate(date)} /> */}
+                            <Datepicker className="input-of-modal input-modal-addmoney" selected={startDate} onChange={handleChange}></Datepicker>
                             </div>
                             <div>
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Bill Number</label>

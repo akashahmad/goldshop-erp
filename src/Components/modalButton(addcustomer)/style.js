@@ -4,26 +4,32 @@ export default ()=>{
 return(
 <style js="true">{`
 
+/*Date Picker React*/
+.react-datepicker {
+  
+    margin-left: 75%;
+}
 /*Remove Input Number Counter*/
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
+/*Font Size*/
 .font-24{
         font-size:24px;
     }
-
+/*MODAL CROSS*/
     .modal-addcustomer .model-header .modalCross{
         margin-left: 45%;
         font-size: 38px;
         }
-
+/*MODAL LABEL*/
 .modal-addcustomer .modal-body-addcustomer .model-Money-Label{
     margin-left: 70px;
     margin-top: 12px;
 }
+/*MODAL INPUT*/
 .modal-body-addcustomer .input-modal-addcustomer{
     margin-left: 70px;
 }

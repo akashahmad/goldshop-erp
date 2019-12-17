@@ -10,7 +10,11 @@ input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
+/*Date Picker React*/
+.react-datepicker {
+  
+    margin-left: 75%;
+}
 .font-24{
         font-size:24px;
     }
@@ -83,7 +87,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 /*!!!!!!!!!!!!!!!!!!!!!!!RADIO BUTTON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 .modal-radiobtn-addmoney{
-  margin-left:13%;
+  margin-left:14%;
 }
 .modal-radiobtn-addmoney .radio input {
   position: absolute;

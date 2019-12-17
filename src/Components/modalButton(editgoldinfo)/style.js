@@ -10,32 +10,34 @@ input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 /*Date Picker React*/
 .react-datepicker {
   
     margin-left: 75%;
 }
+
 .font-24{
         font-size:24px;
     }
-    .modal-addgold .model-header h6{
+    .modal-editgold .model-header h6{
       margin-left: 7%;
     }
-    .modal-addgold .model-header .modalCross{
+    .modal-editgold .model-header .modalCross{
         margin-left: 87%;
         font-size: 38px;
         }
 
-.modal-addgold .modal-body-addgold .model-Money-Label{
+.modal-editgold .modal-body-editgold .model-Money-Label{
     margin-left: 88px;
     margin-top: 12px;
 }
-.input-modal-addgold{
+.input-modal-editgold{
     margin-left: 88px;
 }
 
 /* The Modal (background) */
-.modal-addgold {
+.modal-editgold {
   display:block; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -51,7 +53,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 /* Modal Content */
 
-.modal-addgold .modal-content {
+.modal-editgold .modal-content {
     background-color: #fefefe;
     padding: 20px;
     border: 1px solid #888;
@@ -77,7 +79,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 
 
-.modal-body-addgold .input-postbody-modal{
+.modal-body-editgold .input-postbody-modal{
     width: 423px;
     height: 102px;
     border-radius: 6px;
@@ -88,7 +90,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 
-  .modal-body-addgold .label-radio-modal{
+  .modal-body-editgold .label-radio-modal{
     margin-left: 129px!important;
     }
 
@@ -97,7 +99,7 @@ input[type=number]::-webkit-inner-spin-button {
 /*NEW RADIO*/
 
 
-.modal-radiobtn-addgold{
+.modal-radiobtn-editmoney{
   margin-left:13%;
 }
 .radio input {

@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import {Modal,Button, CloseButton} from 'react-bootstrap'
-import DatePicker from 'react-datepicker'
+import Datepicker from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css";
 import Style from './style'
 import '../../assects/style/common.css'
 
@@ -13,7 +14,9 @@ export default()=>{
     const openModal=()=>{
         setModal(true);
     }
-    
+    const handleChange = date => {
+        setStartDate(date);
+        }
     return(
         <>
          <button id="myBtn" onClick={() => {
@@ -38,8 +41,7 @@ export default()=>{
                                 <label className="model-Money-Label fnt-poppin font-sm">Date</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addgold" type="date"></input>
-                                {/* <DatePicker selected={startDate} onChange={date => setStartDate(date)} /> */}
+                            <Datepicker className="input-of-modal input-modal-addgold" selected={startDate} onChange={handleChange}></Datepicker>
                             </div>
                             <div>
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Bill Number</label>
