@@ -10,7 +10,7 @@ export default()=>{
     return(
         // <div class="wrapper">
         
-        <nav id="sidebar">
+        <nav id="sidebar" className="sidebar">
             <div class="sidebar-header">
                 <h3 className="logo-section1">LOGO</h3>
             </div>

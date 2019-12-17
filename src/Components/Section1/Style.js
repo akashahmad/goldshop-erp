@@ -3,9 +3,7 @@ import React from 'react'
 export default ()=>{
 return(
 <style js="true">{`
-.body{
-    font-family: 'Open Sans', sans-serif;
-}
+
 .wrapper {
     display: flex;
 }
@@ -69,9 +67,9 @@ return(
 
 
 
-ul.list-unstyled.components.logout{
-    min-height: 40vh;
-    max-height: 60vh;
+.sidebar .logout{
+    min-height: 50vh;
+    max-height: 86vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
