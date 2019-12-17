@@ -12,7 +12,7 @@ import Addcustomer from './Components/modalButton(addcustomer)/addcustomer'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assects/style/common.css'
 import './assects/style/style.css'
-
+import  Delete from './Components/Delete(Popup)/delete'
 
 export default()=>{
   return(
@@ -27,6 +27,7 @@ export default()=>{
           <Route path={"/addcustomer"} component={Addcustomer}/>
           <Route path={"/customerDetails"} component={CustomerDetails}/>
           <Route path={"/info"} component={CustomerDetailsInfo}/>
+          <Route path={"/delete"} component={Delete}/>
         </Switch>
     </BrowserRouter>
      </>
