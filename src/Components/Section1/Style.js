@@ -68,8 +68,9 @@ return(
 
 
 .sidebar .logout{
-    min-height: 50vh;
-    max-height: 86vh;
+    padding-top: 93%;
+    // min-height: 50vh;
+    // max-height: 86vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
