@@ -3,6 +3,9 @@ import React from 'react'
 export default()=>{
 return(
 <style js="true"> {`
+.section3-table{
+  height:80vh;
+}
 .section3-table-head{
   background-color: #f8f9fd;
 
@@ -33,7 +36,7 @@ return(
   .section3-table td, th {
   
     text-align: left;
-    padding: 15px;
+    padding: 12px;
   }
   .section3-table .action-button-section3{
 
@@ -42,8 +45,8 @@ return(
     padding-left: 18px;
 }
   .section3-table .dot {
-    height: 10px;
-    width: 10px;
+    height: 8px;
+    width: 8px;
     background-color: #1584bc;
     border-radius: 50%;
    display: block;
@@ -69,6 +72,11 @@ return(
   list-style-type: none;
   line-height: 2;
 
+}
+.section3-table .doted-button{
+  background: none;
+  border: none;
+  outline: none !important;
 }
 `}
 

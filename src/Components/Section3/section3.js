@@ -43,10 +43,10 @@ export default()=>{
       }
 
               <div className="action-div">
-            <a href="#" onClick={()=>openPopUpBox()}> <span class="dot"></span>
+            <button type="button" className="doted-button" onClick={()=>openPopUpBox()}> <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
-                    </a> 
+                    </button> 
                     
                     </div>
          
@@ -72,10 +72,10 @@ export default()=>{
           </div>
       }
            <div className="action-div">
-            <a href="#" onClick={()=>openPopUpBox()}> <span class="dot"></span>
+            <button type="button" className="doted-button"  onClick={()=>openPopUpBox()}> <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
-                    </a> 
+                    </button> 
                     </div></td>
  
 
@@ -96,10 +96,10 @@ export default()=>{
           </div>
       }
         <div className="action-div">
-            <a href="#" onClick={()=>openPopUpBox()}> <span class="dot"></span>
+            <button type="button" className="doted-button"  onClick={()=>openPopUpBox()}> <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
-                    </a> 
+                    </button> 
                     </div></td>
 
 
@@ -120,10 +120,10 @@ export default()=>{
           </div>
       }
        <div className="action-div">
-            <a href="#" onClick={()=>openPopUpBox()}> <span class="dot"></span>
+            <button type="button" className="doted-button"  onClick={()=>openPopUpBox()}> <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
-                    </a> 
+                    </button> 
                     </div></td>
  
 
@@ -144,10 +144,10 @@ export default()=>{
           </div>
       }
              <div className="action-div">
-            <a href="#" onClick={()=>openPopUpBox()}> <span class="dot"></span>
+            <button type="button" className="doted-button"  onClick={()=>openPopUpBox()}> <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
-                    </a> 
+                    </button> 
                     </div></td>
     
 
@@ -168,10 +168,10 @@ export default()=>{
           </div>
       }
           <div className="action-div">
-            <a href="#" onClick={()=>openPopUpBox()}> <span class="dot"></span>
+            <button type="button" className="doted-button"  onClick={()=>openPopUpBox()}> <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
-                    </a> 
+                    </button> 
                     </div></td>
   
 
