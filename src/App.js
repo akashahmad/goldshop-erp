@@ -20,6 +20,7 @@ import './assects/style/common.css'
 import './assects/style/style.css'
 import  Delete from './Components/Delete(Popup)/delete'
 
+
 export default()=>{
   return(
     <>
