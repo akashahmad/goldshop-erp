@@ -15,10 +15,11 @@ import Popup from './Components/popup/popup'
 import Editcustomer from './Components/modalButton(editcustomer)/editcustomer'
 import Editmoney from './Components/modalButton(editmoneyinfo)/editmoneyinfo'
 import Editgold from './Components/modalButton(editgoldinfo)/editgold'
+import  Delete from './Components/Delete(Popup)/delete'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assects/style/common.css'
 import './assects/style/style.css'
-import  Delete from './Components/Delete(Popup)/delete'
+
 
 
 export default()=>{

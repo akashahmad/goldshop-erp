@@ -78,6 +78,10 @@ export default()=>{
             .confirm-popup-of-delete-method {
                 padding: 10px 84px 7px 75px;
             }
+            .confirm-popup-of-delete-method {
+              border-color: #1e93ce;
+              opacity: 71%;
+          }
 `}
         </style>
     );

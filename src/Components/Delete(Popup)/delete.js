@@ -37,12 +37,10 @@ export default()=>{
                                         <button className="btn-blue confirm-popup-of-delete-method">Yes</button>
                                     </div>
 
-                                    <div className=" no-button ml-5">
+                                    <div className=" no-button ml-5 border-of-no-button">
                                         <button className="btn-white-model confirm-popup-of-delete-method">No</button>
                                     </div>
                             </div>
-
-
                             </div>
                         </div>
                     }
