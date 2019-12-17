@@ -284,7 +284,11 @@ a.nav-link {
     font-size: 24px;
     font-size: 18;
     border: none;
-
+}
+.navbar-bottom .button-div-white .navbottom-customer:hover{
+    text-decoration:none;
+    color:#ffffff;
+}
 
 `}</style>
 
