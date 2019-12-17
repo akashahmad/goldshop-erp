@@ -79,42 +79,42 @@ return(
 
 }
 
-.navbar-section2-dashboard{
+.Header-section2 .navbar-section2-dashboard{
     padding:2%;
   
 }
-ul.navbar-topnav-list.navbar-nav.ml-auto {
+.Header-section2 .dashboard-content-homepage .navbar-top-list .navbar-topnav-list{
     display: flex;
     align-items: center;
 }
-.navbar-top{
+.Header-section2 .navbar-top{
     margin-top: 18px;
     padding-right: 4%;
     display: flex;
     justify-content: flex-end;
 }
-a.nav-link {
+.Header-section2 .navbar-top-list .text-navbar-top .nav-link{
     color: white;
     opacity:70%;
 }
-.vertical-line-inside-navbar{
+.Header-section2 .vertical-line-inside-navbar{
     border-left: 1.5px solid white;
     height: 28px;
     margin-top: 3px;
     padding-left: 6px;
     opacity:50%;
 }
-.image-search{
+.Header-section2 .image-search{
     // margin-top: 6px;
     padding-right: 15px;
 }
-.text-navbar-search{
+.Header-section2 .text-navbar-search{
     padding-left:15px;
 }
-.person-image-navbar{
+.Header-section2 .person-image-navbar{
     height:50px;
 }
-.dashboard-content-homepage {
+.Header-section2 .dashboard-content-homepage {
     width: 100%;
     background-image: linear-gradient(to top, #1483bc, #29a1df);
     // background-color: #2094cf;
@@ -123,24 +123,24 @@ a.nav-link {
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
 }
-.dashboard-column-cards-one {
+.Header-section2 .dashboard-content-homepage .dashboard-column-cards-one {
     // color: rgba(255, 255, 255, 0.85);
     margin-left: 43px;
     float: left;
     padding: 0 0px;
     min-width:20%;
   }
-  .dashboard-column-cards-two {
+  .Header-section2 .dashboard-content-homepage .dashboard-column-cards-two {
     float: left;
     padding: 0 0px;
     min-width:20%;
   }
-  .dashboard-column-cards-three {
+  .Header-section2 .dashboard-content-homepage .dashboard-column-cards-three {
     float: left;
     padding: 0 0px;
     min-width:20%;
   }
-  .dashboard-column-cards-four {
+  .Header-section2 .dashboard-content-homepage  .dashboard-column-cards-four {
     float: left;
     padding: 0 0px;
     min-width:20%;
@@ -148,7 +148,7 @@ a.nav-link {
   
   /* Remove extra left and right margins, due to padding */
   
-  .dashboard-row-homepage {margin: 0 -5px;
+  .Header-section2 .dashboard-content-homepage .dashboard-row-homepage {margin: 0 -5px;
   display:flex;
   justify-content:space-around;
   color: #d0e2ee;
@@ -157,7 +157,7 @@ a.nav-link {
   
   /* Clear floats after the columns */
   
-  .dashboard-row-homepage:after {
+  .Header-section2 .dashboard-content-homepage .dashboard-row-homepage:after {
     content: "";
     display: table;
     clear: both;
@@ -166,7 +166,7 @@ a.nav-link {
   
   /* Style the counter cards */
   
-  .card-data {
+  .Header-section2 .dashboard-content-homepage  .card-data {
       color:rgba(255, 255, 255, 0.85);
     // opacity: 85%;
     padding:0px;
@@ -178,23 +178,23 @@ a.nav-link {
     border-radius: 6px;
   }
  
-.card-heading{
+  .Header-section2 .dashboard-content-homepage .card-heading{
     padding-top: 2px;
    margin-top: 7px;
 }
 
-    .card-top {
+.Header-section2 .dashboard-content-homepage .card-top {
         display: flex;
         justify-content: space-around;
     }
-    .card-heading h3{
+    .Header-section2 .dashboard-content-homepage .card-heading h3{
         font-size: 20px;
         margin-top: 6px;
     }
-.card-amount-box1{
+    .Header-section2 .dashboard-content-homepage .card-amount-box1{
     font-size:36px;
 }
-.btn1{
+.Header-section2 .dashboard-content-homepage .btn1{
     background-color: #e4f3fa;
    border: 2px solid #e4f3fa;
    color: #1e91cc;
@@ -204,13 +204,13 @@ a.nav-link {
    font-size: 17px;
 }
 
-.div-viewall{
+.Header-section2 .dashboard-content-homepage .div-viewall{
     display: flex;
     justify-content: flex-end;
     margin-right: 4%;
     margin-top:39px;
 }
-.btn-viewall{
+.Header-section2 .dashboard-content-homepage .btn-viewall{
     margin-bottom: 20px;
     background-color:#2094cf ;
     border:1px solid white;
@@ -220,23 +220,23 @@ a.nav-link {
     font-size: 17px;
     color:rgba(255, 255, 255, 0.85);
 }
-.card-recieved {
+.Header-section2 .dashboard-content-homepage .card-recieved {
     min-height: 15vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.vertical-line-inside-box {
+.Header-section2 .dashboard-content-homepage .vertical-line-inside-box {
     border-left: 1.5px solid white;
     height: 86px;
     opacity:50%;
   }
-  .card-amount{
+  .Header-section2 .dashboard-content-homepage .card-amount{
       color: rgba(255, 255, 255, 0.85);
       font-size:18px;
   }
-  .cardone {
+  .Header-section2 .dashboard-content-homepage .cardone {
     color: rgba(255, 255, 255, 0.85);
     /* justify-content: space-around; */
     display: flex;
@@ -245,19 +245,19 @@ a.nav-link {
     min-height: 25vh;
     justify-content: center;
 }
-.navbar-bottom{
+.Header-section2 .dashboard-content-homepage .navbar-bottom{
     padding-top:10px;
 }
-.navbar-bottom-data{
+.Header-section2 .dashboard-content-homepage .navbar-bottom-data{
     margin-left: 66px;
     margin-right: 66px;
 }
-.link_button {
+.Header-section2 .dashboard-content-homepage .link_button {
     margin-left: 24px;
    margin-top: 56px;
    opacity: 86%;
 }
-.navbar-button-section2{
+.Header-section2 .dashboard-content-homepage .navbar-button-section2{
     padding:0;
 }
 // .nav-link::after {
@@ -274,10 +274,10 @@ a.nav-link {
 //     //transition: width .3s;
 // } 
 
-.button-div-white {
+.Header-section2 .dashboard-content-homepage .button-div-white {
     padding-top: 20px;
 }
-.navbottom-customer {
+.Header-section2 .dashboard-content-homepage .navbottom-customer {
     background-color: transparent;
     padding-left: 60px;
     color: #ffffff;

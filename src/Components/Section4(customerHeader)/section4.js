@@ -8,7 +8,7 @@ export default()=>{
     return(
 <>
 
-<div className="container-fluid Header-section2">
+<div className="container-fluid Header-section4">
         <div className="container-fluid dashboard-content-homepage">
 
             <nav class="navbar-section2-dashboard navbar-expand-lg ">
@@ -51,8 +51,8 @@ export default()=>{
             <div className="div-customer">
                 <div className="customer_heading">Customers</div>
                 <div className="customer-heading-para">Control Panel</div>
-                <div className="div-btn-white-wrapper btn-white-customer">
-                 <button className="btn-Wh btn-white-customer"> Add Customers</button>
+                <div className="div-btn-white-wrapper btn-white-customers">
+                 <button className="btn-Wh btn-white-customers"> Add Customers</button>
                  </div>
 
 

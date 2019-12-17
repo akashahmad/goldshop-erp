@@ -4,7 +4,8 @@ export default ()=>{
 return(
 <style js="true">{`
 
-.Header-section2
+
+.Header-section2 .Header-section4
 {
     padding:0;
     background-color: #f8f9fd;
@@ -25,7 +26,7 @@ return(
     display: flex;
     justify-content: flex-end;
 }
-a.nav-link {
+.navbar-top-list .text-navbar-top .nav-link{
     color: white;
     opacity:70%;
 }
