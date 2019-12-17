@@ -1,70 +1,179 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Style from './Style'
 export default()=>{
+  const data={
+    
+  }
+  const [show,setShow]=useState(false);
+
+  const openPopUpBox=()=>{
+    if(show===true)
+    setShow(false);
+    else
+    setShow(true);
+  }
     return(
 
 <div className="container-fluid section3-table">
-<table >
+<table className="section3-table-inner">
   <tr className="section3-table-head">
+  
     <th>Name</th>
-    <th>Sent Date</th>
-    <th>Amt Sent</th>
-    <th>Recieved Date</th>
-    <th>Amt Recieved</th>
-    <th>Total</th>
+    <th>Address</th>
+    <th>Contact Number</th>
+    <th>Actions</th>
+   
   </tr>
   <tr className="section3-table-rows">
+ 
     <td>JOHN DOE</td>
-    <td>DEC 12,2019</td>
-    <td>66,000.00</td>
-    <td>Dec 13,2019</td>
-    <td>80,000.00</td>
-    <td>90,000.00</td>
+    <td>Abbottabad</td>
+    <td>0312-12345667</td>
+    
+      <td>
+      {
+        show &&
+        <div className="main-div-of-section3-table-popup back-image-of-popup">
+          <li>View</li>
+          <li>Edit</li>
+          <li>Print</li>
+          <li>Delete</li>
+          
+          </div>
+      }
+
+              <div className="action-div">
+            <a href="#" onClick={()=>openPopUpBox()}> <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    </a> 
+                    
+                    </div>
+         
+    </td>
+
+    
+
 
   </tr>
   <tr className="section3-table-rows">
   <td>JOHN DOE</td>
-    <td>DEC 12,2019</td>
-    <td>66,000.00</td>
-    <td>Dec 13,2019</td>
-    <td>80,000.00</td>
-    <td>90,000.00</td>
+    <td>Abbottabad</td>
+    <td>0312-12345667</td>
+    <td>   
+    {
+        show &&
+        <div className="main-div-of-section3-table-popup back-image-of-popup">
+          <li>View</li>
+          <li>Edit</li>
+          <li>Print</li>
+          <li>Delete</li>
+          
+          </div>
+      }
+           <div className="action-div">
+            <a href="#" onClick={()=>openPopUpBox()}> <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    </a> 
+                    </div></td>
+ 
 
   </tr>
   <tr className="section3-table-rows">
   <td>JOHN DOE</td>
-    <td>DEC 12,2019</td>
-    <td>66,000.00</td>
-    <td>Dec 13,2019</td>
-    <td>80,000.00</td>
-    <td>90,000.00</td>
+    <td>Abbottabad</td>
+    <td>0312-12345667</td>
+    <td>      
+    {
+        show &&
+        <div className="main-div-of-section3-table-popup back-image-of-popup">
+          <li>View</li>
+          <li>Edit</li>
+          <li>Print</li>
+          <li>Delete</li>
+          
+          </div>
+      }
+        <div className="action-div">
+            <a href="#" onClick={()=>openPopUpBox()}> <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    </a> 
+                    </div></td>
+
 
   </tr>
   <tr className="section3-table-rows">
   <td>JOHN DOE</td>
-    <td>DEC 12,2019</td>
-    <td>66,000.00</td>
-    <td>Dec 13,2019</td>
-    <td>80,000.00</td>
-    <td>90,000.00</td>
+    <td>Abbottabad</td>
+    <td>0312-12345667</td>
+    <td>
+    {
+        show &&
+        <div className="main-div-of-section3-table-popup back-image-of-popup">
+          <li>View</li>
+          <li>Edit</li>
+          <li>Print</li>
+          <li>Delete</li>
+          
+          </div>
+      }
+       <div className="action-div">
+            <a href="#" onClick={()=>openPopUpBox()}> <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    </a> 
+                    </div></td>
+ 
 
   </tr>
   <tr className="section3-table-rows">
   <td>JOHN DOE</td>
-    <td>DEC 12,2019</td>
-    <td>66,000.00</td>
-    <td>Dec 13,2019</td>
-    <td>80,000.00</td>
-    <td>90,000.00</td>
+    <td>Abbottabad</td>
+    <td>0312-12345667</td>
+    <td> 
+    {
+        show &&
+        <div className="main-div-of-section3-table-popup back-image-of-popup">
+          <li>View</li>
+          <li>Edit</li>
+          <li>Print</li>
+          <li>Delete</li>
+          
+          </div>
+      }
+             <div className="action-div">
+            <a href="#" onClick={()=>openPopUpBox()}> <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    </a> 
+                    </div></td>
+    
 
   </tr>
   <tr className="section3-table-rows">
   <td>JOHN DOE</td>
-    <td>DEC 12,2019</td>
-    <td>66,000.00</td>
-    <td>Dec 13,2019</td>
-    <td>80,000.00</td>
-    <td>90,000.00</td>
+    <td>Abbottabad</td>
+    <td>0312-12345667</td>
+    <td>    
+    {
+        show &&
+        <div className="main-div-of-section3-table-popup back-image-of-popup">
+          <li>View</li>
+          <li>Edit</li>
+          <li>Print</li>
+          <li>Delete</li>
+          
+          </div>
+      }
+          <div className="action-div">
+            <a href="#" onClick={()=>openPopUpBox()}> <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    </a> 
+                    </div></td>
+  
 
   </tr>
 </table>

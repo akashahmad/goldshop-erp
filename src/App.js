@@ -5,6 +5,8 @@ import Home from './Container/Homepage/Homepage'
 import Section4  from './Components/Section4(customerHeader)/section4'
 import CustomerDetails from './Components/customerDetails(viewTransaction)/customerDetails'
 import CustomerDetailsInfo from '../src/Components/customerDetails(customerInfo)/customerDetails'
+import Table from '../src/Components/Table/table'
+import TRanslator from '../src/Components/googleTranslator/translator'
 // import Model from './Components/modelButton/modelButton'
 import Addgold from './Components/modalButton(addgold)/addgold'
 import Addmoney from './Components/modalButton(addmoney)/addmoney'
@@ -28,6 +30,8 @@ export default()=>{
           <Route path={"/customerDetails"} component={CustomerDetails}/>
           <Route path={"/info"} component={CustomerDetailsInfo}/>
           <Route path={"/delete"} component={Delete}/>
+          <Route path={"/table"} component={Table}/>
+          <Route path={"/translate"} component={TRanslator}/>
         </Switch>
     </BrowserRouter>
      </>
