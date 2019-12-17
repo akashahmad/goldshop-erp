@@ -3,7 +3,7 @@ import React from 'react'
 export default ()=>{
 return(
 <style js="true">{`
-.Header-section2
+.Header-section4
 {
     padding:0;
     background-color: #f8f9fd;
@@ -14,7 +14,7 @@ return(
     padding:1%;
   
 }
-ul.navbar-topnav-list.navbar-nav.ml-auto {
+.dashboard-content-homepage .navbar-top-list .navbar-topnav-list{
     display: flex;
     align-items: center;
 }
@@ -24,7 +24,7 @@ ul.navbar-topnav-list.navbar-nav.ml-auto {
     display: flex;
     justify-content: flex-end;
 }
-a.nav-link {
+.navbar-top-list .text-navbar-top .nav-link{
     color: white;
     opacity:70%;
 }
