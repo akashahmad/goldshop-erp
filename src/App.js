@@ -19,6 +19,7 @@ import  Delete from './Components/Delete(Popup)/delete'
 import Signupadmin from './Components/SignUp/signup'
 import Notification from './Components/Notification/Notification'
 import SignUpHeader from './Components/signUpHeader/signUpHeader'
+import NotificationPage from '../src/Container/Notification/notification'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assects/style/common.css'
 import './assects/style/style.css'
@@ -59,6 +60,7 @@ export default()=>{
         <Route path={"/customertransaction"} component={Transaction}/>
         <Route path={"/customerviewgold"} component={customerViewGold}/>
         <Route path={"/signup"} component={Signup}/>
+        <Route path={"/notificationpage"} component={NotificationPage}/>
 
         
         </Switch>

@@ -67,56 +67,6 @@ return(
     font-size: 24px;
     padding-bottom: 10%;
 }
-// .notification-table .notification-rows{
-//     display: flex;
-//     flex-direction: column;
-//     margin-left: 3%;
-//     justify-content: space-around;
-//     background: gray;
-//     /* margin-right: 3%; */
-//     width: 94%;
-// }
-// .notification-table .n0tification-row1{
-//     padding: 15px;
-//     padding-top: 50px;
-
-// }
-// .notification-table .notification-row2{
-//     padding: 15px;
-
-//     display:flex;
-// }
-// .notification-table .notification-row2 .notification-row2-one{
-//     flex:1;
-// }
-// .notification-table .notification-row2 .notification-row2-two{
-//     justify-content: flex-end;
-//     /* justify-content: flex-end; */
-//     flex: 1;
-//     display: flex;
-    
-// }
-// .notification-table .notification-row3{
-//     display:flex;
-//     padding: 15px;
-
-// }
-// .notification-table .notification-row3 .notification-row3-one{
-//     flex:1;
-// }
-// .notification-table .notification-row3 .notification-row3-two{
-//     justify-content: flex-end;
-//     /* justify-content: flex-end; */
-//     flex: 1;
-//     display: flex;
-    
-// }
-// .notification-table .notification-row4 .notification-row4-one {
-//     padding-top: 65px;
-//     /* padding: 15px; */
-//     padding-left: 15px;
-// }
-
 .notification-table{
     color: #b1b2b7;
 }
