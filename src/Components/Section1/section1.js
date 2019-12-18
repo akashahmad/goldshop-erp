@@ -17,7 +17,7 @@ export default()=>{
             </div>
 
             <ul class="list-unstyled components ">
-              <Link to={"/home"}>
+              <Link to={"/"}>
                 <li>
                        <div className="image-div "> 
                        

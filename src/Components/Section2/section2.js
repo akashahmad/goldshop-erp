@@ -107,7 +107,7 @@ export default()=>{
                     </a></div>
 
                     <div class="collapse navbar-collapse div-viewall" >             
-                           <button type="button" className="btn-viewall fnt-poppins">View All</button>                     
+                           <button   type="button" className="btn-viewall fnt-poppins">View All</button>                     
                     </div>
                 </div>
             </nav>
