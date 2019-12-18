@@ -17,6 +17,8 @@ import Editmoney from './Components/modalButton(editmoneyinfo)/editmoneyinfo'
 import Editgold from './Components/modalButton(editgoldinfo)/editgold'
 import  Delete from './Components/Delete(Popup)/delete'
 import Signupadmin from './Components/SignUp/signup'
+import Notification from './Components/Notification/Notification'
+import SignUpHeader from './Components/signUpHeader/signUpHeader'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assects/style/common.css'
 import './assects/style/style.css'
@@ -48,6 +50,8 @@ export default()=>{
           <Route path={"/editcustomer"} component={Editcustomer}/>
           <Route path={"/editmoney"} component={Editmoney}/>
           <Route path={"/editgold"} component={Editgold}/>
+          <Route path={"/Notification"} component={Notification}/>
+          <Route path={"/SignUpHeader"} component={SignUpHeader}/>
           <Route path={"/signupadmin"} component={Signupadmin}/>
           
         {/* --------------Pages------------------------ */}
@@ -55,6 +59,7 @@ export default()=>{
         <Route path={"/customertransaction"} component={Transaction}/>
         <Route path={"/customerviewgold"} component={customerViewGold}/>
         <Route path={"/signup"} component={Signup}/>
+
         
         </Switch>
     </BrowserRouter>
