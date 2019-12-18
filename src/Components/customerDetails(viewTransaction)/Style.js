@@ -159,6 +159,10 @@ return(
     font-size: 16px;
     padding-top: 7px;
 }
+.dropdown-manu-customer-section option{
+
+    background: #1e93ce;
+}
 `}</style>
 
 

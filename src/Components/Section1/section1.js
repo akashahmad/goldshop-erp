@@ -22,7 +22,7 @@ export default()=>{
                        <div className="image-div "> 
                        
                        <img className="image_icon active" src={Image} alt=""/>    
-                             <a href="#" className="fnt-poppins">DashBoard</a></div> 
+                             <a href="#" className="fnt-poppins active">DashBoard</a></div> 
                     
                 </li>
                 </Link>
