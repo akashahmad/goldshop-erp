@@ -16,6 +16,7 @@ import Editcustomer from './Components/modalButton(editcustomer)/editcustomer'
 import Editmoney from './Components/modalButton(editmoneyinfo)/editmoneyinfo'
 import Editgold from './Components/modalButton(editgoldinfo)/editgold'
 import  Delete from './Components/Delete(Popup)/delete'
+import Signupadmin from './Components/SignUp/signup'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assects/style/common.css'
 import './assects/style/style.css'
@@ -25,6 +26,7 @@ import './assects/style/style.css'
 import cutomerPage from './Container/CustomerPage/customer'
 import Transaction from './Container/CustomerViewMoney/customerViewmoney'
 import customerViewGold from './Container/CustomerViewGold/customerViewGold'
+import Signup from './Container/signup/signup'
 
 export default()=>{
   return(
@@ -46,12 +48,13 @@ export default()=>{
           <Route path={"/editcustomer"} component={Editcustomer}/>
           <Route path={"/editmoney"} component={Editmoney}/>
           <Route path={"/editgold"} component={Editgold}/>
-        
+          <Route path={"/signupadmin"} component={Signupadmin}/>
+          
         {/* --------------Pages------------------------ */}
         <Route path={"/customerpage"} component={cutomerPage}/>
         <Route path={"/customertransaction"} component={Transaction}/>
         <Route path={"/customerviewgold"} component={customerViewGold}/>
-        
+        <Route path={"/signup"} component={Signup}/>
         
         </Switch>
     </BrowserRouter>

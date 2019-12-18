@@ -93,3 +93,15 @@
          background-color: #ffffff;
          padding-left: 10px;
  }
+
+ /* input of signup */
+
+ .input-of-signup{
+    padding: 10px;
+        width: 365px;
+        height: 40px;
+        border-radius: 6px;
+        border: solid 1px #e8e8e8;
+        background-color: rgba(255, 255, 255, 0.88);
+      
+ }
