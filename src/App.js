@@ -20,6 +20,7 @@ import Signupadmin from './Components/SignUp/signup'
 import Notification from './Components/Notification/Notification'
 import SignUpHeader from './Components/signUpHeader/signUpHeader'
 import NotificationPage from '../src/Container/Notification/notification'
+import Print from './Components/Print(Popup)/print'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assects/style/common.css'
 import './assects/style/style.css'
@@ -54,7 +55,8 @@ export default()=>{
           <Route path={"/Notification"} component={Notification}/>
           <Route path={"/SignUpHeader"} component={SignUpHeader}/>
           <Route path={"/signupadmin"} component={Signupadmin}/>
-          
+          <Route path={"/print"} component={Print}/>
+        
         {/* --------------Pages------------------------ */}
         <Route path={"/"} exact component={Home} />
         <Route path={"/customerpage"}  component={cutomerPage}/>
