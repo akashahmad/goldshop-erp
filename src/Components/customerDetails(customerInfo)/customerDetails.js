@@ -4,6 +4,9 @@ import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
 import Image3 from '../../assects/images/Layer 6.png'
 import Image4 from '../../assects/images/printer.png'
+import Table from '../../Components/Table/table'
+
+
 export default()=>{
     return(
 <>
@@ -30,13 +33,13 @@ export default()=>{
                                         </div></a>
                             </li> */}
                             <li class="nav-item image-search">
-                                <a class="nav-link " href="#">
+                                <a class="nav-link  " href="#">
                                     <img src={Image1} alt=""/>
                                 </a>
                             </li>
                             <div class="vertical-line-inside-navbar"></div>
                             <li class="nav-item text-navbar-top">
-                                <a class="nav-link " href="#">Ahmed Wali</a>
+                                <a class="nav-link fnt-poppins" href="#">Ahmed Wali</a>
                             </li>
                             <li class="nav-item text-navbar-search">
                             <a class="nav-link " href="#">
@@ -50,7 +53,7 @@ export default()=>{
             </nav>
 <div className="customer-details-box">
 <div className="container-fluid customer-box1-row">
-<ul className="first-column-box1">
+<ul className="first-column-box1 fnt-poppins">
   <li>Name</li>
   <li>Location</li>
   <li>Contact
@@ -121,6 +124,7 @@ export default()=>{
 </div>
 
 <Style/>
+<Table/>
 </div>
 </>
 

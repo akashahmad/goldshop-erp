@@ -21,30 +21,30 @@ export default()=>{
                        <div className="image-div "> 
                        
                        <img className="image_icon active" src={Image} alt=""/>    
-                             <a href="#" >DashBoard</a></div> 
+                             <a href="#" className="fnt-poppins">DashBoard</a></div> 
                     
                 </li>
               
-                <li className="cus">
+                <li className="cus fnt-poppins">
                
                 <div className="image-div"> <img className="image_icon" src={Image3} alt=""/>  
-                             <a href="#" className="sidenav-customer">Customers</a></div> 
+                             <a href="#" className="sidenav-customer fnt-poppins">Customers</a></div> 
                 </li>
                 
                 <li>
                 <div className="image-div"> <img className="image_icon" src={Image4} alt=""/>    
-                             <a href="#" className="sidenav-setting">Setting</a></div> 
+                             <a href="#" className="sidenav-setting fnt-poppins">Setting</a></div> 
                 </li> 
                 <li>
                 <div className="image-div"> <img className="image_icon" src={ImageBell} alt=""/>    
-                             <a href="#" className="sidenav-setting">Notifications</a></div> 
+                             <a href="#" className="sidenav-setting fnt-poppins">Notifications</a></div> 
                 </li>
             </ul>
-            <ul class="list-unstyled components logout">
+            <ul class="list-unstyled components logout ">
 
             <li>
             <div className="image-div-logout"> <img className="image_icon" src={Image5} alt=""/>    
-                             <a href="#" className="sidenav-setting">Log Out</a></div> 
+                             <a href="#" className="sidenav-setting fnt-poppins">Log Out</a></div> 
                 </li>
             </ul>
             <Style/>

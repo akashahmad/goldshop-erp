@@ -36,7 +36,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 /* The Modal (background) */
-.modal-editcustomer {
+  .modal-editcustomer {
   display:block; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */

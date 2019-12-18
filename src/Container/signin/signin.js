@@ -14,7 +14,7 @@ export default ()=>{
          <div className="login" > 
                
                 <div className="login-picture">
-                    <div className="image-portion">
+                    <div className="image-portion fnt-poppins">
                          <h1>Logo</h1>   
                     </div>
                 </div>
@@ -22,30 +22,25 @@ export default ()=>{
 
             <div className="login-form">
              <form className="input-form">   
-                 <h2 className="Sign-in">Sign in</h2>
-                    <Form.Control className="input-text flirt" type="text" name="User"  placeholder="User name">
+                 <h2 className="Sign-in fnt-poppins">Sign in</h2>
+                    <Form.Control className="input-text flirt fnt-poppins" type="text" name="User"  placeholder="User name">
                     </Form.Control>
-                    <Form.Control className="input-text signin-input"  type="password" name="password"  placeholder="Password"/>
+                    <Form.Control className="input-text signin-input fnt-poppins"  type="password" name="password"  placeholder="Password"/>
 
                     <div class="custom-control custom-checkbox signin-checkbox">
-                        <input id="checked" class="custom-control-input" type="checkbox"  />
+                        <input id="checked" class="custom-control-input " type="checkbox"  />
                         
                         <label for="checked" class="custom-control-label"></label>
-                        <div className="checkbox-data">Remember me</div>
-                         <div className="signin-forgrt-password"><a href="#">Forgot password?</a></div>
+                        <div className="checkbox-data fnt-poppins">Remember me</div>
+                         <div className="signin-forgrt-password fnt-poppins"><a href="#">Forgot password?</a></div>
 
                     </div>
-                   <div className="signin-button-div"><button className="btn-blue btn-signin-padding">Sign In</button></div> 
+                   <div className="signin-button-div"><button className="btn-blue btn-signin-padding fnt-poppins">Sign In</button></div> 
 
               </form>
             </div>
          </div>
-
-
-
-
 <Stylejs/>
-
 </div>
        
       

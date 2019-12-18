@@ -36,7 +36,7 @@ export default()=>{
                             </li>
                             <div class="vertical-line-inside-navbar"></div>
                             <li class="nav-item text-navbar-top">
-                                <a class="nav-link " href="#">Ahmed Wali</a>
+                                <a class="nav-link fnt-poppins" href="#">Ahmed Wali</a>
                             </li>
                             <li class="nav-item text-navbar-search">
                             <a class="nav-link " href="#">
@@ -53,47 +53,47 @@ export default()=>{
   <div class="dashboard-column-cards-one">
     <div class="card-data"> 
       <div className="cardone">
-          <p className="card-amount-box1">196</p>
+          <p className="card-amount-box1 fnt-poppins">196</p>
           <h5>Total Customers</h5>
       </div>
     </div>
   </div>
   <div class="dashboard-column-cards-two">
     <div class="card-data">
-      <div className="card-heading"><h3>USD</h3>
+      <div className="card-heading fnt-poppins"><h3>USD</h3>
       <hr style={{backgroundColor:"white"}}/>
       </div>
       <div className="card-recieved">
-          <div><p className="card-amount">10,000.00</p>
+          <div><p className="card-amount fnt-poppins">10,000.00</p>
           <h5> Recieved</h5></div>
       <div class="vertical-line-inside-box"></div>
-      <div><p className="card-amount">10,000.00</p>
+      <div><p className="card-amount fnt-poppins">10,000.00</p>
           <h5> Sent</h5></div></div>
     </div>
   </div>
 
   <div class="dashboard-column-cards-three">
     <div class="card-data">
-    <div className="card-heading"><h3>PKR</h3>
+    <div className="card-heading fnt-poppins"><h3>PKR</h3>
     <hr style={{backgroundColor:"white"}}/>
     </div>
-    <div className="card-recieved"> <div><p className="card-amount">10,000.00</p>
+    <div className="card-recieved fnt-poppins"> <div><p className="card-amount fnt-poppins">10,000.00</p>
           <h5> Recieved</h5></div>
-    <div class="vertical-line-inside-box"></div>
-    <div><p className="card-amount">10,000.00</p>
+    <div class="vertical-line-inside-box fnt-poppins"></div>
+    <div><p className="card-amount fnt-poppins">10,000.00</p>
           <h5> Sent</h5></div></div>
     </div>
   </div>
   
   <div class="dashboard-column-cards-four">
     <div class="card-data">
-    <div className="card-heading"><h3>AFGHANI</h3>
+    <div className="card-heading fnt-poppins"><h3>AFGHANI</h3>
     <hr style={{backgroundColor:"white"}}/>
     </div>
-    <div className="card-recieved"> <div><p className="card-amount">10,000.00</p>
+    <div className="card-recieved"> <div><p className="card-amount fnt-poppins">10,000.00</p>
           <h5> Recieved</h5></div>
     <div class="vertical-line-inside-box"></div>
-    <div><p className="card-amount">10,000.00</p>
+    <div><p className="card-amount fnt-poppins">10,000.00</p>
           <h5> Sent</h5></div></div>
     </div>
   </div>
@@ -101,13 +101,13 @@ export default()=>{
 <nav class="navbar navbar-expand-lg navbar-button-section2">
                 <div class="container-fluid navbar-bottom">
                 <div className=" button-div-white">
-                    <a href="#" className="navbottom-customer">
+                    <a href="#" className="navbottom-customer fnt-poppins">
                         Customers
                         {/* <span>Toggle Sidebar</span> */}
                     </a></div>
 
                     <div class="collapse navbar-collapse div-viewall" >             
-                           <button type="button" className="btn-viewall">View All</button>                     
+                           <button type="button" className="btn-viewall fnt-poppins">View All</button>                     
                     </div>
                 </div>
             </nav>

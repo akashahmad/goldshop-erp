@@ -8,7 +8,7 @@ export default ()=>{
         <>
         <div className="container-fluid section-table-view-details">
         <table className="section-table-view-detailstable-inner">
-          <tr className="section-table-view-detailstable-head">
+          <tr className="section-table-view-detailstable-head fnt-poppins">
             <th>Bill No</th>
             <th>Details</th>
             <th>Date</th>
@@ -20,7 +20,7 @@ export default ()=>{
             <th>Actions</th>
            
           </tr>
-          <tr className="section-table-view-detailstable-rows">
+          <tr className="section-table-view-detailstable-rows fnt-poppins">
             <td>0001</td>
             <td>Abbottabad</td>
             <td>Dec 12,2019</td>
@@ -40,7 +40,7 @@ export default ()=>{
             </td>
         
           </tr>
-          <tr className="section-table-view-detailstable-rows">
+          <tr className="section-table-view-detailstable-rows fnt-poppins">
           <td>0001</td>
             <td>Abbottabad</td>
             <td>Dec 12,2019</td>
@@ -59,7 +59,7 @@ export default ()=>{
          
         
           </tr>
-          <tr className="section-table-view-detailstable-rows">
+          <tr className="section-table-view-detailstable-rows fnt-poppins">
           <td>0001</td>
             <td>Abbottabad</td>
             <td>Dec 12,2019</td>
@@ -78,7 +78,7 @@ export default ()=>{
         
         
           </tr>
-          <tr className="section-table-view-detailstable-rows">
+          <tr className="section-table-view-detailstable-rows fnt-poppins">
           <td>0001</td>
             <td>Abbottabad</td>
             <td>Dec 12,2019</td>
@@ -97,7 +97,7 @@ export default ()=>{
          
         
           </tr>
-          <tr className="section-table-view-detailstable-rows">
+          <tr className="section-table-view-detailstable-rows fnt-poppins">
           <td>0001</td>
             <td>Abbottabad</td>
             <td>Dec 12,2019</td>
@@ -116,7 +116,7 @@ export default ()=>{
             
         
           </tr>
-          <tr className="section-table-view-detailstable-rows">
+          <tr className="section-table-view-detailstable-rows fnt-poppins">
           <td>0001</td>
             <td>Abbottabad</td>
             <td>Dec 12,2019</td>

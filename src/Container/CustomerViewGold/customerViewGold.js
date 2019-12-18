@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Section1 from '../../Components/Section1/section1'
-import SectioncustomerTarnsaction from '../../Components/customerDetails(viewTransaction)/customerDetails'
+import CustomerDetailsInfo from '../../Components/customerDetails(customerInfo)/customerDetails'
 import '../../assects/style/common.css'
 
 export default ()=>{
@@ -9,7 +9,7 @@ export default ()=>{
         <>
             <div style={{display:"flex"}}>
             <Section1/>
-            <SectioncustomerTarnsaction/>
+            <CustomerDetailsInfo/>
             </div >
         
         </>

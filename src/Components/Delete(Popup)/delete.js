@@ -16,17 +16,17 @@ export default()=>{
                             { /* Model Header  */}
                            
                             <div class="modal-content d-flex model-header">
-                                    <div className="heading6-of-deleteMethod">
+                                    <div className="heading6-of-deleteMethod fnt-poppins">
                                        <h6>Delete</h6>
                                     </div>
 
-                                    <div className="close-button-of-header">
+                                    <div className="close-button-of-header fnt-poppins">
                                         <span class="close" onClick={()=>setHide(false)}>&times;</span>
                                      </div>                           
 
 
                             <div className="model-body-of-deletemethod">
-                                    <div className="option-text-delete-model">
+                                    <div className="option-text-delete-model fnt-poppins">
                                         <h6>Are you sure you want to delete this record</h6>
                                     </div>
                             </div>
@@ -34,11 +34,11 @@ export default()=>{
                             <div className="delete-model-popup-button">
                                     
                                     <div className="yes-button">
-                                        <button className="btn-blue confirm-popup-of-delete-method">Yes</button>
+                                        <button className="btn-blue confirm-popup-of-delete-method fnt-poppins">Yes</button>
                                     </div>
 
                                     <div className=" no-button ml-5 border-of-no-button">
-                                        <button className="btn-white-model confirm-popup-of-delete-method">No</button>
+                                        <button className="btn-white-model confirm-popup-of-delete-method fnt-poppins">No</button>
                                     </div>
                             </div>
                             </div>

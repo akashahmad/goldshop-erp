@@ -36,7 +36,7 @@ export default()=>{
                             </li>
                             <div class="vertical-line-inside-navbar"></div>
                             <li class="nav-item text-navbar-top">
-                                <a class="nav-link " href="#">Ahmed Wali</a>
+                                <a class="nav-link fnt-poppins" href="#">Ahmed Wali</a>
                             </li>
                             <li class="nav-item text-navbar-search">
                             <a class="nav-link " href="#">
@@ -49,10 +49,10 @@ export default()=>{
                
             </nav>
             <div className="div-customer">
-                <div className="customer_heading">Customers</div>
-                <div className="customer-heading-para">Control Panel</div>
+                <div className="customer_heading fnt-poppins">Customers</div>
+                <div className="customer-heading-para fnt-poppins">Control Panel</div>
                 <div className="div-btn-white-wrapper btn-white-customers">
-                 <button className="btn-Wh btn-white-customers"> Add Customers</button>
+                 <button className="btn-Wh btn-white-customers fnt-poppins"> Add Customers</button>
                  </div>
 
 

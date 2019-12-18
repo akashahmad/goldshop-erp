@@ -29,7 +29,7 @@ export default ()=>{
         {hide&&
         <div className="tripledot-btn ">
         <div className="modal-content ">
-            <div className="mdl-lst-btn">
+            <div className="mdl-lst-btn fnt-poppins">
             <ul>
                 <li>View</li>
                 <li>Edit</li>

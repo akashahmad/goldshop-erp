@@ -23,6 +23,8 @@ import './assects/style/style.css'
 
 // pages 
 import cutomerPage from './Container/CustomerPage/customer'
+import Transaction from './Container/CustomerViewMoney/customerViewmoney'
+import customerViewGold from './Container/CustomerViewGold/customerViewGold'
 
 export default()=>{
   return(
@@ -47,7 +49,8 @@ export default()=>{
         
         {/* --------------Pages------------------------ */}
         <Route path={"/customerpage"} component={cutomerPage}/>
-        
+        <Route path={"/customertransaction"} component={Transaction}/>
+        <Route path={"/customerviewgold"} component={customerViewGold}/>
         
         
         </Switch>

@@ -38,7 +38,6 @@ return(
     opacity:50%;
 }
 .Header-section4 .image-search{
-    // margin-top: 6px;
     padding-right: 15px;
 }
 .Header-section4 .text-navbar-search{

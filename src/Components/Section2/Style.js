@@ -105,7 +105,6 @@ return(
     opacity:50%;
 }
 .Header-section2 .image-search{
-    // margin-top: 6px;
     padding-right: 15px;
 }
 .Header-section2 .text-navbar-search{
@@ -117,14 +116,11 @@ return(
 .Header-section2 .dashboard-content-homepage {
     width: 100%;
     background-image: linear-gradient(to top, #1483bc, #29a1df);
-    // background-color: #2094cf;
-    // min-height: 48vh;
     transition: all 0.3s;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
 }
 .Header-section2 .dashboard-content-homepage .dashboard-column-cards-one {
-    // color: rgba(255, 255, 255, 0.85);
     margin-left: 43px;
     float: left;
     padding: 0 0px;
@@ -168,7 +164,6 @@ return(
   
   .Header-section2 .dashboard-content-homepage  .card-data {
       color:rgba(255, 255, 255, 0.85);
-    // opacity: 85%;
     padding:0px;
     text-align: center;
     background-color:#2094cf ;
@@ -180,7 +175,7 @@ return(
  
   .Header-section2 .dashboard-content-homepage .card-heading{
     padding-top: 2px;
-   margin-top: 7px;
+    margin-top: 7px;
 }
 
 .Header-section2 .dashboard-content-homepage .card-top {
@@ -192,16 +187,16 @@ return(
         margin-top: 6px;
     }
     .Header-section2 .dashboard-content-homepage .card-amount-box1{
-    font-size:36px;
+     font-size:36px;
 }
 .Header-section2 .dashboard-content-homepage .btn1{
     background-color: #e4f3fa;
-   border: 2px solid #e4f3fa;
-   color: #1e91cc;
-   padding: 8px 35px 8px 35px;
-   border-radius: 6px;
-   margin-left: 20px;
-   font-size: 17px;
+    border: 2px solid #e4f3fa;
+    color: #1e91cc;
+    padding: 8px 35px 8px 35px;
+    border-radius: 6px;
+    margin-left: 20px;
+    font-size: 17px;
 }
 
 .Header-section2 .dashboard-content-homepage .div-viewall{
@@ -238,9 +233,7 @@ return(
   }
   .Header-section2 .dashboard-content-homepage .cardone {
     color: rgba(255, 255, 255, 0.85);
-    /* justify-content: space-around; */
     display: flex;
-    /* justify-content: space-around; */
     flex-direction: column;
     min-height: 25vh;
     justify-content: center;

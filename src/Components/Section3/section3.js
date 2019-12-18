@@ -16,7 +16,7 @@ export default()=>{
 
 <div className="container-fluid section3-table">
 <table className="section3-table-inner">
-  <tr className="section3-table-head">
+  <tr className="section3-table-head fnt-poppins">
   
     <th>Name</th>
     <th>Address</th>
@@ -24,7 +24,7 @@ export default()=>{
     <th>Actions</th>
    
   </tr>
-  <tr className="section3-table-rows">
+  <tr className="section3-table-rows fnt-poppins">
  
     <td>JOHN DOE</td>
     <td>Abbottabad</td>
@@ -33,7 +33,7 @@ export default()=>{
       <td>
       {
         show &&
-        <div className="main-div-of-section3-table-popup back-image-of-popup">
+        <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
           <li>View</li>
           <li>Edit</li>
           <li>Print</li>
@@ -46,24 +46,19 @@ export default()=>{
             <button type="button" className="doted-button" onClick={()=>openPopUpBox()}> <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
-                    </button> 
-                    
+                    </button>            
                     </div>
          
     </td>
-
-    
-
-
   </tr>
-  <tr className="section3-table-rows">
+  <tr className="section3-table-rows fnt-poppins">
   <td>JOHN DOE</td>
     <td>Abbottabad</td>
     <td>0312-12345667</td>
     <td>   
     {
         show &&
-        <div className="main-div-of-section3-table-popup back-image-of-popup">
+        <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
           <li>View</li>
           <li>Edit</li>
           <li>Print</li>
@@ -77,17 +72,16 @@ export default()=>{
                     <span class="dot"></span>
                     </button> 
                     </div></td>
- 
 
   </tr>
-  <tr className="section3-table-rows">
+  <tr className="section3-table-rows fnt-poppins">
   <td>JOHN DOE</td>
     <td>Abbottabad</td>
     <td>0312-12345667</td>
     <td>      
     {
         show &&
-        <div className="main-div-of-section3-table-popup back-image-of-popup">
+        <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
           <li>View</li>
           <li>Edit</li>
           <li>Print</li>
@@ -104,14 +98,14 @@ export default()=>{
 
 
   </tr>
-  <tr className="section3-table-rows">
+  <tr className="section3-table-rows fnt-poppins">
   <td>JOHN DOE</td>
     <td>Abbottabad</td>
     <td>0312-12345667</td>
     <td>
     {
         show &&
-        <div className="main-div-of-section3-table-popup back-image-of-popup">
+        <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
           <li>View</li>
           <li>Edit</li>
           <li>Print</li>
@@ -126,16 +120,15 @@ export default()=>{
                     </button> 
                     </div></td>
  
-
   </tr>
-  <tr className="section3-table-rows">
+  <tr className="section3-table-rows fnt-poppins">
   <td>JOHN DOE</td>
     <td>Abbottabad</td>
     <td>0312-12345667</td>
     <td> 
     {
         show &&
-        <div className="main-div-of-section3-table-popup back-image-of-popup">
+        <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
           <li>View</li>
           <li>Edit</li>
           <li>Print</li>
@@ -149,17 +142,16 @@ export default()=>{
                     <span class="dot"></span>
                     </button> 
                     </div></td>
-    
-
+ 
   </tr>
-  <tr className="section3-table-rows">
+  <tr className="section3-table-rows fnt-poppins">
   <td>JOHN DOE</td>
     <td>Abbottabad</td>
     <td>0312-12345667</td>
     <td>    
     {
         show &&
-        <div className="main-div-of-section3-table-popup back-image-of-popup">
+        <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
           <li>View</li>
           <li>Edit</li>
           <li>Print</li>

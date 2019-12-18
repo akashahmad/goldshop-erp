@@ -19,7 +19,6 @@ return(
 
     min-width: 300px;
     max-width: 300px;
-    /* background: #292a2e; */
     color: black;
     transition: all 0.3s;
 }
@@ -27,7 +26,6 @@ return(
     font-weight: 700;
    font-size:36px;
     color: rgba(39, 159, 221, 0.78);
-    // opacity: 0.78;
   
 }
 
@@ -59,7 +57,6 @@ return(
 
 #sidebar ul li a:hover {
      color: #1e93ce;
-    // background: #fff;
     text-decoration:none;
     opacity:100%;
    
@@ -69,8 +66,6 @@ return(
 
 .sidebar .logout{
     padding-top: 93%;
-    // min-height: 50vh;
-    // max-height: 86vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -80,7 +75,6 @@ return(
     border-left:5px solid transparent;
     padding-left: 50px;
     display: flex;
-    // justify-content: safe;
 }
 .image-div-logout:hover {
     border-left-color: #1e93ce;
@@ -90,7 +84,6 @@ return(
     border-left:5px solid transparent;
     padding-left: 50px;
     display: flex;
-    // justify-content: safe;
 }
 .image-div:hover {
     border-left-color: #1e93ce;
