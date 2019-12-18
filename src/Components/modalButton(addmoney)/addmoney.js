@@ -4,6 +4,7 @@ import Datepicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import Style from './style'
 import '../../assects/style/common.css'
+import Calender from '../../assects/images/dateicon.png'
 
 
 export default () => {
@@ -17,6 +18,7 @@ export default () => {
     const handleChange = date => {
         setStartDate(date);
         }
+      
     return (
         <>
             <button id="myBtn" onClick={() => {
@@ -41,6 +43,7 @@ export default () => {
                             </div>
                             <div>
                             <Datepicker className="input-of-modal input-modal-addmoney" selected={startDate} onChange={handleChange}></Datepicker>
+                            {/* <span><img className="calender-icon" src={Calender}/></span> */}
                             </div>
                             <div>
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Bill Number</label>

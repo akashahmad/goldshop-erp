@@ -4,6 +4,13 @@ export default ()=>{
 return(
 <style js="true">{`
 
+/*Calender Icon*/
+.calender-icon {
+  margin-left: -29px;
+  margin-top: -7px;
+  position: relative;
+}
+
 /*Remove Input Number Counter*/
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
