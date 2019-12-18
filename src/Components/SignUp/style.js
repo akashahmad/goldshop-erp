@@ -28,6 +28,7 @@ export default ()=>{
     .display-row-left-right .left-part-os-signup {
         background: white;
         padding: 3%;
+        width: 184px;
         border-bottom-left-radius: 29px;
         border-top-left-radius: 29px;
     }
