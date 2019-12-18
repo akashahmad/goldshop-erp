@@ -16,7 +16,15 @@ input[type=number]::-webkit-inner-spin-button {
   
     margin-left: 75%;
 }
-
+.react-date-picker__wrapper {
+  border: unset; 
+}
+.react-date-picker__inputGroup {
+  min-width: calc((89px * 3) + 0.54em * 8 + 0.217em * 2);
+}
+.react-date-picker__inputGroup__input:invalid {
+  background: unset;
+}
 .font-24{
         font-size:24px;
     }

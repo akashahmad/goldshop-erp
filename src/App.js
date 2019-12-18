@@ -16,6 +16,7 @@ import Editcustomer from './Components/modalButton(editcustomer)/editcustomer'
 import Editmoney from './Components/modalButton(editmoneyinfo)/editmoneyinfo'
 import Editgold from './Components/modalButton(editgoldinfo)/editgold'
 import  Delete from './Components/Delete(Popup)/delete'
+import Print from './Components/Print(Popup)/print'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assects/style/common.css'
 import './assects/style/style.css'
@@ -46,6 +47,7 @@ export default()=>{
           <Route path={"/editcustomer"} component={Editcustomer}/>
           <Route path={"/editmoney"} component={Editmoney}/>
           <Route path={"/editgold"} component={Editgold}/>
+          <Route path={"/print"} component={Print}/>
         
         {/* --------------Pages------------------------ */}
         <Route path={"/customerpage"} component={cutomerPage}/>
