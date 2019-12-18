@@ -122,14 +122,9 @@ export default()=>{
                     
                 </div>
 </div>
-
 <Style/>
 <Table/>
 </div>
 </>
-
-
-
-        
     )
 }

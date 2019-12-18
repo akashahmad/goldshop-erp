@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Section1 from '../../Components/Section1/section1'
-import SignUp from '../../Components/SignUp/signup'
+import SignUp from '../../Components/signUpHeader/signUpHeader'
 import '../../assects/style/common.css'
 
 export default ()=>{
