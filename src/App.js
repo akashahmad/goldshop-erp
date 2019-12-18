@@ -16,6 +16,8 @@ import Editcustomer from './Components/modalButton(editcustomer)/editcustomer'
 import Editmoney from './Components/modalButton(editmoneyinfo)/editmoneyinfo'
 import Editgold from './Components/modalButton(editgoldinfo)/editgold'
 import  Delete from './Components/Delete(Popup)/delete'
+import Notification from './Components/Notification/Notification'
+import SignUpHeader from './Components/signUpHeader/signUpHeader'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assects/style/common.css'
 import './assects/style/style.css'
@@ -46,7 +48,8 @@ export default()=>{
           <Route path={"/editcustomer"} component={Editcustomer}/>
           <Route path={"/editmoney"} component={Editmoney}/>
           <Route path={"/editgold"} component={Editgold}/>
-        
+          <Route path={"/Notification"} component={Notification}/>
+          <Route path={"/SignUpHeader"} component={SignUpHeader}/>
         {/* --------------Pages------------------------ */}
         <Route path={"/customerpage"} component={cutomerPage}/>
         <Route path={"/customertransaction"} component={Transaction}/>

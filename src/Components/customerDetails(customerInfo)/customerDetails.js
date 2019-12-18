@@ -66,7 +66,7 @@ export default()=>{
       <li>0312-1234567 </li>
       <li>johndoe@gmail.com</li>
     </ul>
-    <ul className="container-fluid image-div">
+    <ul className="container-fluid image-div2">
      <li className="image-div d-flex ">
          <div className="image1-customer"><img className="customer-image-icons1" src={Image3} alt=""/></div>
         <div className="image-customer"><img className="customer-image-icons2" src={Image4} alt=""/></div></li>

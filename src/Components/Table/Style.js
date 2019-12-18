@@ -38,8 +38,8 @@ return(
     padding-left: 18px;
 }
   .dot {
-    height: 10px;
-    width: 10px;
+    height: 8px;
+    width: 8px;
     background-color: #1584bc;
     border-radius: 50%;
     display: block;
