@@ -55,6 +55,7 @@ export default()=>{
         <Route path={"/customertransaction"} component={Transaction}/>
         <Route path={"/customerviewgold"} component={customerViewGold}/>
         
+        {/* <///////////> */}
         
         </Switch>
     </BrowserRouter>
