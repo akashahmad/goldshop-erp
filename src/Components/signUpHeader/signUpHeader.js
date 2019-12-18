@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Style from '../Notification/Style'
 import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
-import Signupform  from '../../Components/signUpHeader/signUpHeader'
+// import Signupform  from '../../Components/signUpHeader/signUpHeader'
 
 export default()=>{
     return(
@@ -44,7 +44,7 @@ export default()=>{
 </div>
                        
 <Style/>
-<Signupform/>
+{/* <Signupform/> */}
 </div>
     )
 }

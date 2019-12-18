@@ -1,11 +1,13 @@
 import React from 'react'
 import Style from './style'
 import manIcon from '../../assects/images/manicon.png'
+import SignUp from '../../Components/signUpHeader/signUpHeader'
 
 
 export default ()=>{
     return(
-            <>
+            <div className="container-fluid d-flex flex-column" style={{padding:0}}>
+                      <SignUp/>
                     <div className="main-div-of-signup">
                         <div className="container-of-signup  display-row-left-right">
                             
@@ -162,6 +164,6 @@ export default ()=>{
 
 
             <Style/>
-            </>
+            </div>
     );
 }

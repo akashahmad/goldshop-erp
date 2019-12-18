@@ -3,6 +3,23 @@ import Style from './Style'
 import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
 export default()=>{
+    const [hide,setHide]=useState(true);
+   const printElem=()=> {
+       window.print();
+        // var content = document.getElementById(divId).innerHTML;
+        // var mywindow = window.open('','print');
+    
+        // mywindow.document.write('<html><head><title>Print</title><link media="all" type="text/css" rel="stylesheet" href="./App.css"/>');
+        // mywindow.document.write('</head><body >');
+        // mywindow.document.write(content);
+        // mywindow.document.write('</body></html>');
+    
+        // mywindow.document.close();
+        // mywindow.focus()
+        // mywindow.print();
+        // mywindow.close();
+        // return true;
+    }
     return(
 
 
@@ -43,6 +60,7 @@ export default()=>{
                                 </a>
                             </li>
                         </ul></div>
+                       
                     </div>
                
             </nav>
@@ -84,7 +102,7 @@ export default()=>{
                         </div>
                     </div>
                     </div> */}
-        <div className="container-fluid notification-table">
+        <div id="ifmcontentstoprint" className="container-fluid notification-table">
         <table className="notification-table-inner">
           <tr className="notification-table-head fnt-poppins">
             <th >Today</th>
@@ -134,7 +152,7 @@ export default()=>{
           </tr>
         </table>
       
-    
+        <button onClick={()=>printElem()}>print</button>
         </div>
 
                        
