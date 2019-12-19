@@ -1,16 +1,19 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Section1 from '../../Components/Section1/section1'
 import Section4 from '../../Components/Section4(customerHeader)/section4'
+import AddCustomer from '../../Components/modalButton(addcustomer)/addcustomer'
 import '../../assects/style/common.css'
 
-export default ()=>{
-    return(
+export default () => {
+    const [addCustomer, setAddCustomer] = useState(false)
+    return (
         <>
-<div style={{display:"flex"}}>
-<Section1 />
-<Section4/>
-</div >
-</>
+            <div style={{ display: "flex" }}>
+                <Section1 />
+                <Section4 setAddCustomer={setAddCustomer}/>
+                <AddCustomer addCustomer={addCustomer} setAddCustomer={setAddCustomer}/> 
+            </div >
+        </>
     );
 }

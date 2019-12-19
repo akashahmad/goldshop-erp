@@ -85,9 +85,10 @@ return(
     padding-left: 50px;
     display: flex;
 }
-.image-div:hover {
+.active, image-div {
     border-left-color: #1e93ce;
 }
+
 .image_icon{
     height: 30px;
     margin-top: 21px;
@@ -97,6 +98,14 @@ return(
 .sidenav-customer{
 margin-left:-7px;
 }
+// .active, .image-div:hover {
+//     background-color: #666;
+//     color: white;
+//   }
+#sidebar .list-unstyled li .active a{
+    color: #1e93ce!important;
+}
+
 `}</style>
 
 

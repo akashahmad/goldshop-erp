@@ -46,7 +46,7 @@ return(
     width: 8px;
     background-color: #1584bc;
     border-radius: 50%;
-    display: block;
+      display: block;
     margin: 2px;
    }
  

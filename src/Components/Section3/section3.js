@@ -1,178 +1,54 @@
 import React, { useState } from 'react'
 import Style from './Style'
-export default()=>{
-  const data={
-    
-  }
-  const [show,setShow]=useState(false);
+export default (props) => {
+  let { data } = props;
+  let customers = data ? (data.customers ? data.customers : "") : "";
+  const [show, setShow] = useState("");
 
-  const openPopUpBox=()=>{
-    if(show===true)
-    setShow(false);
-    else
-    setShow(true);
-  }
-    return(
+  return (
 
-<div className="container-fluid section3-table">
-<table className="section3-table-inner">
-  <tr className="section3-table-head fnt-poppins">
-  
-    <th>Name</th>
-    <th>Address</th>
-    <th>Contact Number</th>
-    <th>Actions</th>
-   
-  </tr>
-  <tr className="section3-table-rows fnt-poppins">
- 
-    <td>JOHN DOE</td>
-    <td>Abbottabad</td>
-    <td>0312-12345667</td>
-    
-      <td>
-      {
-        show &&
-        <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
-          <li>View</li>
-          <li>Edit</li>
-          <li>Print</li>
-          <li>Delete</li>
-          
-          </div>
-      }
+    <div className="container-fluid section3-table">
+      <table className="section3-table-inner">
+        <tr className="section3-table-head fnt-poppins">
 
-              <div className="action-div">
-            <button type="button" className="doted-button" onClick={()=>openPopUpBox()}> <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    </button>            
-                    </div>
-         
-    </td>
-  </tr>
-  <tr className="section3-table-rows fnt-poppins">
-  <td>JOHN DOE</td>
-    <td>Abbottabad</td>
-    <td>0312-12345667</td>
-    <td>   
-    {
-        show &&
-        <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
-          <li>View</li>
-          <li>Edit</li>
-          <li>Print</li>
-          <li>Delete</li>
-          
-          </div>
-      }
-           <div className="action-div">
-            <button type="button" className="doted-button"  onClick={()=>openPopUpBox()}> <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    </button> 
-                    </div></td>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Contact Number</th>
+          <th>Actions</th>
+s
+        </tr>
+        {customers?customers.map((single,index)=><tr key={single.id} className="section3-table-rows fnt-poppins">
 
-  </tr>
-  <tr className="section3-table-rows fnt-poppins">
-  <td>JOHN DOE</td>
-    <td>Abbottabad</td>
-    <td>0312-12345667</td>
-    <td>      
-    {
-        show &&
-        <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
-          <li>View</li>
-          <li>Edit</li>
-          <li>Print</li>
-          <li>Delete</li>
-          
-          </div>
-      }
-        <div className="action-div">
-            <button type="button" className="doted-button"  onClick={()=>openPopUpBox()}> <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    </button> 
-                    </div></td>
+          <td>{single.name}</td>
+          <td>{single.address}</td>
+          <td>{single.conntactNumber}</td>
+
+          <td>
+            {
+              show===single.id &&
+              <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
+                <li>View</li>
+                <li>Edit</li>
+                <li>Print</li>
+                <li>Delete</li>
+
+              </div>
+            }
+
+            <div className="action-div">
+              <button type="button" className="doted-button" onClick={() => setShow(show===single.id?"":single.id)}> <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </button>
+            </div>
+
+          </td>
+        </tr>):<h1>Loader ....</h1>}
+      </table>
+      <Style />
+    </div>
 
 
-  </tr>
-  <tr className="section3-table-rows fnt-poppins">
-  <td>JOHN DOE</td>
-    <td>Abbottabad</td>
-    <td>0312-12345667</td>
-    <td>
-    {
-        show &&
-        <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
-          <li>View</li>
-          <li>Edit</li>
-          <li>Print</li>
-          <li>Delete</li>
-          
-          </div>
-      }
-       <div className="action-div">
-            <button type="button" className="doted-button"  onClick={()=>openPopUpBox()}> <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    </button> 
-                    </div></td>
- 
-  </tr>
-  <tr className="section3-table-rows fnt-poppins">
-  <td>JOHN DOE</td>
-    <td>Abbottabad</td>
-    <td>0312-12345667</td>
-    <td> 
-    {
-        show &&
-        <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
-          <li>View</li>
-          <li>Edit</li>
-          <li>Print</li>
-          <li>Delete</li>
-          
-          </div>
-      }
-             <div className="action-div">
-            <button type="button" className="doted-button"  onClick={()=>openPopUpBox()}> <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    </button> 
-                    </div></td>
- 
-  </tr>
-  <tr className="section3-table-rows fnt-poppins">
-  <td>JOHN DOE</td>
-    <td>Abbottabad</td>
-    <td>0312-12345667</td>
-    <td>    
-    {
-        show &&
-        <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
-          <li>View</li>
-          <li>Edit</li>
-          <li>Print</li>
-          <li>Delete</li>
-          
-          </div>
-      }
-          <div className="action-div">
-            <button type="button" className="doted-button"  onClick={()=>openPopUpBox()}> <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    </button> 
-                    </div></td>
-  
 
-  </tr>
-</table>
-<Style/>
-</div>
-
-
-        
-    )
+  )
 }
