@@ -39,11 +39,11 @@ export default () => {
 
                 <Link to={"/customerpage"}>
                     <li className="cus fnt-poppins">
-
                         <div className={"image-div " + currentActive("customer")}> <img className="image_icon" src={currentActive("customer")==="active"?require('../../assects/images/customersActive.jpg'):require('../../assects/images/customer.png')} alt="" />
                             <a href="#" className="sidenav-customer fnt-poppins">Customers</a></div>
                     </li>
                 </Link>
+
                 <Link to={"/signup"}>
                     <li>
                         <div className={"image-div " + currentActive("sign")}> 
