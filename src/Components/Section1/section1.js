@@ -31,7 +31,7 @@ export default () => {
 
                         <div className={"image-div " + currentActive("dashboard")}>
 
-                            <img className="image_icon " src={currentActive("dashboard")==="active"?require('../../assects/images/customer.png'):require('../../assects/images/dashboard.png')} alt="" />
+                            <img className="image_icon " src={currentActive("dashboard")==="active"?require('../../assects/images/dashboardBlue.png'):require('../../assects/images/dashboard.png')} alt="" />
                             <a href="#" className="fnt-poppins ">DashBoard</a></div>
 
                     </li>
@@ -47,13 +47,13 @@ export default () => {
                 <Link to={"/signup"}>
                     <li>
                         <div className={"image-div " + currentActive("sign")}> 
-                        <img className="image_icon" src={Image4} alt="" />
+                        <img className="image_icon" src={currentActive("sign")==="active"?require('../../assects/images/settingBlue.png'):require('../../assects/images/setting.png')} alt="" />
                             <a href="#" className="sidenav-setting fnt-poppins">Setting</a></div>
                     </li>
                 </Link>
                 <Link to={"/notificationpage"}>
                     <li>
-                        <div className={"image-div " + currentActive("notifica")}> <img className="image_icon" src={ImageBell} alt="" />
+                        <div className={"image-div " + currentActive("notifica")}> <img className="image_icon" src={currentActive("notifica")==="active"?require('../../assects/images/bellblue.jpg'):require('../../assects/images/bell.png')} alt="" />
                             <a href="#" className="sidenav-setting fnt-poppins">Notifications</a></div>
                     </li>
                 </Link>
