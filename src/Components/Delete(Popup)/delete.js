@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 import Style from './style'
 
-export default()=>{
-    
-    const [hide,setHide]=useState(false);
+export default(props)=>{
+    let {deleteModel,setDeleteModel}=props;
+    // const [hide,setHide]=useState(false);
 
-    const openPopup=()=>{
-        setHide(true);
-    }
+    // const openPopup=()=>{
+    //     setHide(true);
+    // }
 
     return(
         <>
-                <button onClick={()=>openPopup()}>Delete</button>
-                   {hide &&  <div className="main-div-of-delete-model">
+                {/* <button onClick={()=>openPopup()}>Delete</button> */}
+                   {
+                   deleteModel &&  <div className="main-div-of-delete-model">
                             { /* Model Header  */}
                            
                             <div class="modal-content d-flex model-header">
@@ -21,7 +22,7 @@ export default()=>{
                                     </div>
 
                                     <div className="close-button-of-header fnt-poppins">
-                                        <span class="close" onClick={()=>setHide(false)}>&times;</span>
+                                        <span class="close" onClick={()=>setDeleteModel(false)}>&times;</span>
                                      </div>                           
 
 

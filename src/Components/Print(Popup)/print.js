@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import Style from './style'
 
-export default()=>{
+export default(props)=>{
     
-    const [hide,setHide]=useState(false);
+let {printModel,setPrintModel}=props;
 
-    const openPopup=()=>{
-        setHide(true);
-    }
+    // const [hide,setHide]=useState(false);
+
+    // const openPopup=()=>{
+    //     setHide(true);
+    // }
 
     return(
         <>
-                <button onClick={()=>openPopup()}>Print</button>
-                   {hide &&  <div className="main-div-of-print-model">
+                
+                   {printModel &&  <div className="main-div-of-print-model">
                             { /* Model Header  */}
                            
                             <div class="modal-content d-flex model-header">
@@ -21,7 +23,7 @@ export default()=>{
                                     </div>
 
                                     <div className="close-button-of-header fnt-poppins">
-                                        <span class="close" onClick={()=>setHide(false)}>&times;</span>
+                                        <span class="close" onClick={()=>setPrintModel(false)}>&times;</span>
                                      </div>                           
 
 

@@ -6,6 +6,9 @@ import Image2 from '../../assects/images/layer-6.png'
 
 export default (props) => {
     let {data} = props;
+    let {setEditCustomer} =props;
+    let {setPrintModel}=props;
+   let {setDeleteModel}=props;
     return (
         <>
             <div className="container-fluid Header-section2">
@@ -113,7 +116,7 @@ export default (props) => {
                     </nav>
 
                 </div>
-                <Section3 data={data} />
+                <Section3 data={data} setEditCustomer={setEditCustomer} setPrintModel={setPrintModel} setDeleteModel={setDeleteModel}/>
                 <Style />
             </div>
         </>
