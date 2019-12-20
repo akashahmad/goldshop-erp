@@ -6,7 +6,8 @@ import Image3 from '../../assects/images/Layer 6.png'
 import Image4 from '../../assects/images/printer.png'
 import Table from '../../Components/Table/table'
 
-export default()=>{
+export default(props)=>{
+    let {setAddMoney}=props;
     return(
 <>
 
@@ -84,7 +85,9 @@ export default()=>{
                             </select>
                    </div> 
                    <div className="button-div-customerDetails">
-                    <button className="btn-Wh">Add Money</button></div>
+                    <button className="btn-Wh" onClick={()=>{
+                        setAddMoney(true)
+                    }}>Add Money</button></div>
                     
                     </div>
 

@@ -7,10 +7,10 @@ import '../../assects/style/common.css'
 
 export default (props) => {
     let {addgold, setAddGold} = props;
-    const [show, setShow] = useState(false);
+    // const [show, setShow] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
     const handleChange = date => {
         setStartDate(date);
     }

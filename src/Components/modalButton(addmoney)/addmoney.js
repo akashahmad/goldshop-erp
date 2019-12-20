@@ -7,32 +7,30 @@ import '../../assects/style/common.css'
 
 
 
-export default () => {
+export default (props) => {
+let{addmoney,setAddMoney}=props;
+
     const [show, setShow] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const handleClose = () => setShow(false);
-    const [modal, setModal] = useState(false);
-    const openModal = () => {
-        setModal(true);
-    }
+    // const [modal, setModal] = useState(false);
+    // const openModal = () => {
+    //     setModal(true);
+    // }
     const handleChange = date => {
         setStartDate(date);
         }
       
     return (
         <>
-            <button id="myBtn" onClick={() => {
-                openModal();
-            }}>Open Modal</button>
 
-
-            {modal&&<div className="modal-addmoney">
+            {addmoney&&<div className="modal-addmoney">
                 <div className="modal-content">
 
                     <div className="model-header">
                         <div className="d-flex flex-row ml-5 justify-content-around">
                             <h6 className="fnt-poppins font-24 mt-3 ml-2">Add Money</h6>
-                            <CloseButton className="modalCross" variant="secondary" onClick={()=>{setModal(false)}} />
+                            <CloseButton className="modalCross" variant="secondary" onClick={()=>{setAddMoney(false)}} />
                         </div>
                     </div>
 
@@ -140,7 +138,7 @@ export default () => {
                             </div>
 
                             <div className="d-flex justify-content-center mt-5 mb-5">
-                                <button className="btn-white-model" onClick={()=>{setModal(false)}}>Cancel</button>
+                                <button className="btn-white-model" onClick={()=>{setAddMoney(false)}}>Cancel</button>
                                 <button className="btn-blue ml-2">Save</button>
                             </div>
                         </form>
