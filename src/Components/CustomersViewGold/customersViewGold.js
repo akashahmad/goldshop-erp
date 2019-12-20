@@ -3,6 +3,7 @@ import Style from './style'
 // import CustomerDetailsInfo from '../customerDetails(customerInfo)/customerDetails'
 
 export default (props) => {
+    let {setPrintModel}=props;
     let {setEditCustomer} =props;
     let { data } = props;
     let customers = data ? (data.customers ? data.customers : "") : "";
@@ -33,7 +34,7 @@ export default (props) => {
                                 <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
                                     <li>View</li>
                                     <li onClick={()=>{setEditCustomer(true)}}>Edit</li>
-                                    <li>Print</li>
+                                    <li onClick={()=>{setPrintModel(true)}}>Print</li>
                                     <li>Delete</li>
 
                                 </div>
