@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Style from './Style'
+
 export default (props) => {
+
   let { data } = props;
   let customers = data ? (data.customers ? data.customers : "") : "";
   const [show, setShow] = useState("");
@@ -15,7 +17,6 @@ export default (props) => {
           <th>Address</th>
           <th>Contact Number</th>
           <th>Actions</th>
-s
         </tr>
         {customers?customers.map((single,index)=><tr key={single.id} className="section3-table-rows fnt-poppins">
 

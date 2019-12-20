@@ -32,6 +32,8 @@ import Transaction from './Container/CustomerViewMoney/customerViewmoney'
 import customerViewGold from './Container/CustomerViewGold/customerViewGold'
 import Signup from './Container/signup/signup'
 import customerTransaction from './Container/CustomerTransaction/customerTransaction'
+import ViewGold from './Container/CustomersViewGoldPage/customerViewGold'
+
 
 export default()=>{
   return(
@@ -65,7 +67,9 @@ export default()=>{
         <Route path={"/signup"} component={Signup}/>
         <Route path={"/notificationpage"} component={NotificationPage}/>
         <Route path={"/customertransaction"} component={customerTransaction}/>
+        <Route path={"/viewgold"} component={ViewGold}/>
 
+        
         
         </Switch>
     </BrowserRouter>

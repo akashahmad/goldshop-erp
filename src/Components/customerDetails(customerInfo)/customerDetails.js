@@ -4,11 +4,12 @@ import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
 import Image3 from '../../assects/images/Layer 6.png'
 import Image4 from '../../assects/images/printer.png'
-import Table from '../../Components/Table/table'
+import Table from '../../Components/CustomersViewGold/customersViewGold'
 
 
 export default(props)=>{
     let { setAddGold }=props;
+    let {data }=props
     return(
 <>
 
@@ -126,7 +127,7 @@ export default(props)=>{
                 </div>
 </div>
 <Style/>
-<Table/>
+<Table data={data}/>
 </div>
 </>
     )
