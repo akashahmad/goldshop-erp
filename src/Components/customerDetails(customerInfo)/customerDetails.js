@@ -9,6 +9,7 @@ import Table from '../../Components/CustomersViewGold/customersViewGold'
 
 export default(props)=>{
     let { setAddGold }=props;
+    let {setEditCustomer}=props;
     let {data }=props
     return(
 <>
@@ -127,7 +128,7 @@ export default(props)=>{
                 </div>
 </div>
 <Style/>
-<Table data={data}/>
+<Table data={data} setEditCustomer={setEditCustomer}/>
 </div>
 </>
     )

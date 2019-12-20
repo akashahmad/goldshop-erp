@@ -29,6 +29,7 @@ export default () => {
             <td>1271.9</td>
             <td>28.73</td>
             <td>1017.56</td>
+            {/* Added By Hamza To Check Modal On Edit */}
             <td>
               <div className="action-div">
                 <a href="#"> <span class="dot"></span>

@@ -68,6 +68,7 @@ export default()=>{
         <Route path={"/notificationpage"} component={NotificationPage}/>
         <Route path={"/customertransaction"} component={customerTransaction}/>
         <Route path={"/viewgold"} component={ViewGold}/>
+        <Route path={"/transaction"} component={Transaction}/>
 
         
         
