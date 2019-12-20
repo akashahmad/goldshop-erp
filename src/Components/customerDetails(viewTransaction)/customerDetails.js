@@ -15,22 +15,11 @@ export default()=>{
 
             <nav class="navbar-section2-dashboard navbar-expand-lg ">
                 <div class="container-fluid navbar-top">
-                {/* <div className="button-div-white">
-                    <button type="button" className=" btn1">
-                        Add Customer
-                        {/* <span>Toggle Sidebar</span> */}
-                    {/* </button></div> */} 
-                    {/* <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button> */}
+              
 
                     <div className="navbar-top-list">
                         <ul class="navbar-topnav-list navbar-nav ml-auto">
-                            {/* <li class="nav-item active">
-                                <a class="nav-link" href="#">
-                                    <div id="google_translate_element">
-                                        </div></a>
-                            </li> */}
+                         
                             <li class="nav-item image-search">
                                 <a class="nav-link " href="#">
                                     <img src={Image1} alt=""/>
@@ -72,26 +61,7 @@ export default()=>{
     </ul>
     </div>
 
-{/* <div className=" customer-box1-row1" >
-<div className="customer-name">Name</div>
-<div className="customer-name-details">John Doe</div>
-<div className="box1-customer-details">
-<div className="image1-customer"><img className="customer-image-icons1" src={Image3} alt=""/></div>
-<div className="image-customer"><img className="customer-image-icons2" src={Image4} alt=""/></div>
-</div>
-</div> */}
-{/* <tr >
-<td>Location</td>
-<td>Abbottabad</td>
-</tr>
-<tr >
-<td>Contact</td>
-<td>0300-1234567</td>
-</tr>
-<tr >
-<td>Email</td>
-<td>johndoe@gmail.com</td>
-</tr> */}
+
 
 
 
