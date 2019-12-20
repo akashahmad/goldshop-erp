@@ -4,6 +4,7 @@ import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
 import Image3 from '../../assects/images/Layer 6.png'
 import Image4 from '../../assects/images/printer.png'
+import {Link} from 'react-router-dom'
 import Table from '../../Components/CustomersViewGold/customersViewGold'
 
 
@@ -69,9 +70,9 @@ export default (props) => {
                     </div>
                     <div className="section-customer-navbottom">
                         <div className="section-customer-bottom-link">
-                            <div><a>View Money</a></div>
+                            <div><Link to={"/customertransaction"}>View Money</Link></div>
 
-                            <div className="link-view-Gold"><a >View Gold</a></div>
+                            <div className="link-view-Gold"><Link to={"/viewgold"}>View Gold</Link></div>
                         </div>
                         <div className="section-customerdetail-right ">
 
