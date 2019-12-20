@@ -18,7 +18,7 @@ export default(props)=>{
             editCustomer && <div className="modal-editcustomer">
                 <div className="modal-content">
                
-                    <div className="model-header mt-4">
+                    <div className="model-header mt-5">
                         <div className="d-flex flex-column ml-4">
                         <CloseButton className="modalCross" variant="secondary" onClick={()=>{setEditCustomer(false)}} />
                             <h6 className="fnt-poppins font-24 mt-3">Edit Customer Information</h6>

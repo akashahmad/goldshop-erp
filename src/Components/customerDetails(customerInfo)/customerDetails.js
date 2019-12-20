@@ -8,6 +8,7 @@ import Table from '../../Components/CustomersViewGold/customersViewGold'
 
 
 export default (props) => {
+    let {setDeleteModel}=props;
     let { setPrintModel } = props;
     let { setAddGold } = props;
     let { setEditCustomer } = props;
@@ -129,7 +130,7 @@ export default (props) => {
                     </div>
                 </div>
                 <Style />
-                <Table data={data} setEditCustomer={setEditCustomer} setPrintModel={setPrintModel} />
+                <Table data={data} setEditCustomer={setEditCustomer} setPrintModel={setPrintModel} setDeleteModel={setDeleteModel}/>
             </div>
         </>
     )

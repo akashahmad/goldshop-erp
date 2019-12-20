@@ -22,7 +22,7 @@ export default (props) => {
             {addgold && <div className="modal-addgold">
                 <div className="modal-content">
 
-                    <div className="model-header mt-4">
+                    <div className="model-header mt-5">
                         <div className="d-flex flex-column ml-5">
                             <CloseButton className="modalCross" variant="secondary" onClick={() => { setAddGold(false) }} />
                             <h6 className="fnt-poppins font-24 mt-3">Add Gold</h6>

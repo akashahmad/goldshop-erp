@@ -3,6 +3,7 @@ import Style from './style'
 // import CustomerDetailsInfo from '../customerDetails(customerInfo)/customerDetails'
 
 export default (props) => {
+    let {setDeleteModel}=props;
     let {setPrintModel}=props;
     let {setEditCustomer} =props;
     let { data } = props;
@@ -35,7 +36,7 @@ export default (props) => {
                                     <li>View</li>
                                     <li onClick={()=>{setEditCustomer(true)}}>Edit</li>
                                     <li onClick={()=>{setPrintModel(true)}}>Print</li>
-                                    <li>Delete</li>
+                                    <li onClick={()=>{setDeleteModel(true)}}>Delete</li>
 
                                 </div>
                             }
