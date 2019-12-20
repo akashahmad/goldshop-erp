@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
 import Style from './Style'
 export default (props) => {
+  let {setEditCustomer} = props;
+  let {setPrintModel} =props;
+  let {setDeleteModel}=props;
   let { data } = props;
   let customers = data ? (data.customers ? data.customers : "") : "";
+  // console.log(setEditCustomer);
   const [show, setShow] = useState("");
 
   return (
@@ -15,7 +20,7 @@ export default (props) => {
           <th>Address</th>
           <th>Contact Number</th>
           <th>Actions</th>
-s
+
         </tr>
         {customers?customers.map((single,index)=><tr key={single.id} className="section3-table-rows fnt-poppins">
 
@@ -28,10 +33,9 @@ s
               show===single.id &&
               <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
                 <li>View</li>
-                <li>Edit</li>
-                <li>Print</li>
-                <li>Delete</li>
-
+                <li><a href='#' onClick={()=>{setEditCustomer(true)}}>Edit</a></li>
+                <li><Link onClick={()=>{setPrintModel(true)}}>Print</Link></li>
+                <li><Link onClick={()=>{setDeleteModel(true)}}>Delete</Link> </li>
               </div>
             }
 
