@@ -41,7 +41,7 @@ export default()=>{
     <BrowserRouter>
         <Switch>
 
-          <Route path={"/signin"} component={signin}/>
+
           <Route path={"/section4"} component={Section4} />
           <Route path={"/addgold"} component={Addgold}/>
           <Route path={"/addmoney"} component={Addmoney}/>
@@ -63,11 +63,13 @@ export default()=>{
         {/* --------------Pages------------------------ */}
         <Route path={"/"} exact component={Home} />
         <Route path={"/customerpage"}  component={cutomerPage}/>
-        <Route path={"/customerviewgold"} component={customerViewGold}/>
+        {/* <Route path={"/customerviewgold"} component={customerViewGold}/> */}
         <Route path={"/signup"} component={Signup}/>
         <Route path={"/notificationpage"} component={NotificationPage}/>
         <Route path={"/customertransaction"} component={customerTransaction}/>
         <Route path={"/viewgold"} component={ViewGold}/>
+        <Route path={"/signin"} component={signin}/>
+        
 
         
         
