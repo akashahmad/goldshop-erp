@@ -31,9 +31,8 @@ export default (props) => {
                             {
                                 show === single.id &&
                                 <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
-                                    <li>View</li>
+                                    
                                     <li>Edit</li>
-                                    <li>Print</li>
                                     <li>Delete</li>
 
                                 </div>
