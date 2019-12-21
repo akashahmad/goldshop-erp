@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 import Image4 from '../../assects/images/setting.png'
 import Image5 from '../../assects/images/logout1.png'
 import ImageBell from '../../assects/images/bell.png'
+import cookie from 'react-cookies'
 
 export default () => {
     let location = useLocation().pathname;
@@ -17,6 +18,23 @@ export default () => {
         }
     }
 
+    const logout =()=>{
+        localStorage.removeItem("token")
+        let age =localStorage.getItem("age");
+        cookie.remove('token',{
+            maxAge:parseInt(age),
+            path:"/signin"
+        });
+        localStorage.removeItem("age");
+        window.location.replace("/signin")
+    }
+    useEffect(()=>{
+        let token=localStorage.getItem("token")
+        // if(!token){
+        //     window.location.replace("/signin")
+        // }
+        return !token ? window.location.replace("/signin"):"";
+    },[])
     return (
         // <div class="wrapper">
 
@@ -62,7 +80,7 @@ export default () => {
 
                 <li>
                     <div className="image-div-logout"> <img className="image_icon" src={Image5} alt="" />
-                        <a href="#" className="sidenav-setting fnt-poppins">Log Out</a></div>
+                        <a href="#" className="sidenav-setting fnt-poppins" onClick={()=>{logout()}}>Log Out</a></div>
                 </li>
             </ul>
             <Style />
