@@ -3,7 +3,8 @@ import Style from './style'
 
 
 export default (props) => {
-
+    let {setDeleteModel}=props;
+    let {setEditMoney}=props;
     let { data } = props;
     let customers = data ? (data.customers ? data.customers : "") : "";
     const [show, setShow] = useState("");
@@ -37,8 +38,8 @@ export default (props) => {
                                 show === single.id &&
                                 <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
                                                                         
-                                    <li>Edit</li>
-                                    <li>Delete</li>
+                                    <li onClick={()=>{setEditMoney(true)}}>Edit</li>
+                                    <li onClick={()=>{setDeleteModel(true)}}>Delete</li>
                                     
                                 </div>
                             }

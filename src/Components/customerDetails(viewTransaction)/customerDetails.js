@@ -9,6 +9,8 @@ import Table from '../../Components/Customertransactiontable/customerTransaction
 
 
 export default(props)=>{
+    let {setDeleteModel}=props;
+    let {setEditMoney}=props;
     let {setAddMoney}=props;
     let {data}=props;
     return(
@@ -99,7 +101,7 @@ export default(props)=>{
 </div>
 
 <Style/>
-<Table data={data}/>
+<Table data={data} setEditMoney={setEditMoney} setDeleteModel={setDeleteModel}/>
 </div>
 </>
 
