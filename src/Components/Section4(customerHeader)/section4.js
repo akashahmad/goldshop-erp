@@ -2,10 +2,13 @@ import React from 'react'
 import Style from './Style'
 import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
-import Table from '../../Components/Transactiontable/transactiontable'
+import Section3 from '../../Components/Section3/section3'
 
 
 export default (props) => {
+    let {setEditCustomer} =props;
+    let {setPrintModel}=props;
+   let {setDeleteModel}=props;
     let { setAddCustomer } = props;
     let {data}=props;
     
@@ -60,7 +63,7 @@ export default (props) => {
                         </div>
                     </div>
                 </div>
-                <Table data={data}/>
+                <Section3 data={data}  setEditCustomer={setEditCustomer} setPrintModel={setPrintModel} setDeleteModel={setDeleteModel}/>
                 <Style />
             </div>
 
