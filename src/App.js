@@ -63,14 +63,11 @@ export default()=>{
         {/* --------------Pages------------------------ */}
         <Route path={"/"} exact component={Home} />
         <Route path={"/customerpage"}  component={cutomerPage}/>
-        {/* <Route path={"/customerviewgold"} component={customerViewGold}/> */}
         <Route path={"/signup"} component={Signup}/>
         <Route path={"/notificationpage"} component={NotificationPage}/>
         <Route path={"/customertransaction"} component={customerTransaction}/>
         <Route path={"/viewgold"} component={ViewGold}/>
         <Route path={"/signin"} component={signin}/>
-        
-
         
         
         </Switch>
