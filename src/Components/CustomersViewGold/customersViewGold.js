@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Style from './style'
 // import CustomerDetailsInfo from '../customerDetails(customerInfo)/customerDetails'
-
+import {Link} from 'react-router-dom'
 export default (props) => {
     let {setEditGold}=props;
     let {setDeleteModel}=props;
@@ -50,8 +50,8 @@ export default (props) => {
                                     <li onClick={()=>{setDeleteModel(true)}}>Delete</li> */}
 
                                     
-                                    <li onClick={()=>{setEditGold(true)}}>Edit</li>
-                                    <li onClick={()=>{setDeleteModel(true)}}>Delete</li>
+                                    <li> <Link className="link-model-on-action-buttons" onClick={()=>{setEditGold(true)}}> Edit</Link></li>
+                                    <li><Link className="link-model-on-action-buttons" onClick={()=>{setDeleteModel(true)}}>Delete</Link></li>
 
 
                                 </div>

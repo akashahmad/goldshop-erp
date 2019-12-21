@@ -134,7 +134,7 @@ let{addmoney,setAddMoney}=props;
 
                             <div className="d-flex flex-column">
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Details</label>
-                                <input className="input-postbody-modal" placeholder="" type="textarea"></input>
+                                <textarea className="input-postbody-modal" placeholder="" type="textarea"></textarea>
                             </div>
 
                             <div className="d-flex justify-content-center mt-5 mb-5">

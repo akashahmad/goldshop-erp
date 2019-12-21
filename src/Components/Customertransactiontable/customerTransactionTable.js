@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Style from './style'
+import { Link } from 'react-router-dom';
 
 
 export default (props) => {
@@ -38,8 +39,8 @@ export default (props) => {
                                 show === single.id &&
                                 <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
                                                                         
-                                    <li onClick={()=>{setEditMoney(true)}}>Edit</li>
-                                    <li onClick={()=>{setDeleteModel(true)}}>Delete</li>
+                                    <li > <Link className="link-model-on-action-buttons" onClick={()=>{setEditMoney(true)}}> Edit</Link></li>
+                                    <li> <Link className="link-model-on-action-buttons" onClick={()=>{setDeleteModel(true)}}>Delete</Link></li>
                                     
                                 </div>
                             }

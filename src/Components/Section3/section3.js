@@ -33,10 +33,10 @@ export default (props) => {
             {
               show===single.id &&
               <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
-                <li>View</li>
-                <li><a href='#' onClick={()=>{setEditCustomer(true)}}>Edit</a></li>
-                <li><Link onClick={()=>{setPrintModel(true)}}>Print</Link></li>
-                <li><Link onClick={()=>{setDeleteModel(true)}}>Delete</Link> </li>
+                <li><Link to="/customertransaction" className="link-model-on-action-buttons">View</Link></li>
+                <li><Link className="link-model-on-action-buttons" onClick={()=>{setEditCustomer(true)}}>Edit</Link></li>
+                <li><Link className="link-model-on-action-buttons" onClick={()=>{setPrintModel(true)}}>Print</Link></li>
+                <li><Link className="link-model-on-action-buttons" onClick={()=>{setDeleteModel(true)}}>Delete</Link> </li>
               </div>
             }
 

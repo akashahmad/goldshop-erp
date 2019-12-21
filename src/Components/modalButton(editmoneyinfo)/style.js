@@ -68,6 +68,7 @@ input[type=number]::-webkit-inner-spin-button {
     width: 40%;
     float: right;
     margin-top: -6%;
+    height: 100vh;
 }
 
 /* The Close Button */

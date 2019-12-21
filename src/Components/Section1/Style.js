@@ -57,9 +57,15 @@ return(
 
 #sidebar ul li a:hover {
      color: #1e93ce;
-    text-decoration:none;
+    text-decoration:none!important;
     opacity:100%;
    
+}
+#sidebar a:hover {
+    color: #1e93ce;
+   text-decoration:none!important;
+   opacity:100%;
+  
 }
 
 
