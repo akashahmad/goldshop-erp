@@ -2,10 +2,13 @@ import React from 'react'
 import Style from './Style'
 import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
-import Table from '../../Components/Table/table'
+import Table from '../../Components/Transactiontable/transactiontable'
+
 
 export default (props) => {
     let { setAddCustomer } = props;
+    let {data}=props;
+    
     return (
         <>
 
@@ -57,7 +60,7 @@ export default (props) => {
                         </div>
                     </div>
                 </div>
-                <Table />
+                <Table data={data}/>
                 <Style />
             </div>
 

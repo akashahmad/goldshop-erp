@@ -4,10 +4,13 @@ import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
 import Image3 from '../../assects/images/Layer 6.png'
 import Image4 from '../../assects/images/printer.png'
-import Table from '../../Components/Table/table'
+import {Link } from 'react-router-dom'
+import Table from '../../Components/Customertransactiontable/customerTransactionTable'
+
 
 export default(props)=>{
     let {setAddMoney}=props;
+    let {data}=props;
     return(
 <>
 
@@ -69,9 +72,9 @@ export default(props)=>{
 </div>
                 <div className="section-customer-navbottom">
                     <div className="section-customer-bottom-link">
-                        <div><a>View Money</a></div>
+                        <div><Link to={"/customertransaction"}>View Money</Link></div>
                    
-                    <div className="link-view-Gold"><a >View Gold</a></div>
+                    <div className="link-view-Gold"><Link to={"/viewgold"}>View Gold</Link></div>
                     </div>
                  <div className="section-customerdetail-right "> 
                        <div className="first-section-customer-detail"><a>View Transactions:</a>
@@ -96,7 +99,7 @@ export default(props)=>{
 </div>
 
 <Style/>
-<Table/>
+<Table data={data}/>
 </div>
 </>
 
