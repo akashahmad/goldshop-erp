@@ -3,6 +3,7 @@ import Style from './style'
 // import CustomerDetailsInfo from '../customerDetails(customerInfo)/customerDetails'
 
 export default (props) => {
+    let {setEditGold}=props;
     let {setDeleteModel}=props;
     let {setPrintModel}=props;
     let {setEditCustomer} =props;
@@ -43,14 +44,14 @@ export default (props) => {
                                 show === single.id &&
                                 <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
 
-                                    <li>View</li>
+                                    {/* <li>View</li>
                                     <li onClick={()=>{setEditCustomer(true)}}>Edit</li>
                                     <li onClick={()=>{setPrintModel(true)}}>Print</li>
-                                    <li onClick={()=>{setDeleteModel(true)}}>Delete</li>
+                                    <li onClick={()=>{setDeleteModel(true)}}>Delete</li> */}
 
                                     
-                                    <li>Edit</li>
-                                    <li>Delete</li>
+                                    <li onClick={()=>{setEditGold(true)}}>Edit</li>
+                                    <li onClick={()=>{setDeleteModel(true)}}>Delete</li>
 
 
                                 </div>

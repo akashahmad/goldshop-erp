@@ -9,6 +9,8 @@ import Table from '../../Components/CustomersViewGold/customersViewGold'
 
 
 export default (props) => {
+    let {setDeleteModel} =props;
+    let {setEditGold} =props;
     let { setAddGold } = props;
     let { data } = props
     return (
@@ -88,7 +90,7 @@ export default (props) => {
                     </div>
                 </div>
                 <Style />
-                <Table data={data} />
+                <Table data={data} setEditGold={setEditGold} setDeleteModel={setDeleteModel}/>
             </div>
         </>
     )

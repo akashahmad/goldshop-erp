@@ -5,7 +5,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import Style from './style'
 import '../../assects/style/common.css'
 
-export default()=>{
+export default(props)=>{
+    let {editGold,setEditGold}=props;
     const [show, setShow] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
   
@@ -18,17 +19,14 @@ export default()=>{
      }
     return(
         <>
-         <button id="myBtn" onClick={() => {
-                openModal();
-            }}>Open Modal</button>
 
 
-            {modal&&<div className="modal-editgold">
+            {editGold&&<div className="modal-editgold">
                 <div className="modal-content">
                
-                    <div className="model-header mt-4">
+                    <div className="model-header mt-5">
                         <div className="d-flex flex-column ml-5">
-                        <CloseButton className="modalCross" variant="secondary" onClick={()=>{setModal(false)}} />
+                        <CloseButton className="modalCross" variant="secondary" onClick={()=>{setEditGold(false)}} />
                             <h6 className="fnt-poppins font-24 mt-3">Edit Gold Information</h6>
                             
                         </div>
@@ -91,7 +89,7 @@ export default()=>{
                             
 
                             <div className="d-flex justify-content-center mt-4 mb-5">
-                                <button className="btn-white-model" onClick={()=>{setModal(false)}}>Cancel</button>
+                                <button className="btn-white-model" onClick={()=>{setEditGold(false)}}>Cancel</button>
                                 <button className="btn-blue ml-2">Update</button>
                             </div>
                         </form>
