@@ -72,9 +72,9 @@ export default(props)=>{
 </div>
                 <div className="section-customer-navbottom">
                     <div className="section-customer-bottom-link">
-                        <div><Link to={"/customertransaction"}>View Money</Link></div>
+                        <div><Link to={"/customertransaction"} className="link-of-models">View Money</Link></div>
                    
-                    <div className="link-view-Gold"><Link to={"/viewgold"}>View Gold</Link></div>
+                    <div className="link-view-Gold"><Link to={"/viewgold"} className="link-of-models">View Gold</Link></div>
                     </div>
                  <div className="section-customerdetail-right "> 
                        <div className="first-section-customer-detail"><a>View Transactions:</a>

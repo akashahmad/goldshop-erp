@@ -103,5 +103,14 @@
         border-radius: 6px;
         border: solid 1px #e8e8e8;
         background-color: rgba(255, 255, 255, 0.88);
-      
  }
+
+
+
+.link-of-models{
+    color:#ffffff;
+}
+.link-of-models:hover{
+    text-decoration: none;
+    color:#ffffff;
+}
