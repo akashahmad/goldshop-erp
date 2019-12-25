@@ -23,10 +23,10 @@ export default () => {
         let age =localStorage.getItem("age");
         cookie.remove('token',{
             maxAge:parseInt(age),
-            path:"/signin"
+            path:"/"
         });
         localStorage.removeItem("age");
-        window.location.replace("/signin")
+        window.location.replace("/")
     }
  
     // useEffect(()=>{
