@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Style from './Style'
 import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
@@ -11,7 +11,9 @@ export default (props) => {
    let {setDeleteModel}=props;
     let { setAddCustomer } = props;
     let {data}=props;
+
     
+
     return (
         <>
 

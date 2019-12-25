@@ -1,5 +1,5 @@
-import React from 'react'
-import {BrowserRouter , Route , Switch } from 'react-router-dom'
+import React,{useEffect} from 'react'
+import {BrowserRouter , Route , Switch, Redirect } from 'react-router-dom'
 import signin from './Container/signin/signin'
 import Home from './Container/Homepage/Homepage'
 import Section4  from './Components/Section4(customerHeader)/section4'
@@ -27,15 +27,19 @@ import './assects/style/style.css'
 
 
 // pages 
-import cutomerPage from './Container/CustomerPage/customer'
+import CustomerPage from './Container/CustomerPage/customer'
 import Transaction from './Container/CustomerViewMoney/customerViewmoney'
 import customerViewGold from './Container/CustomerViewGold/customerViewGold'
 import Signup from './Container/signup/signup'
 import customerTransaction from './Container/CustomerTransaction/customerTransaction'
 import ViewGold from './Container/CustomersViewGoldPage/customerViewGold'
+import signup from './Components/SignUp/signup'
 
 
 export default()=>{
+
+  
+
   return(
     <>
     <BrowserRouter>
@@ -61,16 +65,38 @@ export default()=>{
           <Route path={"/print"} component={Print}/>
         
         {/* --------------Pages------------------------ */}
-        <Route path={"/"} exact component={Home} />
-        <Route path={"/customerpage"}  component={cutomerPage}/>
-        <Route path={"/signup"} component={Signup}/>
-        <Route path={"/notificationpage"} component={NotificationPage}/>
-        <Route path={"/customertransaction"} component={customerTransaction}/>
-        <Route path={"/viewgold"} component={ViewGold}/>
-        <Route path={"/transaction"} component={Transaction}/>
-        <Route path={"/signin"} component={signin}/>
+       
+        <Route path={"/customerpage"}  render={()=>
+        localStorage.getItem("token")?<CustomerPage/>:<Redirect to={{pathname:"/signin"}}/>
+      
+        }
+        />
+        <Route path={"/signup"} render={()=>
+        localStorage.getItem("token")?<Signup/>:<Redirect to={{pathname:"/signin"}}/>
+        }  
+        />
+        <Route path={"/notificationpage"} render={()=> 
+          localStorage.getItem("token")?<NotificationPage/>:<Redirect to={{pathname:"/signin"}}/>
+        }        
+        />
+        <Route path={"/customertransaction"} render={()=>
+          localStorage.getItem("token")?<customerTransaction/>:<Redirect to={{pathname:"/signin"}}/>
+        }
+        />
+        <Route path={"/viewgold"} render={()=>
+            localStorage.getItem("token")?<ViewGold/>:<Redirect to={{pathname:"/signin"}}/>
+        }/>
+
+        <Route path={"/transaction"} render={()=>
+            localStorage.getItem("token")?<Transaction/>:<Redirect to={{pathname:"/signin"}}/>
+        }
+        />
+        <Route path={"/signin"} exact component={signin}/>
+        <Route path={"/home"}  render={()=>
+          localStorage.getItem("token")? <Home/>:<Redirect to={{pathname:"/signin"}}/>
         
-        
+        } />
+              
         </Switch>
     </BrowserRouter>
      </>

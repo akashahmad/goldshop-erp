@@ -18,10 +18,10 @@ export default () => {
         axios.post(userAuthapiPath + "/api/login", payLoad).then(response => {
             localStorage.setItem("token", response.data.token);
             localStorage.setItem("age", remember ? 1296000 : 86400);
-            cookie.save('token', response.data.token, { maxAge: (remember ? 1296000 : 86400), path: "/" });
+            cookie.save('token', response.data.token, { maxAge: (remember ? 1296000 : 86400), path: "/home" });
             setEmail("");
             setPassword("");
-            window.location.replace("/");
+            window.location.replace("/home");
         })
             .catch(err => {
                 if (err.message === "Request failed with status code 404") {
@@ -33,15 +33,13 @@ export default () => {
             });
     };
 
-    useEffect(() => {
-        let loggedIn = localStorage.getItem("token");
-        if (loggedIn) {
-          window.location.replace('/');
-        } else {
-          // setLoader(true)
-          console.log("NAHI CHALA")
-        }
-      }, []);
+    // useEffect(() => {
+    //     let loggedIn = localStorage.getItem("token");
+    //     if (loggedIn) {
+    //       window.location.replace('/');
+    //     }
+        
+    //   }, []);
 
     return (
 

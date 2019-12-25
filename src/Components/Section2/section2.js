@@ -1,14 +1,24 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Style from './Style'
 import Section3 from '../Section3/section3'
 import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
+import axios from 'axios'
+import {userAuthapiPath} from '../../Config'
 
 export default (props) => {
     let {data} = props;
     let {setEditCustomer} =props;
     let {setPrintModel}=props;
    let {setDeleteModel}=props;
+
+useEffect(()=>{
+    axios.get(userAuthapiPath + '/api/team/').then(response=>{
+        console.log('array',response.data);
+    })
+
+},[])
+
     return (
         <>
             <div className="container-fluid Header-section2">

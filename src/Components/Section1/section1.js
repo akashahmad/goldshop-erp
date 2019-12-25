@@ -11,7 +11,7 @@ export default () => {
 
     // navigation active handler
     const currentActive = (value) => {
-        if(location==="/" && value==="dashboard"){
+        if(location==="/home" && value==="dashboard"){
             return "active"
         }else{
             return location.indexOf(value) === -1 ? "" : "active"
@@ -28,13 +28,15 @@ export default () => {
         localStorage.removeItem("age");
         window.location.replace("/signin")
     }
-    useEffect(()=>{
-        let token=localStorage.getItem("token")
-        // if(!token){
-        //     window.location.replace("/signin")
-        // }
-        return !token ? window.location.replace("/signin"):"";
-    },[])
+ 
+    // useEffect(()=>{
+    //     let token=localStorage.getItem("token");
+    //     // if(!token){
+    //     //     window.location.replace("/signin")
+    //     // }
+    //     return !token ? window.location.replace("/signin"):"";
+        
+    // },[])
     return (
         // <div class="wrapper">
 
@@ -44,7 +46,7 @@ export default () => {
             </div>
 
             <ul class="list-unstyled components ">
-                <Link to={"/"}>
+                <Link to={"/home"}>
                     <li >
 
                         <div className={"image-div " + currentActive("dashboard")}>
@@ -53,6 +55,7 @@ export default () => {
                             <a href="#" className="fnt-poppins ">DashBoard</a></div>
 
                     </li>
+
                 </Link>
 
                 <Link to={"/customerpage"}>
@@ -60,7 +63,11 @@ export default () => {
                         <div className={"image-div " + currentActive("customer")}> <img className="image_icon" src={currentActive("customer")==="active"?require('../../assects/images/customersActive.jpg'):require('../../assects/images/customer.png')} alt="" />
                             <a href="#" className="sidenav-customer fnt-poppins">Customers</a></div>
                     </li>
+                
                 </Link>
+
+        
+
 
                 <Link to={"/signup"}>
                     <li>
