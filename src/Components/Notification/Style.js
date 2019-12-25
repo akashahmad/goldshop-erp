@@ -62,6 +62,15 @@ return(
     color: #ffffff;
     font-size: 36px;
 }
+
+.Notification-customers .customer_heading-create-shop {
+    // line-height: 74px;
+    color: #ffffff;
+    padding-bottom:30px;
+    font-size: 36px;
+}
+
+
 .Notification-customers .customer-heading-para {
     color: #ffffff;
     font-size: 24px;

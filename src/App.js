@@ -32,7 +32,7 @@ import Transaction from './Container/CustomerViewMoney/customerViewmoney'
 import Signup from './Container/signup/signup'
 import CustomerTransaction from './Container/CustomerTransaction/customerTransaction'
 import ViewGold from './Container/CustomersViewGoldPage/customerViewGold'
-
+import CreateShop from './Container/CreateNewShop/createShop'
 
 
 export default () => {
@@ -97,6 +97,10 @@ export default () => {
             localStorage.getItem("token") ? <Home /> : <Redirect to={{ pathname: "/" }} />
 
           } />
+
+          <Route path={"/createshop"} component={CreateShop}/>
+
+
 
           <Route path={"/"} exact component={signin} />
             
