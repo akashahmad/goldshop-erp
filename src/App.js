@@ -91,7 +91,7 @@ export default()=>{
             localStorage.getItem("token")?<Transaction/>:<Redirect to={{pathname:"/signin"}}/>
         }
         />
-        <Route path={"/signin"} exact component={signin}/>
+        <Route path={"/"} exact component={signin}/>
         <Route path={"/home"}  render={()=>
           localStorage.getItem("token")? <Home/>:<Redirect to={{pathname:"/signin"}}/>
         
