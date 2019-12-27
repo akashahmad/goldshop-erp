@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import StyleShop from './style'
 import manIcon from '../../assects/images/manicon.png'
 // import SignUp from '../../Components/signUpHeader/signUpHeader'
+
+import { userAuthapiPath } from '../../Config'
+import  axios from 'axios'
 
 // create Shop header 
 import Style from '../../Components/Notification/Style'
@@ -11,6 +14,26 @@ import Image2 from '../../assects/images/layer-6.png'
 
 
 export default () => {
+
+
+    const [ firstName , setFirstname ] =useState("");
+    const [ lastName , setLastname ] =useState("");
+    const [ email , setEmail] =useState("");
+    const [ password ,setPassword ] = useState("");
+    const [ shopName , setShopName ] = useState(""); 
+    const [ address ,setAddress ] =useState("");
+    const [ phone , setPhone ] =useState("");
+    const [logo , setLogo ] =useState("");
+
+    const CreateShop = (event)=>{
+        event.preventDefault();
+        let payload  = {firstName:firstName , lastName:lastName , email:email , password:password , shopName:shopName , address:address , phone:phone};
+        axios.post(userAuthapiPath+"/api/createShop/ToGath3rW3Grow&*^",payload).then(response=>{
+            console.log(response.log);
+        })
+    }
+
+
     return (
         <>
             {/* // ----------------------Header Starts Here------------------------------- */}
@@ -70,7 +93,7 @@ export default () => {
 
                             {/*  right side of form  */}
 
-                            <form>
+                            <form onSubmit={event=>CreateShop(event)}>
 
                                 <div className="username-and-phoneNumber">
 
@@ -82,7 +105,9 @@ export default () => {
                                         </div>
 
                                         <div>
-                                            <input className="input-of-signup font-sm" placeholder="First Name" />
+                                            <input value={firstName} className="input-of-signup font-sm" placeholder="First Name" onChange={event=>{
+                                                setFirstname(event.target.value);
+                                            }} />
                                         </div>
                                     </div>
 
@@ -92,7 +117,9 @@ export default () => {
                                         </div>
 
                                         <div className="phone-div-signup">
-                                            <input className="input-of-signup font-sm" placeholder="Last Name" />
+                                            <input value={lastName} className="input-of-signup font-sm" placeholder="Last Name" onChange={event=>{
+                                                setLastname(event.target.value);
+                                            }} />
                                         </div>
                                     </div>
 
@@ -113,7 +140,9 @@ export default () => {
                                         </div>
 
                                         <div>
-                                            <input className="input-of-signup font-sm" placeholder="Email" />
+                                            <input value={email} className="input-of-signup font-sm" placeholder="Email" onChange={event=>{
+                                                setEmail(event.target.value);
+                                            }}/>
                                         </div>
                                     </div>
 
@@ -123,7 +152,9 @@ export default () => {
                                         </div>
 
                                         <div className="">
-                                            <input className="input-of-signup font-sm" placeholder="Password" />
+                                            <input value={password} className="input-of-signup font-sm" placeholder="Password" onChange={event=>{
+                                                setPassword(event.target.value);
+                                            }}/>
                                         </div>
                                     </div>
 
@@ -151,7 +182,9 @@ export default () => {
                                         </div>
 
                                         <div>
-                                            <input className="input-of-signup font-sm" placeholder="Shop Name" />
+                                            <input value={shopName} className="input-of-signup font-sm" placeholder="Shop Name" onChange={event=>{
+                                                setShopName(event.target.value);
+                                            }}/>
                                         </div>
                                     </div>
 
@@ -161,7 +194,9 @@ export default () => {
                                         </div>
 
                                         <div className="font-sm">
-                                            <input className="input-of-signup" placeholder="Address" />
+                                            <input value={address} className="input-of-signup" placeholder="Address" onChange={event=>{
+                                                setAddress(event.target.value);
+                                            }}/>
                                         </div>
                                     </div>
 
@@ -178,7 +213,9 @@ export default () => {
                                         </div>
 
                                         <div>
-                                            <input className="input-of-signup font-sm" placeholder="Phone" />
+                                            <input value={phone} className="input-of-signup font-sm" placeholder="Phone" onChange={event=>{
+                                                setPhone(event.target.value);
+                                            }}/>
                                         </div>
                                     </div>
 
@@ -200,7 +237,7 @@ export default () => {
                                     </div>
 
                                     <div className="button-margin-of-signup-second">
-                                        <button className="btn-blue font-sm">Save</button>
+                                        <button type="submit" className="btn-blue font-sm">Save</button>
                                     </div>
                                 </div>
 
