@@ -45,7 +45,7 @@ export default (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Address</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addcustomer" placeholder="Phone Number" type="number"></input>
+                                <input className="input-of-modal input-modal-addcustomer" placeholder="Address" type="text"></input>
                             </div>
 
                             <div className="d-flex flex-column">
