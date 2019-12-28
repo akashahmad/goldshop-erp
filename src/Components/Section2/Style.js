@@ -282,7 +282,73 @@ return(
     text-decoration:none;
     color:#ffffff;
 }
-
+.search-form {
+    margin-top: -13px;
+    position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    transform: translate(-50%);
+}
+   }
+   
+   .input-group.search-group {
+    //   height: 50px;
+    //   min-width: 50px;
+      position: relative;
+   }
+   
+   .input-group .form-control:hover,
+   .input-group .form-control:focus {
+      padding: 10px 20px;
+      width: 380px;
+      color: #000;
+      cursor: auto;
+      background-color: #fff;
+   }
+   
+   .input-group .form-control::-moz-placeholder {
+      color: transparent;
+   }
+   
+   .input-group .form-control::-webkit-input-placeholder {
+      color: transparent;
+   }
+   
+   .input-group .form-control:hover::-moz-placeholder,
+   .input-group .form-control:focus::-moz-placeholder {
+      color: #ddd;
+   }
+   .input-group .form-control:hover::-webkit-input-placeholder,
+   .input-group .form-control:focus::-webkit-input-placeholder {
+      color: #ddd;
+   }
+   
+   .input-group .form-control:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border-color: #e6e6e6;
+   }
+   
+   .form-control.search-control {
+    border: none;
+    background: url(http://milansavov.com/img/zoom.svg) no-repeat right 2px center / 28px;
+    //: ;
+    /* border: 1px solid #ddd; */
+    border-radius: 30px;
+    color: transparent;
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    outline: 0 none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    transition: width 0.25s;
+   }
 `}</style>
 
 

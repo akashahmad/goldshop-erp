@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import Style from './Style'
 import Section3 from '../Section3/section3'
 import Image1 from '../../assects/images/magnifying-glass.png'
@@ -7,17 +7,29 @@ import axios from 'axios'
 import {userAuthapiPath} from '../../Config'
 
 export default (props) => {
+    const [totalCus,setTotelCus]=useState([])
+    const [totalPkr,setTotalPkr]=useState("")
+    const [totalPkrRec,setTotalPkrRec]=useState("")
     let {data} = props;
     let {setEditCustomer} =props;
     let {setPrintModel}=props;
    let {setDeleteModel}=props;
 
-useEffect(()=>{
-    axios.get(userAuthapiPath + '/api/team/').then(response=>{
-        console.log('array',response.data);
-    })
-
-},[])
+   useEffect(()=>{
+    let token = localStorage.getItem("token");
+    if(token){
+    let header = {
+    headers: {
+    Authorization: `Bearer ${token}`
+    }
+    };
+    axios.get(userAuthapiPath + "/api/dashboard", header).then(res=>{
+        setTotelCus(res.data.totalCustomers)
+        setTotalPkr(res.data.totalPKRSent)
+        setTotalPkrRec(res.data.totalPKRReceived)
+    });
+    }
+    },[]);
 
     return (
         <>
@@ -44,7 +56,11 @@ useEffect(()=>{
                             </li> */}
                                     <li class="nav-item image-search">
                                         <a class="nav-link " href="#">
-                                            <img src={Image1} alt="" />
+                                        <form class="search-form">
+       <div class="input-group search-group">
+           <input type="text" class="form-control search-control" placeholder="Enter your search term..." />
+       </div>
+   </form>
                                         </a>
                                     </li>
                                     <div class="vertical-line-inside-navbar"></div>
@@ -66,7 +82,11 @@ useEffect(()=>{
                         <div class="dashboard-column-cards-one">
                             <div class="card-data">
                                 <div className="cardone">
-                                    <p className="card-amount-box1 fnt-poppins">196</p>
+                                    <p className="card-amount-box1 fnt-poppins">
+                                        {
+                                            totalCus
+                                        }
+                                    </p>
                                     <h5>Total Customers</h5>
                                 </div>
                             </div>
@@ -90,10 +110,10 @@ useEffect(()=>{
                                 <div className="card-heading fnt-poppins"><h3>PKR</h3>
                                     <hr style={{ backgroundColor: "white" }} />
                                 </div>
-                                <div className="card-recieved fnt-poppins"> <div><p className="card-amount fnt-poppins">10,000.00</p>
+                                <div className="card-recieved fnt-poppins"> <div><p className="card-amount fnt-poppins">{totalPkrRec}</p>
                                     <h5> Recieved</h5></div>
                                     <div class="vertical-line-inside-box fnt-poppins"></div>
-                                    <div><p className="card-amount fnt-poppins">10,000.00</p>
+                                    <div><p className="card-amount fnt-poppins">{totalPkr}</p>
                                         <h5> Sent</h5></div></div>
                             </div>
                         </div>
