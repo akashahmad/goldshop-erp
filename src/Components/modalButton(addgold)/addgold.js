@@ -4,9 +4,11 @@ import Datepicker from 'react-date-picker'
 import "react-datepicker/dist/react-datepicker.css";
 import Style from './style'
 import '../../assects/style/common.css'
+import Axios from 'axios';
+import { userAuthapiPath } from '../../Config'
 
 export default (props) => {
-    let {addgold, setAddGold} = props;
+    let { addgold, setAddGold } = props;
     // const [show, setShow] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     // const handleClose = () => setShow(false);
@@ -15,19 +17,47 @@ export default (props) => {
         setStartDate(date);
     }
 
-    const [customer , setCustomer]=useState("");
-    const [bill , setBill] =useState("");
-    const [particular , setParticular]=useState("");
-// status
-// purity
-// grossWeight
-// pureWeight
-// transactionDate
-    const [addGold , setAddgold]=useState("")
+
+    // add gold through axios
+
+    const [customer, setCustomer] = useState("");
+    const [bill, setBill] = useState("");
+    const [particular, setParticular] = useState("");
+    const [status, setStatus] = useState("");
+    const [purity, setPurity] = useState("");
+    const [grossWeight, setGrossweight] = useState("");
+    const [pureWeight, setPureweight] = useState("");
+    const [transactionDate, setTransactiondate] = useState("");
+
+    let token=localStorage.getItem("token");
+    console.log(token);
+
+    // const [addGold , setAddgold]=useState("")
+    const Addgold = (event) => {
+        event.preventDefault();
+            let header = {
+                headers : {
+                    Authorization : `Berear ${token}`
+                }
+            }
+
+            let payload = {
+                customer: customer, bill: bill, particular: particular, status: status, purity: purity, grossWeight: grossWeight,
+                pureWeight: pureWeight, transactionDate: transactionDate
+            }
+
+            Axios.get(userAuthapiPath + "/api/gold" , payload , header  ).then(Response => {
+                console.log(Response.data);
+                
+            })
     
+
+
+    }
+
     return (
         <>
-           
+
 
 
             {addgold && <div className="modal-addgold">
@@ -42,7 +72,7 @@ export default (props) => {
                     </div>
 
                     <div className="modal-body-addgold">
-                        <form>
+                        <form onSubmit={event => Addgold(event)}>
                             <div>
                                 <label className="model-Money-Label fnt-poppin font-sm">Date</label>
                             </div>
@@ -53,14 +83,22 @@ export default (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Bill Number</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addgold" placeholder="0001" type="number"></input>
+                                <input className="input-of-modal input-modal-addgold" value={bill} placeholder="0001" type="number"
+                                    onChange={event => {
+                                        setBill(event.target.value);
+                                    }}
+                                />
                             </div>
 
                             <div className="d-flex flex-column">
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Description</label>
                             </div>
                             <div>
-                                <textarea className="input-postbody-modal" placeholder="Description" ></textarea>
+                                <textarea className="input-postbody-modal" value={particular} placeholder="Description"
+                                    onChange={event => {
+                                        setParticular(event.target.value);
+                                    }}
+                                ></textarea>
                             </div>
 
                             <div className="d-flex modal-radiobtn-addgold">
@@ -135,7 +173,7 @@ export default (props) => {
 
                             <div className="d-flex justify-content-center mt-5 mb-5">
                                 <button className="btn-white-model" onClick={() => { setAddGold(false) }}>Cancel</button>
-                                <button className="btn-blue ml-2">Save</button>
+                                <button className="btn-blue ml-2" type="submit">Save</button>
                             </div>
                         </form>
                     </div>

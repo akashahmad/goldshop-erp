@@ -1,36 +1,36 @@
-import React,{useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Style from './Style'
 import Section3 from '../Section3/section3'
 import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
 import axios from 'axios'
-import {userAuthapiPath} from '../../Config'
+import { userAuthapiPath } from '../../Config'
 
 export default (props) => {
 
-    const [totalCus,setTotelCus]=useState([])
-    const [totalPkr,setTotalPkr]=useState("")
-    const [totalPkrRec,setTotalPkrRec]=useState("")
-    let {data} = props;
-    let {setEditCustomer} =props;
-    let {setPrintModel}=props;
-    let {setDeleteModel}=props;
+    const [totalCus, setTotelCus] = useState([])
+    const [totalPkr, setTotalPkr] = useState("")
+    const [totalPkrRec, setTotalPkrRec] = useState("")
+    let { data } = props;
+    let { setEditCustomer } = props;
+    let { setPrintModel } = props;
+    let { setDeleteModel } = props;
 
-   useEffect(()=>{
-    let token = localStorage.getItem("token");
-    if(token){
-    let header = {
-    headers: {
-    Authorization: `Bearer ${token}`
-    }
-    };
-    axios.get(userAuthapiPath + "/api/dashboard", header).then(res=>{
-        setTotelCus(res.data.totalCustomers)
-        setTotalPkr(res.data.totalPKRSent)
-        setTotalPkrRec(res.data.totalPKRReceived)
-    });
-    }
-    },[]);
+    useEffect(() => {
+        let token = localStorage.getItem("token");
+        if (token) {
+            let header = {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            };
+            axios.get(userAuthapiPath + "/api/dashboard", header).then(res => {
+                setTotelCus(res.data.totalCustomers)
+                setTotalPkr(res.data.totalPKRSent)
+                setTotalPkrRec(res.data.totalPKRReceived)
+            });
+        }
+    }, []);
 
     return (
         <>
@@ -57,11 +57,11 @@ export default (props) => {
                             </li> */}
                                     <li class="nav-item image-search">
                                         <a class="nav-link " href="#">
-                                        <form class="search-form">
-       <div class="input-group search-group">
-           <input type="text" class="form-control search-control" placeholder="Enter your search term..." />
-       </div>
-   </form>
+                                            <form class="search-form">
+                                                <div class="input-group search-group">
+                                                    <input type="text" class="form-control search-control" placeholder="Enter your search term..." />
+                                                </div>
+                                            </form>
                                         </a>
                                     </li>
                                     <div class="vertical-line-inside-navbar"></div>
@@ -147,7 +147,7 @@ export default (props) => {
                     </nav>
 
                 </div>
-                <Section3 data={data} setEditCustomer={setEditCustomer} setPrintModel={setPrintModel} setDeleteModel={setDeleteModel}/>
+                <Section3 data={data} setEditCustomer={setEditCustomer} setPrintModel={setPrintModel} setDeleteModel={setDeleteModel} />
                 <Style />
             </div>
         </>

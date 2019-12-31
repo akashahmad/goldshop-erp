@@ -24,13 +24,13 @@ export default (props) => {
                   Authorization: `Bearer ${token}`
                 }
             }
-            axios.get(userAuthapiPath+"/api/money/14",header).then(Response=>{
-                console.log(Response.data.money);
-                // setViewMoney(Response.data.data);
+            axios.get(userAuthapiPath+"/api/money",header).then(Response=>{
+                console.log(Response.data.data);
+                setViewMoney(Response.data.data);
             })
 
         }
-     })
+     },[])
 
     return (
         <>
@@ -40,22 +40,22 @@ export default (props) => {
                     <tr className="section3-table-head fnt-poppins">
 
                         <th>Bill No</th>
-                        <th>Details</th>
-                        <th>Date</th>
-                        <th>Amt Sent</th>
-                        <th>Amt Recieved</th>
-                        <th>Currency Type</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Currency</th>
+                        <th>Detail</th>
+                        <th>Transaction Date</th>
                         <th>Action</th>
 
                     </tr>
                     {viewMoney ? viewMoney.map((single, index) => <tr key={single.id} className="section3-table-rows fnt-poppins">
 
                         <td>{single.billNo}</td>
-                        <td>{single.address}</td>
-                        <td>{single.conntactNumber}</td>
-                        <td>{single.name}</td>
-                        <td>{single.name}</td>
-                        <td>{single.name}</td>
+                        <td>{single.amount}</td>
+                        <td>{single.status}</td>
+                        <td>{single.currency}</td>
+                        <td>{single.detail}</td>
+                        <td>{single.transactionDate}</td>
                         <td>
                             {
                                 show === single.id &&
