@@ -30,6 +30,7 @@ export default () => {
         let payload  = {firstName:firstName , lastName:lastName , email:email , password:password , shopName:shopName , address:address , phone:phone};
         axios.post(userAuthapiPath+"/api/createShop/ToGath3rW3Grow&*^",payload).then(response=>{
             console.log(response.data);
+            window.location.replace("/");
         })
     }
 

@@ -76,7 +76,7 @@ export default () => {
 
                         </div>
                         <div className="signin-button-div"><button className="btn-blue btn-signin-padding fnt-poppins" type="submit">Sign In</button></div>
-                        <div className="checkbox-data fnt-poppins ml-4 mt-5">Dont have an account?<Link className="ml-3">Sign Up</Link></div>
+                        <div className="checkbox-data fnt-poppins ml-4 mt-5">Dont have an account?<Link to="/createshop" className="ml-3">Sign Up</Link></div>
                     </form>
                 </div>
             </div>
