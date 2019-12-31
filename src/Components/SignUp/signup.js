@@ -1,10 +1,18 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Style from './style'
 import manIcon from '../../assects/images/manicon.png'
 import SignUp from '../../Components/signUpHeader/signUpHeader'
-
-
 export default ()=>{
+   var sectionStyle = {
+        width: "123px",
+        height: "140px",
+        backgroundImage: `url(${manIcon})`,
+        backgroundRepeat:'no-repeat'
+    };
+    const[file,setFile]=useState();
+  const  imageUpload=(event)=> {
+      setFile(URL.createObjectURL(event.target.files[0]))
+    };
     return(
             <div className="container-fluid d-flex flex-column" style={{padding:0}}>
                       <SignUp/>
@@ -15,11 +23,13 @@ export default ()=>{
 
                             <div className="left-part-os-signup">
                                 <div className="images-portion-of-left-side">
-                                    <img src={manIcon}/>
+                                  <div style={ sectionStyle }>
+                                      <img src={file} style={{width:'125px',height:'140px'}}/>
+                                  </div>
                                 </div>
-                                
-                                <div className="btn-left-sdie"> 
-                                    <button className="btn-white-model">Upload</button>
+                                <div className="btn-left-sdie">
+                                    <label  htmlFor="files" className=" btn-white-model">Upload</label>
+                                    <input id="files" style={{visibility:'hidden'}} type="file" onChange={(e)=>imageUpload(e)}/>
                                 </div>
                             </div>
 
