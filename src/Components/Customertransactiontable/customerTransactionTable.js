@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import Style from './style'
 import { Link } from 'react-router-dom';
+import axios from 'axios'
+import { userAuthapiPath } from '../../Config'
 
 
 export default (props) => {
@@ -9,6 +11,26 @@ export default (props) => {
     let { data } = props;
     let customers = data ? (data.customers ? data.customers : "") : "";
     const [show, setShow] = useState("");
+
+    // axios.get value of view money
+    const [viewMoney , setViewMoney]=useState([]);
+
+    useEffect(()=>{
+        let token = localStorage.getItem("token")
+        if(token)
+        {
+            let header = {
+                headers:{
+                  Authorization: `Bearer ${token}`
+                }
+            }
+            axios.get(userAuthapiPath+"/api/money/14",header).then(Response=>{
+                console.log(Response.data.money);
+                // setViewMoney(Response.data.data);
+            })
+
+        }
+     })
 
     return (
         <>
@@ -26,9 +48,9 @@ export default (props) => {
                         <th>Action</th>
 
                     </tr>
-                    {customers ? customers.map((single, index) => <tr key={single.id} className="section3-table-rows fnt-poppins">
+                    {viewMoney ? viewMoney.map((single, index) => <tr key={single.id} className="section3-table-rows fnt-poppins">
 
-                        <td>{single.name}</td>
+                        <td>{single.billNo}</td>
                         <td>{single.address}</td>
                         <td>{single.conntactNumber}</td>
                         <td>{single.name}</td>

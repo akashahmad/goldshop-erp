@@ -14,6 +14,17 @@ export default (props) => {
     const handleChange = date => {
         setStartDate(date);
     }
+
+    const [customer , setCustomer]=useState("");
+    const [bill , setBill] =useState("");
+    const [particular , setParticular]=useState("");
+// status
+// purity
+// grossWeight
+// pureWeight
+// transactionDate
+    const [addGold , setAddgold]=useState("")
+    
     return (
         <>
            

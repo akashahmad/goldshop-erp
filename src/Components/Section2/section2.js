@@ -7,13 +7,14 @@ import axios from 'axios'
 import {userAuthapiPath} from '../../Config'
 
 export default (props) => {
+
     const [totalCus,setTotelCus]=useState([])
     const [totalPkr,setTotalPkr]=useState("")
     const [totalPkrRec,setTotalPkrRec]=useState("")
     let {data} = props;
     let {setEditCustomer} =props;
     let {setPrintModel}=props;
-   let {setDeleteModel}=props;
+    let {setDeleteModel}=props;
 
    useEffect(()=>{
     let token = localStorage.getItem("token");
