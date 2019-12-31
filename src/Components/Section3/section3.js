@@ -10,7 +10,7 @@ export default (props) => {
   let { setPrintModel } = props;
   let { setDeleteModel } = props;
   let { data } = props;
-  let customers = data ? (data.customers ? data.customers : "") : "";
+  // let customers = data ? (data.customers ? data.customers : "") : "";
   // console.log(setEditCustomer);
   const [show, setShow] = useState("");
 
