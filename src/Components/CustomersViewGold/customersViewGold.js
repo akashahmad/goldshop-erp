@@ -1,16 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Style from './style'
 // import CustomerDetailsInfo from '../customerDetails(customerInfo)/customerDetails'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import axios from 'axios';
+import { userAuthapiPath } from '../../Config'
 export default (props) => {
-    let {setEditGold}=props;
-    let {setDeleteModel}=props;
-    let {setPrintModel}=props;
-    let {setEditCustomer} =props;
+    let { setEditGold } = props;
+    let { setDeleteModel } = props;
+    let { setPrintModel } = props;
+    let { setEditCustomer } = props;
     let { data } = props;
     let customers = data ? (data.customers ? data.customers : "") : "";
     const [show, setShow] = useState("");
 
+    const [viewGold, setViewGold] = useState([]);
+
+    useEffect(() => {
+        let token = localStorage.getItem("token")
+        console.log(token)
+        if (token) {
+            let header = {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+            axios.get(userAuthapiPath + "/api/gold", header).then(response => {
+                console.log(response.data.data)
+                setViewGold(response.data.data)
+            })
+        }
+    },[])
     return (
         <>
             {/* <div><CustomerDetailsInfo/></div> */}
@@ -19,26 +38,23 @@ export default (props) => {
                     <tr className="section3-table-head fnt-poppins">
 
                         <th>Bill No</th>
-                        <th>Details</th>
-                        <th>Date</th>
+                        <th>Status</th>
                         <th>Purity</th>
-                        <th>Gross wt</th>
-                        <th>Pure wt Rec</th>
-                        <th>Pure wt Sent</th>
-                        <th>Total Pure wt</th>
+                        <th>Gross Weight</th>
+                        <th>Pure Weight</th>
+                        <th>Transaction Date</th>
                         <th>Actions</th>
 
                     </tr>
-                    {customers ? customers.map((single, index) => <tr key={single.id} className="section3-table-rows fnt-poppins">
+                    {viewGold ? viewGold.map((single, index) => <tr key={single.id} className="section3-table-rows fnt-poppins">
 
-                        <td>{single.name}</td>
-                        <td>{single.address}</td>
-                        <td>{single.conntactNumber}</td>
-                        <td>{single.name}</td>
-                        <td>{single.name}</td>
-                        <td>{single.name}</td>
-                        <td>{single.name}</td>
-                        <td>{single.name}</td>
+                        <td>{single.billNo}</td>
+                        <td>{single.status}</td>
+                        <td>{single.purity}</td>
+                        <td>{single.grossWeight}</td>
+                        <td>{single.pureWeight}</td>
+                        <td>{single.transactionDate}</td>
+                        
                         <td>
                             {
                                 show === single.id &&
@@ -49,9 +65,9 @@ export default (props) => {
                                     <li onClick={()=>{setPrintModel(true)}}>Print</li>
                                     <li onClick={()=>{setDeleteModel(true)}}>Delete</li> */}
 
-                                    
-                                    <li> <Link className="link-model-on-action-buttons" onClick={()=>{setEditGold(true)}}> Edit</Link></li>
-                                    <li><Link className="link-model-on-action-buttons" onClick={()=>{setDeleteModel(true)}}>Delete</Link></li>
+
+                                    <li> <Link className="link-model-on-action-buttons" onClick={() => { setEditGold(true) }}> Edit</Link></li>
+                                    <li><Link className="link-model-on-action-buttons" onClick={() => { setDeleteModel(true) }}>Delete</Link></li>
 
 
                                 </div>
