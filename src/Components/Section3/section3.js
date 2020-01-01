@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import Style from './Style'
 import axios from 'axios'
+import right from '../../assects/images/chorenright.png'
 import ReactPaginate from "react-paginate";
 import {userAuthapiPath} from '../../Config'
 
@@ -65,7 +66,7 @@ export default (props) => {
 
                     <td>
                         {
-                            show && single.id &&
+                            show && show === single.id &&
                             <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
                                 <li><Link to="/customertransaction" className="link-model-on-action-buttons">View</Link>
                                 </li>
@@ -83,8 +84,12 @@ export default (props) => {
 
                         <div className="action-div">
                             <button type="button" className="doted-button"
-                                    onClick={() => setShow(show === single.id ? "" : single.id)}><span
-                                class="dot"></span>
+                                    onClick={() => {
+                                        console.log("show", show);
+                                        console.log("show", single.id);
+                                        setShow(show === single.id ? "" : single.id)
+                                    }}>
+                                <span class="dot"/>
                                 <span className="dot"/>
                                 <span className="dot"/>
                             </button>
@@ -93,8 +98,8 @@ export default (props) => {
                     </td>
                 </tr>) : <h1>Loader ....</h1>}
             </table>
-            <ReactPaginate previousLabel={<i className="fa fa-chevron-left "> </i>}
-                           nextLabel={<i className="fa fa-chevron-right "> </i>}
+            <ReactPaginate previousLabel={<span className="fa fa-chevron-right "  > &#60; </span>}
+                           nextLabel={<span className="fa fa-chevron-right "  > > </span>}
                            breakLabel={". . ." }
                            breakClassName={"break-me"}
                            pageCount={pageCount}
