@@ -46,7 +46,10 @@ export default (props) => {
     }, []);
 
     const handlePageClick = (page) => {
+        console.log(page);
+        
         nextCourses(page.selected + 1);
+        
     };
 
     const nextCourses = (page) => {
@@ -58,7 +61,7 @@ export default (props) => {
                 }
             };
 
-            axios.get(userAuthapiPath + `/api/customers?page=${page}&limit=5`, header).then(response => {
+            axios.get(userAuthapiPath + `/api/customers?page=${page}&limit=10`, header).then(response => {
                 setCustomers(response.data.customers);
                 setPageCount(response.data.totalPages);
                 setCurrentPage(response.data.currentPage);

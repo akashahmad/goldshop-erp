@@ -10,6 +10,13 @@ export default (props) => {
     const [totalCus, setTotelCus] = useState([]);
     const [totalPkr, setTotalPkr] = useState("");
     const [totalPkrRec, setTotalPkrRec] = useState("");
+    
+    const [totalUsdRecieve ,  setTotalUsedRecieved]=useState([]);
+    const [totalUsdSend ,  setTotalUsedSend]=useState([]);
+    
+    const [totalAfgSend  ,  setTotalAfgSend]=useState([]);
+    const [totalAfgRecieved ,  setTotalAfgRecieved]=useState([]);
+    
     let {data} = props;
     let {setEditCustomer} = props;
     let {setPrintModel} = props;
@@ -17,6 +24,7 @@ export default (props) => {
 
     useEffect(() => {
         let token = localStorage.getItem("token");
+        console.log(token);
         if (token) {
             let header = {
                 headers: {
@@ -27,6 +35,8 @@ export default (props) => {
                 setTotelCus(res.data.totalCustomers);
                 setTotalPkr(res.data.totalPKRSent);
                 setTotalPkrRec(res.data.totalPKRReceived)
+                // setTotalAfgRecieved(res.data.)
+                console.log(token);
             });
         }
     }, []);
