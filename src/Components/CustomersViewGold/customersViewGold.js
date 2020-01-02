@@ -49,10 +49,11 @@ export default (props) => {
                 }
             };
 
-            axios.get(userAuthapiPath +`/api/gold/?${page}`, header).then(response => {
-                setViewGold(response.data.data);
+            axios.get(userAuthapiPath + `/api/gold?page=${page}&limit=5`, header).then(response => {
+                setViewGold(response.data.gold);
                 setPageCount(response.data.totalPages);
                 setCurrentPage(response.data.currentPage);
+                console.log(response.data.gold)
             })
         }
     };
@@ -80,7 +81,7 @@ const deleteTransaction=(id)=>{
                 <table className="section3-table-inner">
                     <tr className="section3-table-head fnt-poppins">
 
-                        <th>Customer ID</th>
+                      
                         <th>Bill No</th>
                         <th>Status</th>
                         <th>Purity</th>
@@ -91,7 +92,7 @@ const deleteTransaction=(id)=>{
 
                     </tr>
                     {viewGold ? viewGold.map((single, index) => <tr key={single.id} className="section3-table-rows fnt-poppins">
-                        <td>{single.customerId}</td>
+                      
                         <td>{single.billNo}</td>
                         <td>{single.status}</td>
                         <td>{single.purity}</td>

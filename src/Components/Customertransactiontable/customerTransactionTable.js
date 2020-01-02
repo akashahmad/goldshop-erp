@@ -33,8 +33,8 @@ export default (props) => {
                 }
             };
 
-            axios.get(userAuthapiPath +`/api/money/?${page}`, header).then(response => {
-                setViewMoney(response.data.data);
+            axios.get(userAuthapiPath +`/api/money?page=${page}&limit=5`, header).then(response => {
+                setViewMoney(response.data.money);
                 setPageCount(response.data.totalPages);
                 setCurrentPage(response.data.currentPage);
             })

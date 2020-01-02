@@ -21,6 +21,8 @@ export default (props) => {
     // add gold through axios
 
     const [customer, setCustomer] = useState("");
+
+    const[goldId,setGoldId]=useState("");
     const [bill, setBill] = useState("");
     const [particular, setParticular] = useState("");
     const [status, setStatus] = useState("");
@@ -46,8 +48,9 @@ export default (props) => {
                     Authorization: `Bearer ${token}`
                 }
             };
+
         let payload = {
-            customerId: customerId, bill: bill, particular: particular, status: status, purity: purity, grossWeight: grossWeight,
+           goldId:goldId, customerId: customerId, bill: bill, particular: particular, status: status, purity: purity, grossWeight: grossWeight,
             pureWeight: pureWeight, transactionDate: transactionDate,
         }
 
@@ -78,6 +81,17 @@ export default (props) => {
 
                     <div className="modal-body-addgold">
                         <form onSubmit={event => Addgold(event)}>
+                        <div>
+                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Id</label>
+                            </div>
+                            <div>
+                                <input className="input-of-modal input-modal-addgold" value={goldId} placeholder="0001" type="number"
+                                    onChange={event => {
+                                        setGoldId(event.target.value);
+                                    }}
+                                />
+                            </div>
+
                         <div>
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Customer Id</label>
                             </div>
