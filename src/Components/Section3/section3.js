@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import Style from './Style'
 import axios from 'axios'
-import right from '../../assects/images/chorenright.png'
 import ReactPaginate from "react-paginate";
 import {userAuthapiPath} from '../../Config'
 import Delete from '../../Components/Delete(Popup)/delete'

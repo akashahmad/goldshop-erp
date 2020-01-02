@@ -10,7 +10,7 @@ export default (props) => {
     const [totalCus, setTotelCus] = useState([]);
     const [totalPkr, setTotalPkr] = useState("");
     const [totalPkrRec, setTotalPkrRec] = useState("");
-    let {data} = props;
+    const [data, setData] = useState([]);
     let {setEditCustomer} = props;
     let {setPrintModel} = props;
     let {setDeleteModel} = props;
@@ -28,6 +28,7 @@ export default (props) => {
                 setTotalPkr(res.data.totalPKRSent);
                 setTotalPkrRec(res.data.totalPKRReceived)
             });
+
         }
     }, []);
 
@@ -137,7 +138,7 @@ export default (props) => {
                 </nav>
 
             </div>
-            <Section3 data={data} setEditCustomer={setEditCustomer} setPrintModel={setPrintModel}
+            <Section3 setEditCustomer={setEditCustomer} setPrintModel={setPrintModel}
                       setDeleteModel={setDeleteModel}/>
             <Style />
         </div>
