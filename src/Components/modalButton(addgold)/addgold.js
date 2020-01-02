@@ -28,30 +28,35 @@ export default (props) => {
     const [grossWeight, setGrossweight] = useState("");
     const [pureWeight, setPureweight] = useState("");
     const [transactionDate, setTransactiondate] = useState("");
-
-    let token=localStorage.getItem("token");
-    console.log(token);
+    // const [pureWeightSend,setPureweightSend]=useState("");
+    // const[totalPureWeight,setTotalPureWeight]=useState("");
+    const[customerId,setCustomerId]=useState("");
+    // let token = localStorage.getItem("token");
+    // console.log(token);
 
     // const [addGold , setAddgold]=useState("")
+  
     const Addgold = (event) => {
         event.preventDefault();
+        let token = localStorage.getItem("token");
+        console.log(token);
+        if (token) {
             let header = {
-                headers : {
-                    Authorization : `Berear ${token}`
+                headers: {
+                    Authorization: `Bearer ${token}`
                 }
-            }
+            };
+        let payload = {
+            customerId: customerId, bill: bill, particular: particular, status: status, purity: purity, grossWeight: grossWeight,
+            pureWeight: pureWeight, transactionDate: transactionDate,
+        }
 
-            let payload = {
-                customer: customer, bill: bill, particular: particular, status: status, purity: purity, grossWeight: grossWeight,
-                pureWeight: pureWeight, transactionDate: transactionDate
-            }
+        Axios.post(userAuthapiPath + "/api/gold", payload, header).then(Response => {
+            console.log(Response.data);
 
-            Axios.get(userAuthapiPath + "/api/gold" , payload , header  ).then(Response => {
-                console.log(Response.data);
-                
-            })
-    
+        })
 
+    }
 
     }
 
@@ -73,6 +78,17 @@ export default (props) => {
 
                     <div className="modal-body-addgold">
                         <form onSubmit={event => Addgold(event)}>
+                        <div>
+                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Customer Id</label>
+                            </div>
+                            <div>
+                                <input className="input-of-modal input-modal-addgold" value={customerId} placeholder="0001" type="number"
+                                    onChange={event => {
+                                        setCustomerId(event.target.value);
+                                    }}
+                                />
+                            </div>
+
                             <div>
                                 <label className="model-Money-Label fnt-poppin font-sm">Date</label>
                             </div>
@@ -101,7 +117,7 @@ export default (props) => {
                                 ></textarea>
                             </div>
 
-                            <div className="d-flex modal-radiobtn-addgold">
+                            {/* <div className="d-flex modal-radiobtn-addgold">
                                 <div className="radios">
                                     <div className="d-flex radio">
                                         <input type="radio" id="radio1" name="auto" />
@@ -113,9 +129,9 @@ export default (props) => {
 
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
-                            <div className="d-flex modal-radiobtn-addgold">
+                            {/* <div className="d-flex modal-radiobtn-addgold">
                                 <div className="radios">
                                     <div className="d-flex radio">
                                         <input type="radio" id="radio2" name="auto" />
@@ -127,16 +143,69 @@ export default (props) => {
 
                                     </div>
                                 </div>
+                            </div> */}
+                            <div>
+                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Status</label>
+                            </div>
+                            <div>
+                                <input className="input-of-modal input-modal-addgold" value={status} placeholder="status" type="text"
+                                    onChange={event => {
+                                        setStatus(event.target.value);
+                                    }}
+                                />
+                            </div>
+                            <div>
+                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Purity</label>
+                            </div>
+                            <div>
+                                <input className="input-of-modal input-modal-addgold" value={purity} placeholder="18.5" type="number"
+                                    onChange={event => {
+                                        setPurity(event.target.value);
+                                    }}
+                                />
+                            </div>
+                            <div>
+                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Gross Weight</label>
+                            </div>
+                            <div>
+                                <input className="input-of-modal input-modal-addgold" value={grossWeight} placeholder="1579" type="number"
+                                    onChange={event => {
+                                        setGrossweight(event.target.value);
+                                    }}
+                                />
                             </div>
 
                             <div className="d-flex flex-column">
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Pure Weight</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addgold" placeholder="" type="text"></input>
+                                <input className="input-of-modal input-modal-addgold" value={pureWeight} placeholder="" type="text"
+                                onChange={event=>{
+                                    setPureweight(event.target.value);
+                                }}
+                                ></input>
                             </div>
-
-                            <div className="d-flex flex-column">
+                            {/* <div>
+                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Pure Weight Send</label>
+                            </div>
+                            <div>
+                                <input className="input-of-modal input-modal-addgold" value={pureWeightSend} placeholder="12.8" type="number"
+                                    onChange={event => {
+                                        setPureweightSend(event.target.value);
+                                    }}
+                                />
+                            </div> */}
+                            {/* <div>
+                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Total Pure Weight </label>
+                            </div>
+                            <div>
+                                <input className="input-of-modal input-modal-addgold" value={totalPureWeight} placeholder="1012" type="number"
+                                    onChange={event => {
+                                        setTotalPureWeight(event.target.value);
+                                    }}
+                                />
+                            </div> */}
+                            {/* <div className="d-flex flex-column">
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Gold Type</label>
                             </div>
 
@@ -166,7 +235,7 @@ export default (props) => {
 
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
 
 

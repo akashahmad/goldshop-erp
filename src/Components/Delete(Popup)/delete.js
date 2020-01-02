@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Style from './style'
-
+import axios from 'axios'
+import {userAuthapiPath} from '../../Config'
 export default(props)=>{
     let {deleteModel,setDeleteModel}=props;
+   
+    // console.log("dhdhhdd",handleRemoveItem)
+
     // const [hide,setHide]=useState(false);
 
     // const openPopup=()=>{
@@ -35,7 +39,9 @@ export default(props)=>{
                             <div className="delete-model-popup-button">
                                     
                                     <div className="yes-button">
-                                        <button className="btn-blue confirm-popup-of-delete-method fnt-poppins">Yes</button>
+                                        <button className="btn-blue confirm-popup-of-delete-method fnt-poppins"
+                                        onClick={()=>{}}
+                                        >Yes</button>
                                     </div>
 
                                     <div className=" no-button ml-5 border-of-no-button">

@@ -5,7 +5,7 @@ import axios from 'axios'
 import right from '../../assects/images/chorenright.png'
 import ReactPaginate from "react-paginate";
 import {userAuthapiPath} from '../../Config'
-
+import Delete from '../../Components/Delete(Popup)/delete'
 export default (props) => {
 
     let {setEditCustomer, setPrintModel, setDeleteModel} = props;
@@ -13,12 +13,35 @@ export default (props) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [show, setShow] = useState("");
 
-
+   
     // get all customers
+    const handleRemoveItem = (id) => {
+
+      console.log(id)
+      let token = localStorage.getItem("token");
+      if (token) {
+          let header = {
+              headers: {
+                  Authorization: `Bearer ${token}`
+              }
+          };
+          // window.confirm("");
+          axios.delete(userAuthapiPath+"/api/customers/"+id,header).then (res=>{
+          setCustomers(customers => customers.filter(item => item.id !== id))
+          console.log(res)
+          console.log(res.data)
+          console.log(id)
+          
+      
+            }    )
+  
+        }
+      
+  }
 
     const [customers, setCustomers] = useState([]);
 
-    useEffect(() => {
+   useEffect(() => {
         nextCourses(1);
     }, []);
 
@@ -42,7 +65,7 @@ export default (props) => {
             })
         }
     };
-
+ 
 
     return (
 
@@ -77,7 +100,7 @@ export default (props) => {
                                     setPrintModel(true)
                                 }}>Print</Link></li>
                                 <li><Link className="link-model-on-action-buttons" onClick={() => {
-                                    setDeleteModel(true)
+                                  setDeleteModel(true)
                                 }}>Delete</Link></li>
                             </div>
                         }
@@ -85,8 +108,8 @@ export default (props) => {
                         <div className="action-div">
                             <button type="button" className="doted-button"
                                     onClick={() => {
-                                        console.log("show", show);
-                                        console.log("show", single.id);
+                                        // console.log("show", show);
+                                        // console.log("show", single.id);
                                         setShow(show === single.id ? "" : single.id)
                                     }}>
                                 <span class="dot"/>
@@ -110,6 +133,7 @@ export default (props) => {
                            subContainerClassName={"container column"}
                            activeClassName={"p-one"}/>
             <Style />
+            <Delete handlePageClick={()=>handleRemoveItem()} />
         </div>
     )
 }

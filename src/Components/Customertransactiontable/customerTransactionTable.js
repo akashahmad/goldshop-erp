@@ -3,7 +3,7 @@ import Style from './style'
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import { userAuthapiPath } from '../../Config'
-
+import ReactPaginate from "react-paginate";
 
 export default (props) => {
     let {setDeleteModel}=props;
@@ -14,23 +14,51 @@ export default (props) => {
 
     // axios.get value of view money
     const [viewMoney , setViewMoney]=useState([]);
+    const [pageCount, setPageCount] = useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
+    useEffect(() => {
+        nextCourses(1);
+    }, []);
 
-    useEffect(()=>{
-        let token = localStorage.getItem("token")
-        if(token)
-        {
+    const handlePageClick = (page) => {
+        nextCourses(page.selected + 1);
+    };
+
+    const nextCourses = (page) => {
+        let token = localStorage.getItem("token");
+        if (token) {
             let header = {
-                headers:{
-                  Authorization: `Bearer ${token}`
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            };
+
+            axios.get(userAuthapiPath +`/api/money/?${page}`, header).then(response => {
+                setViewMoney(response.data.data);
+                setPageCount(response.data.totalPages);
+                setCurrentPage(response.data.currentPage);
+            })
+        }
+    };
+
+
+    // axios .delete
+
+    const deleteTransaction=(id)=>{
+        let token = localStorage.getItem("token");
+        if(token){
+            let header ={
+                headers : {
+                    Authorization : `Bearer ${token} `
                 }
             }
-            axios.get(userAuthapiPath+"/api/money",header).then(Response=>{
-                console.log(Response.data.data);
-                setViewMoney(Response.data.data);
+            window.confirm("Are You Sure You Want to Delete Data");
+            axios.delete(userAuthapiPath+'/api/money/'+id,header).then(response=>{
+                setViewMoney(viewMoney=>viewMoney.filter(single=>single.id!==id))
             })
-
         }
-     },[])
+    }
+
 
     return (
         <>
@@ -62,7 +90,7 @@ export default (props) => {
                                 <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
                                                                         
                                     <li > <Link className="link-model-on-action-buttons" onClick={()=>{setEditMoney(true)}}> Edit</Link></li>
-                                    <li> <Link className="link-model-on-action-buttons" onClick={()=>{setDeleteModel(true)}}>Delete</Link></li>
+                                    <li> <Link className="link-model-on-action-buttons" onClick={()=>{setDeleteModel(true) ; deleteTransaction(single.id)}}>Delete</Link></li>
                                     
                                 </div>
                             }
@@ -77,6 +105,17 @@ export default (props) => {
                         </td>
                     </tr>) : <h1>Loader ....</h1>}
                 </table>
+                <ReactPaginate previousLabel={<span className="fa fa-chevron-right "  > &#60; </span>}
+                           nextLabel={<span className="fa fa-chevron-right "  > > </span>}
+                           breakLabel={". . ." }
+                           breakClassName={"break-me"}
+                           pageCount={pageCount}
+                           marginPagesDisplayed={2}
+                           pageRangeDisplayed={5}
+                           onPageChange={handlePageClick}
+                           containerClassName={"digit-icons main"}
+                           subContainerClassName={"container column"}
+                           activeClassName={"p-one"}/>
                 <Style />
             </div>
         </>

@@ -4,6 +4,7 @@ import Style from './style'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import { userAuthapiPath } from '../../Config'
+import ReactPaginate from "react-paginate";
 export default (props) => {
     let { setEditGold } = props;
     let { setDeleteModel } = props;
@@ -14,22 +15,64 @@ export default (props) => {
     const [show, setShow] = useState("");
 
     const [viewGold, setViewGold] = useState([]);
-
+    const [pageCount, setPageCount] = useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
+    // useEffect(() => {
+    //     let token = localStorage.getItem("token")
+    //     console.log(token)
+    //     if (token) {
+    //         let header = {
+    //             headers: {
+    //                 Authorization: `Bearer ${token}`
+    //             }
+    //         }
+    //         axios.get(userAuthapiPath + "/api/gold", header).then(response => {
+    //             console.log(response.data.data)
+    //             setViewGold(response.data.data)
+    //         })
+    //     }
+    // }, [])
     useEffect(() => {
-        let token = localStorage.getItem("token")
-        console.log(token)
+        nextCourses(1);
+    }, []);
+
+    const handlePageClick = (page) => {
+        nextCourses(page.selected + 1);
+    };
+
+    const nextCourses = (page) => {
+        let token = localStorage.getItem("token");
         if (token) {
             let header = {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
-            }
-            axios.get(userAuthapiPath + "/api/gold", header).then(response => {
-                console.log(response.data.data)
-                setViewGold(response.data.data)
+            };
+
+            axios.get(userAuthapiPath +`/api/gold/?${page}`, header).then(response => {
+                setViewGold(response.data.data);
+                setPageCount(response.data.totalPages);
+                setCurrentPage(response.data.currentPage);
             })
         }
-    },[])
+    };
+
+// <...Axios delete ...?
+const deleteTransaction=(id)=>{
+    let token = localStorage.getItem("token");
+    if(token){
+        let header ={
+            headers : {
+                Authorization : `Bearer ${token} `
+            }
+        }
+        window.confirm("Are You Sure You Want to Delete Data");
+        axios.delete(userAuthapiPath+'/api/money/'+id,header).then(response=>{
+            setViewGold(viewGold=>viewGold.filter(single=>single.id!==id))
+        })
+    }
+}
+
     return (
         <>
             {/* <div><CustomerDetailsInfo/></div> */}
@@ -37,6 +80,7 @@ export default (props) => {
                 <table className="section3-table-inner">
                     <tr className="section3-table-head fnt-poppins">
 
+                        <th>Customer ID</th>
                         <th>Bill No</th>
                         <th>Status</th>
                         <th>Purity</th>
@@ -47,17 +91,17 @@ export default (props) => {
 
                     </tr>
                     {viewGold ? viewGold.map((single, index) => <tr key={single.id} className="section3-table-rows fnt-poppins">
-
+                        <td>{single.customerId}</td>
                         <td>{single.billNo}</td>
                         <td>{single.status}</td>
                         <td>{single.purity}</td>
                         <td>{single.grossWeight}</td>
                         <td>{single.pureWeight}</td>
                         <td>{single.transactionDate}</td>
-                        
+
                         <td>
                             {
-                                show === single.id &&
+                              show &&  show === single.id &&
                                 <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
 
                                     {/* <li>View</li>
@@ -83,6 +127,17 @@ export default (props) => {
                         </td>
                     </tr>) : <h1>Loader ....</h1>}
                 </table>
+                <ReactPaginate previousLabel={<span className="fa fa-chevron-right "  > &#60; </span>}
+                           nextLabel={<span className="fa fa-chevron-right "  > > </span>}
+                           breakLabel={". . ." }
+                           breakClassName={"break-me"}
+                           pageCount={pageCount}
+                           marginPagesDisplayed={2}
+                           pageRangeDisplayed={5}
+                           onPageChange={handlePageClick}
+                           containerClassName={"digit-icons main"}
+                           subContainerClassName={"container column"}
+                           activeClassName={"p-one"}/>
                 <Style />
             </div>
 
