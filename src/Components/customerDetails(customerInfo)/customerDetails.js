@@ -50,8 +50,7 @@ export default (props) => {
                             <ul className="first-column-box1 fnt-poppins">
                                 <li>Name</li>
                                 <li>Location</li>
-                                <li>Contact
-  </li>
+                                <li>Contact</li>
                                 <li>Email</li>
                             </ul>
                             <ul>

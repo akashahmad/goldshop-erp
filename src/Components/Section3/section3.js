@@ -12,6 +12,8 @@ export default (props) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [show, setShow] = useState("");
 
+
+    const [getId , setGetId]=useState([]);
    
     // get all customers
     const handleRemoveItem = (id) => {
@@ -65,6 +67,29 @@ export default (props) => {
         }
     };
  
+const HandleRemoveItem = (id) => {
+        console.log(id)
+        let token = localStorage.getItem("token");
+        if (token) {
+            let header = {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            };
+            if(window.confirm("Are You Sure You Want to Delete")){
+            axios.delete(userAuthapiPath+"/api/customers/"+id,header).then (res=>{
+            setCustomers(customers => customers.filter(item => item.id !== id))
+            console.log(res)
+            console.log(res.data)
+            console.log(id)
+            
+        
+              }    )
+    
+          }
+        
+    }
+}
 
     return (
 
@@ -81,7 +106,7 @@ export default (props) => {
 
                 {customers ? customers.map((single, index) => <tr key={single.id}
                                                                   className="section3-table-rows fnt-poppins">
-
+                                                                      
                     <td>{single.fullName}</td>
                     <td>{single.address}</td>
                     <td>{single.phone}</td>
@@ -90,7 +115,7 @@ export default (props) => {
                         {
                             show && show === single.id &&
                             <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
-                                <li><Link to="/customertransaction" className="link-model-on-action-buttons">View</Link>
+                                <li><Link to={"/customertransaction/"+single.id} className="link-model-on-action-buttons">View</Link>
                                 </li>
                                 <li><Link className="link-model-on-action-buttons" onClick={() => {
                                     setEditCustomer(true)
@@ -103,7 +128,7 @@ export default (props) => {
                                 }}>Delete</Link></li>
                             </div>
                         }
-
+<button onClick={()=>HandleRemoveItem(single.id)}>delete</button>
                         <div className="action-div">
                             <button type="button" className="doted-button"
                                     onClick={() => {

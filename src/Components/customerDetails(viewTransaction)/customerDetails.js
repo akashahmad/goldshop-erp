@@ -13,6 +13,10 @@ export default(props)=>{
     let {setEditMoney}=props;
     let {setAddMoney}=props;
     let {data}=props;
+
+
+    
+
     return(
 <>
 
@@ -67,10 +71,6 @@ export default(props)=>{
     </ul>
     </div>
 
-
-
-
-
 </div>
                 <div className="section-customer-navbottom">
                     <div className="section-customer-bottom-link">
@@ -101,7 +101,7 @@ export default(props)=>{
 </div>
 
 <Style/>
-<Table data={data} setEditMoney={setEditMoney} setDeleteModel={setDeleteModel}/>
+<Table  data={data} setEditMoney={setEditMoney} setDeleteModel={setDeleteModel}/>
 </div>
 </>
 

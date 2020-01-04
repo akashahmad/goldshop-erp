@@ -5,7 +5,13 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import { userAuthapiPath } from '../../Config'
 import ReactPaginate from "react-paginate";
-export default (props) => {
+import { withRouter } from 'react-router-dom';  
+
+    
+const Table = (props)=>{
+
+    const {match}=props
+
     let { setEditGold } = props;
     let { setDeleteModel } = props;
     let { setPrintModel } = props;
@@ -17,30 +23,20 @@ export default (props) => {
     const [viewGold, setViewGold] = useState([]);
     const [pageCount, setPageCount] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
-    // useEffect(() => {
-    //     let token = localStorage.getItem("token")
-    //     console.log(token)
-    //     if (token) {
-    //         let header = {
-    //             headers: {
-    //                 Authorization: `Bearer ${token}`
-    //             }
-    //         }
-    //         axios.get(userAuthapiPath + "/api/gold", header).then(response => {
-    //             console.log(response.data.data)
-    //             setViewGold(response.data.data)
-    //         })
-    //     }
-    // }, [])
+
     useEffect(() => {
         nextCourses(1);
+        
     }, []);
+
 
     const handlePageClick = (page) => {
         nextCourses(page.selected + 1);
     };
 
     const nextCourses = (page) => {
+        let id = match.params && match.params.id?match.params.id:"";
+        console.log(id);
         let token = localStorage.getItem("token");
         if (token) {
             let header = {
@@ -49,11 +45,12 @@ export default (props) => {
                 }
             };
 
-            axios.get(userAuthapiPath + `/api/gold?page=${page}&limit=5`, header).then(response => {
+            axios.get(userAuthapiPath + `/api/gold/${id}/?page=${page}&limit=5`, header).then(response => {
                 setViewGold(response.data.gold);
+                console.log(response.data.gold);
                 setPageCount(response.data.totalPages);
                 setCurrentPage(response.data.currentPage);
-                console.log(response.data.gold)
+                console.log(response.data.gold);
             })
         }
     };
@@ -81,7 +78,6 @@ const deleteTransaction=(id)=>{
                 <table className="section3-table-inner">
                     <tr className="section3-table-head fnt-poppins">
 
-                      
                         <th>Bill No</th>
                         <th>Status</th>
                         <th>Purity</th>
@@ -146,3 +142,4 @@ const deleteTransaction=(id)=>{
         </>
     )
 }
+export default withRouter(Table);

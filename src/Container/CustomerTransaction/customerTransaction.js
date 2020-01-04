@@ -6,10 +6,12 @@ import data from '../Homepage/data.json'
 import EditMoneyInfoModal from '../../Components/modalButton(editmoneyinfo)/editmoneyinfo'
 import DeletePopUpModal from '../../Components/Delete(Popup)/delete'
 
-export default ()=>{
+export default (props)=>{
 const [addmoney,setAddMoney]=useState(false);
 const [editmoney,setEditMoney]=useState(false);
-const [deleteModel,setDeleteModel]=useState(false)
+const [deleteModel,setDeleteModel]=useState(false);
+
+
 return(
 <>
 <div style={{display:"flex"}}>
