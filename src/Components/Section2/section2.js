@@ -11,7 +11,7 @@ export default (props) => {
     const [totalPkr, setTotalPkr] = useState("");
     const [totalPkrRec, setTotalPkrRec] = useState("");
     
-    const [totalUsdRecieve ,  setTotalUsedRecieved]=useState([]);
+    const [totalUsdRecieved ,  setTotalUsedRecieved]=useState([]);
     const [totalUsdSend ,  setTotalUsedSend]=useState([]);
     
     const [totalAfgSend  ,  setTotalAfgSend]=useState([]);
@@ -38,6 +38,15 @@ export default (props) => {
                 setTotelCus(res.data.totalCustomers);
                 setTotalPkr(res.data.totalPKRSent);
                 setTotalPkrRec(res.data.totalPKRReceived)
+
+                // usdRecieved and sent
+                setTotalUsedRecieved(res.data.totalUSDReceived);
+                setTotalUsedSend(res.data.totalUSDSent);
+                
+                // Afgrecieved and sent
+                setTotalAfgRecieved(res.data.totalCustomers);
+                setTotalAfgSend(res.data.totalCustomers);
+
                 // setTotalAfgRecieved(res.data.)
                 console.log(token);
             });
@@ -98,10 +107,10 @@ export default (props) => {
                                 <hr style={{backgroundColor: "white"}}/>
                             </div>
                             <div className="card-recieved">
-                                <div><p className="card-amount fnt-poppins">10,000.00</p>
+                                <div><p className="card-amount fnt-poppins">{totalUsdRecieved}</p>
                                     <h5> Recieved</h5></div>
                                 <div className="vertical-line-inside-box"/>
-                                <div><p className="card-amount fnt-poppins">10,000.00</p>
+                                <div><p className="card-amount fnt-poppins">{totalUsdSend}</p>
                                     <h5> Sent</h5></div>
                             </div>
                         </div>
@@ -128,10 +137,10 @@ export default (props) => {
                                 <hr style={{backgroundColor: "white"}}/>
                             </div>
                             <div className="card-recieved">
-                                <div><p className="card-amount fnt-poppins">10,000.00</p>
+                                <div><p className="card-amount fnt-poppins">{totalAfgRecieved}</p>
                                     <h5> Recieved</h5></div>
                                 <div className="vertical-line-inside-box"/>
-                                <div><p className="card-amount fnt-poppins">10,000.00</p>
+                                <div><p className="card-amount fnt-poppins">{totalAfgSend}</p>
                                     <h5> Sent</h5></div>
                             </div>
                         </div>
