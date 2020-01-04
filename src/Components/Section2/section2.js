@@ -17,9 +17,9 @@ export default (props) => {
     const [totalAfgSend  ,  setTotalAfgSend]=useState([]);
     const [totalAfgRecieved ,  setTotalAfgRecieved]=useState([]);
     
-    let {data} = props;
+    // let {data} = props;
 
-    const [data, setData] = useState([]);
+    // const [data, setData] = useState([]);
 
     let {setEditCustomer} = props;
     let {setPrintModel} = props;

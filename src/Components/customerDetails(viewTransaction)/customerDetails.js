@@ -1,21 +1,49 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Style from './Style'
 import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
 import Image3 from '../../assects/images/Layer 6.png'
 import Image4 from '../../assects/images/printer.png'
-import {Link } from 'react-router-dom'
+import {Link,withRouter } from 'react-router-dom'
 import Table from '../../Components/Customertransactiontable/customerTransactionTable'
+import Axios from 'axios'
+import { userAuthapiPath } from '../../Config'
 
 
-export default(props)=>{
+const Table2=(props)=>{
+    const {match} =props;
+   
     let {setDeleteModel}=props;
     let {setEditMoney}=props;
     let {setAddMoney}=props;
     let {data}=props;
 
+    const[showData,setShowData]=useState([]);
 
-    
+ const [getName,setGetName] =useState([]);
+ const [getAddress,setGetAddress] =useState([]);
+ const [getPhone,setGetPhone] =useState([]);
+ let id= match.params && match.params.id;
+ useEffect(()=>{
+
+    let token=localStorage.getItem("token");
+    if(token){
+        let header = {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        };
+        Axios.get(userAuthapiPath+`/api/customerCall/${id}`,header).then(response=>{
+        //    console.log(setGetName(response.data.customerInfo.fullName));
+        //   console.log(response.data.customerInfo);
+        //    console.log(response.data.customerInfo.phone);
+           setGetName(response.data.customerInfo.fullName);
+           setGetAddress(response.data.customerInfo.address);
+           setGetPhone(response.data.customerInfo.phone);
+            setShowData(response.data.customerInfo);
+        })
+    }
+ },[])
 
     return(
 <>
@@ -56,14 +84,14 @@ export default(props)=>{
   <li>Location</li>
   <li>Contact
   </li>
-  <li>Email</li>
+
   </ul>
-    <ul>
-      <li>John Doe</li>
-      <li>Abbottabad</li>
-      <li>0312-1234567 </li>
-      <li>johndoe@gmail.com</li>
-    </ul>
+  <ul>
+    <li>{getName}</li>
+    <li>{getAddress}</li>
+    <li>{getPhone}</li>
+
+        </ul>
     <ul className="container-fluid image-div2">
      <li className="image-div d-flex ">
          <div className="image1-customer"><img className="customer-image-icons1" src={Image3} alt=""/></div>
@@ -74,9 +102,9 @@ export default(props)=>{
 </div>
                 <div className="section-customer-navbottom">
                     <div className="section-customer-bottom-link">
-                        <div><Link to={"/customertransaction"} className="link-of-models">View Money</Link></div>
+                        <div><Link to={"/customertransaction/"+id} className="link-of-models">View Money</Link></div>
                    
-                    <div className="link-view-Gold"><Link to={"/viewgold"} className="link-of-models">View Gold</Link></div>
+                    <div className="link-view-Gold"><Link to={"/viewgold/"+id} className="link-of-models">View Gold</Link></div>
                     </div>
                  <div className="section-customerdetail-right "> 
                        <div className="first-section-customer-detail"><a>View Transactions:</a>
@@ -110,3 +138,4 @@ export default(props)=>{
         
     )
 }
+export default withRouter(Table2);

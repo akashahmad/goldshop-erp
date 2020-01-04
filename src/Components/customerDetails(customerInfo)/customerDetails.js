@@ -4,11 +4,13 @@ import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
 import Image3 from '../../assects/images/Layer 6.png'
 import Image4 from '../../assects/images/printer.png'
-import {Link} from 'react-router-dom'
+import {Link ,withRouter} from 'react-router-dom'
 import Table from '../../Components/CustomersViewGold/customersViewGold'
 
 
-export default (props) => {
+const Table2 =(props) => {
+    let {match}=props;
+    let id=match.params && match.params.id;
     let {setDeleteModel} =props;
     let {setEditGold} =props;
     let { setAddGold } = props;
@@ -71,9 +73,9 @@ export default (props) => {
                     </div>
                     <div className="section-customer-navbottom">
                         <div className="section-customer-bottom-link">
-                            <div><Link to={"/customertransaction"} className="link-of-models">View Money</Link></div>
+                            <div><Link to={"/customertransaction/"+id} className="link-of-models">View Money</Link></div>
 
-                            <div className="link-view-Gold"><Link to={"/viewgold"} className="link-of-models">View Gold</Link></div>
+                            <div className="link-view-Gold"><Link to={"/viewgold/"+id} className="link-of-models">View Gold</Link></div>
                         </div>
                         
                      <div className="section-customerdetail-right ">
@@ -94,3 +96,4 @@ export default (props) => {
         </>
     )
 }
+export default withRouter(Table2);
