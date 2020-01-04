@@ -1,21 +1,28 @@
 import React, { useState , useEffect } from 'react'
 import Style from './style'
-import { Link } from 'react-router-dom';
+import { Link , withRouter } from 'react-router-dom';
 import axios from 'axios'
 import { userAuthapiPath } from '../../Config'
 import ReactPaginate from "react-paginate";
 
-export default (props) => {
+
+
+const  Table = (props) => {
+    let {match} = props;
+    console.log(match.params && match.params.id);
     let {setDeleteModel}=props;
     let {setEditMoney}=props;
     let { data } = props;
     let customers = data ? (data.customers ? data.customers : "") : "";
     const [show, setShow] = useState("");
 
+
+
     // axios.get value of view money
     const [viewMoney , setViewMoney]=useState([]);
     const [pageCount, setPageCount] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
+    
     useEffect(() => {
         nextCourses(1);
     }, []);
@@ -25,6 +32,7 @@ export default (props) => {
     };
 
     const nextCourses = (page) => {
+        let id = match.params && match.params.id?match.params.id:"";
         let token = localStorage.getItem("token");
         if (token) {
             let header = {
@@ -33,7 +41,7 @@ export default (props) => {
                 }
             };
 
-            axios.get(userAuthapiPath +`/api/money?page=${page}&limit=5`, header).then(response => {
+            axios.get(userAuthapiPath +`/api/money/${id}/?page=${page}&limit=5`, header).then(response => {
                 setViewMoney(response.data.money);
                 setPageCount(response.data.totalPages);
                 setCurrentPage(response.data.currentPage);
@@ -104,6 +112,8 @@ export default (props) => {
 
                         </td>
                     </tr>) : <h1>Loader ....</h1>}
+
+             
                 </table>
                 <ReactPaginate previousLabel={<span className="fa fa-chevron-right "  > &#60; </span>}
                            nextLabel={<span className="fa fa-chevron-right "  > > </span>}
@@ -121,3 +131,4 @@ export default (props) => {
         </>
     )
 }
+export default withRouter(Table);

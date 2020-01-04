@@ -6,8 +6,12 @@ import Style from './style'
 import '../../assects/style/common.css'
 import Axios from 'axios';
 import { userAuthapiPath } from '../../Config'
+import { withRouter } from 'react-router-dom';
 
-export default (props) => {
+const Table = (props) => {
+
+    let {match}=props;
+
     let { addgold, setAddGold } = props;
     // const [show, setShow] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
@@ -23,7 +27,7 @@ export default (props) => {
     const [customer, setCustomer] = useState("");
 
     const[goldId,setGoldId]=useState("");
-    const [bill, setBill] = useState("");
+    const [billNo, setBillNo] = useState("");
     const [particular, setParticular] = useState("");
     const [status, setStatus] = useState("");
     const [purity, setPurity] = useState("");
@@ -40,6 +44,8 @@ export default (props) => {
   
     const Addgold = (event) => {
         event.preventDefault();
+        let customerId = match.params && match.params.id?match.params.id:"";
+        console.log("passing id",customerId);
         let token = localStorage.getItem("token");
         console.log(token);
         if (token) {
@@ -50,13 +56,13 @@ export default (props) => {
             };
 
         let payload = {
-           goldId:goldId, customerId: customerId, bill: bill, particular: particular, status: status, purity: purity, grossWeight: grossWeight,
+            customerId:customerId , billNo: billNo, particular: particular, status: status, purity: purity, grossWeight: grossWeight,
             pureWeight: pureWeight, transactionDate: transactionDate,
         }
 
-        Axios.post(userAuthapiPath + "/api/gold", payload, header).then(Response => {
+        Axios.post(userAuthapiPath + '/api/gold', payload, header).then(Response => {
             console.log(Response.data);
-
+            
         })
 
     }
@@ -81,28 +87,7 @@ export default (props) => {
 
                     <div className="modal-body-addgold">
                         <form onSubmit={event => Addgold(event)}>
-                        <div>
-                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Id</label>
-                            </div>
-                            <div>
-                                <input className="input-of-modal input-modal-addgold" value={goldId} placeholder="0001" type="number"
-                                    onChange={event => {
-                                        setGoldId(event.target.value);
-                                    }}
-                                />
-                            </div>
-
-                        <div>
-                                <label className="model-Money-Label fnt-poppin font-sm mt-4">Customer Id</label>
-                            </div>
-                            <div>
-                                <input className="input-of-modal input-modal-addgold" value={customerId} placeholder="0001" type="number"
-                                    onChange={event => {
-                                        setCustomerId(event.target.value);
-                                    }}
-                                />
-                            </div>
-
+                    
                             <div>
                                 <label className="model-Money-Label fnt-poppin font-sm">Date</label>
                             </div>
@@ -113,9 +98,9 @@ export default (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Bill Number</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addgold" value={bill} placeholder="0001" type="number"
+                                <input className="input-of-modal input-modal-addgold" value={billNo} placeholder="0001" type="number"
                                     onChange={event => {
-                                        setBill(event.target.value);
+                                        setBillNo(event.target.value);
                                     }}
                                 />
                             </div>
@@ -270,3 +255,4 @@ export default (props) => {
         </>
     );
 }
+export default withRouter(Table);

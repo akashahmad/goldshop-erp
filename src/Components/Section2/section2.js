@@ -18,6 +18,9 @@ export default (props) => {
     const [totalAfgRecieved ,  setTotalAfgRecieved]=useState([]);
     
     let {data} = props;
+
+    const [data, setData] = useState([]);
+
     let {setEditCustomer} = props;
     let {setPrintModel} = props;
     let {setDeleteModel} = props;
@@ -38,6 +41,7 @@ export default (props) => {
                 // setTotalAfgRecieved(res.data.)
                 console.log(token);
             });
+
         }
     }, []);
 
@@ -147,7 +151,7 @@ export default (props) => {
                 </nav>
 
             </div>
-            <Section3 data={data} setEditCustomer={setEditCustomer} setPrintModel={setPrintModel}
+            <Section3 setEditCustomer={setEditCustomer} setPrintModel={setPrintModel}
                       setDeleteModel={setDeleteModel}/>
             <Style />
         </div>

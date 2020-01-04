@@ -26,6 +26,7 @@ import './assects/style/common.css'
 import './assects/style/style.css'
 
 
+
 // pages 
 import CustomerPage from './Container/CustomerPage/customer'
 import Transaction from './Container/CustomerViewMoney/customerViewmoney'
@@ -36,8 +37,6 @@ import CreateShop from './Container/CreateNewShop/createShop'
 
 
 export default () => {
-
-
 
   return (
     <>
@@ -62,8 +61,8 @@ export default () => {
           <Route path={"/SignUpHeader"} component={SignUpHeader}/>
           <Route path={"/signupadmin"} component={Signupadmin}/>
           <Route path={"/print"} component={Print}/>
-        
-       
+
+          
 
           {/* --------------Pages------------------------ */}
 
@@ -80,18 +79,18 @@ export default () => {
             localStorage.getItem("token") ? <NotificationPage /> : <Redirect to={{ pathname: "/" }} />
           }
           />
-          <Route path={"/customertransaction"} render={() =>
-            localStorage.getItem("token") ? <CustomerTransaction /> : <Redirect to={{ pathname: "/" }} />
+          <Route path={"/customertransaction/:id"} render={() =>
+            localStorage.getItem("token") ? <CustomerTransaction  /> : <Redirect to={{ pathname: "/" }} />
           }
           />
-          <Route path={"/viewgold"} render={() =>
+          <Route path={"/viewgold/:id"} render={() =>
             localStorage.getItem("token") ? <ViewGold /> : <Redirect to={{ pathname: "/" }} />
           } />
 
-          <Route path={"/transaction"} render={() =>
+          {/* <Route path={"/transaction"} render={() =>
             localStorage.getItem("token") ? <Transaction /> : <Redirect to={{ pathname: "/" }} />
           }
-          />
+          /> */}
 
           <Route path={"/home"} render={() =>
             localStorage.getItem("token") ? <Home /> : <Redirect to={{ pathname: "/" }} />
