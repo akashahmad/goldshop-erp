@@ -1,20 +1,48 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import Style from '../customerDetails(viewTransaction)/Style'
 import Image1 from '../../assects/images/magnifying-glass.png'
 import Image2 from '../../assects/images/layer-6.png'
 import Image3 from '../../assects/images/Layer 6.png'
 import Image4 from '../../assects/images/printer.png'
-import {Link ,withRouter} from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Table from '../../Components/CustomersViewGold/customersViewGold'
+import Axios from 'axios'
+import {userAuthapiPath} from '../../Config'
 
 
-const Table2 =(props) => {
-    let {match}=props;
-    let id=match.params && match.params.id;
-    let {setDeleteModel} =props;
-    let {setEditGold} =props;
+const Table2 = (props) => {
+    let { match } = props;
+    let id = match.params && match.params.id;
+    let { setDeleteModel } = props;
+    let { setEditGold } = props;
     let { setAddGold } = props;
     let { data } = props
+    const[showData,setShowData]=useState([]);
+
+ const [getName,setGetName] =useState([]);
+ const [getAddress,setGetAddress] =useState([]);
+ const [getPhone,setGetPhone] =useState([]);
+    useEffect(() => {
+
+        let token = localStorage.getItem("token");
+        if (token) {
+            let header = {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            };
+            Axios.get(userAuthapiPath + `/api/customerCall/${id}`, header).then(response => {
+                //    console.log(setGetName(response.data.customerInfo.fullName));
+                //   console.log(response.data.customerInfo);
+                //    console.log(response.data.customerInfo.phone);
+                setGetName(response.data.customerInfo.fullName);
+                setGetAddress(response.data.customerInfo.address);
+                setGetPhone(response.data.customerInfo.phone);
+                setShowData(response.data.customerInfo);
+            })
+        }
+    }, [])
+
     return (
         <>
 
@@ -53,13 +81,12 @@ const Table2 =(props) => {
                                 <li>Name</li>
                                 <li>Location</li>
                                 <li>Contact</li>
-                                <li>Email</li>
+                            
                             </ul>
                             <ul>
-                                <li>John Doe</li>
-                                <li>Abbottabad</li>
-                                <li>0312-1234567 </li>
-                                <li>johndoe@gmail.com</li>
+                                <li>{getName}</li>
+                                <li>{getAddress}</li>
+                                <li>{getPhone}</li>
                             </ul>
                             <ul className="container-fluid image-div2">
                                 <li className="image-div d-flex ">
@@ -73,12 +100,12 @@ const Table2 =(props) => {
                     </div>
                     <div className="section-customer-navbottom">
                         <div className="section-customer-bottom-link">
-                            <div><Link to={"/customertransaction/"+id} className="link-of-models">View Money</Link></div>
+                            <div><Link to={"/customertransaction/" + id} className="link-of-models">View Money</Link></div>
 
-                            <div className="link-view-Gold"><Link to={"/viewgold/"+id} className="link-of-models">View Gold</Link></div>
+                            <div className="link-view-Gold"><Link to={"/viewgold/" + id} className="link-of-models">View Gold</Link></div>
                         </div>
-                        
-                     <div className="section-customerdetail-right ">
+
+                        <div className="section-customerdetail-right ">
 
                             <div className="button-div-customerDetails">
                                 <button className="btn-Wh" onClick={() => {
@@ -91,7 +118,7 @@ const Table2 =(props) => {
                     </div>
                 </div>
                 <Style />
-                <Table data={data} setEditGold={setEditGold} setDeleteModel={setDeleteModel}/>
+                <Table data={data} setEditGold={setEditGold} setDeleteModel={setDeleteModel} />
             </div>
         </>
     )
