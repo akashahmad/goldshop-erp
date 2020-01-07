@@ -52,20 +52,20 @@ const  Table = (props) => {
 
     // axios .delete
 
-    const deleteTransaction=(id)=>{
-        let token = localStorage.getItem("token");
-        if(token){
-            let header ={
-                headers : {
-                    Authorization : `Bearer ${token} `
-                }
-            }
-            window.confirm("Are You Sure You Want to Delete Data");
-            axios.delete(userAuthapiPath+'/api/money/'+id,header).then(response=>{
-                setViewMoney(viewMoney=>viewMoney.filter(single=>single.id!==id))
-            })
-        }
-    }
+    // const deleteTransaction=(id)=>{
+    //     let token = localStorage.getItem("token");
+    //     if(token){
+    //         let header ={
+    //             headers : {
+    //                 Authorization : `Bearer ${token} `
+    //             }
+    //         }
+    //         window.confirm("Are You Sure You Want to Delete Data");
+    //         axios.delete(userAuthapiPath+'/api/money/'+id,header).then(response=>{
+    //             setViewMoney(viewMoney=>viewMoney.filter(single=>single.id!==id))
+    //         })
+    //     }
+    // }
 
 
     return (
@@ -98,7 +98,7 @@ const  Table = (props) => {
                                 <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
                                                                         
                                     <li > <Link className="link-model-on-action-buttons" onClick={()=>{setEditMoney(true)}}> Edit</Link></li>
-                                    <li> <Link className="link-model-on-action-buttons" onClick={()=>{setDeleteModel(true) ; deleteTransaction(single.id)}}>Delete</Link></li>
+                                    <li> <Link className="link-model-on-action-buttons" onClick={()=>{setDeleteModel(true) }}>Delete</Link></li>
                                     
                                 </div>
                             }

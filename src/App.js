@@ -50,7 +50,7 @@ export default () => {
           <Route path={"/addcustomer"} component={Addcustomer}/>
           <Route path={"/customerDetails"} component={CustomerDetails}/>
           <Route path={"/info"} component={CustomerDetailsInfo}/>
-          <Route path={"/delete"} component={Delete}/>
+          <Route path={"/delete/:id"} component={Delete}/>
           <Route path={"/table"} component={Table}/>
           <Route path={"/translate"} component={TRanslator}/>
           <Route path={"/popup"} component={Popup}/>
@@ -92,12 +92,15 @@ export default () => {
           }
           /> */}
 
-          <Route path={"/home"} render={() =>
+          <Route exact path={"/home"} render={() =>
             localStorage.getItem("token") ? <Home /> : <Redirect to={{ pathname: "/" }} />
 
           } />
+          
+          <Route path={"/home/:id"} render={() =>
+            localStorage.getItem("token") ? <Home /> : <Redirect to={{ pathname: "/" }} />
 
-
+          } />
           <Route path={"/createshop"} component={CreateShop}/>
 
 
