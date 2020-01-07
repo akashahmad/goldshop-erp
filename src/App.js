@@ -79,6 +79,7 @@ export default () => {
             localStorage.getItem("token") ? <NotificationPage /> : <Redirect to={{ pathname: "/" }} />
           }
           />
+          
           <Route path={"/customertransaction/:id"} render={() =>
             localStorage.getItem("token") ? <CustomerTransaction  /> : <Redirect to={{ pathname: "/" }} />
           }
@@ -92,7 +93,7 @@ export default () => {
           }
           /> */}
 
-          <Route exact path={"/home"} render={() =>
+          <Route path={"/home"} render={() =>
             localStorage.getItem("token") ? <Home /> : <Redirect to={{ pathname: "/" }} />
 
           } />

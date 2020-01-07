@@ -107,10 +107,8 @@ const Table = (props)=>{
                                     <li onClick={()=>{setDeleteModel(true)}}>Delete</li> */}
 
 
-                                    <li> <Link className="link-model-on-action-buttons" onClick={() => { setEditGold(true) }}> Edit</Link></li>
-                                    <li><Link className="link-model-on-action-buttons" onClick={() => { setDeleteModel(true) }}>Delete</Link></li>
-{/* 
-hgf */}
+                                    <li> <Link to={"/viewgold/"+single.id} className="link-model-on-action-buttons" onClick={() => { setEditGold(true) }}> Edit</Link></li>
+                                    <li> <Link to={"/viewgold/"+single.id} className="link-model-on-action-buttons" onClick={() => { setDeleteModel(true) }}>Delete</Link></li>
                                 </div>
                             }
 
