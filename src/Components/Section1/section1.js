@@ -17,7 +17,7 @@ const SideNavigation = (props) => {
         } else {
             return location.indexOf(value) === -1 ? "" : "active"
         }
-    }
+    };
 
     const logout = () => {
         let age = localStorage.getItem("age");
@@ -28,15 +28,6 @@ const SideNavigation = (props) => {
         localStorage.removeItem("age");
         history.push("/");
     };
-
-    // useEffect(()=>{
-    //     let token=localStorage.getItem("token");
-    //     // if(!token){
-    //     //     window.location.replace("/signin")
-    //     // }
-    //     return !token ? window.location.replace("/signin"):"";
-
-    // },[])
     return (
         // <div class="wrapper">
 

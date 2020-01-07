@@ -11,7 +11,7 @@ import {userAuthapiPath} from '../../Config'
 import '../../assets/style/style.css'
 
 const Login = (props) => {
-    let {history, disptch} = props;
+    let {history, dispatch} = props;
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [remember, setRemember] = useState(false);
@@ -21,9 +21,9 @@ const Login = (props) => {
         let payLoad = {email: email, password: password};
         axios.post(userAuthapiPath + "/api/login", payLoad).then(async response => {
             await localStorage.setItem("age", remember ? 1296000 : 86400);
-            await cookie.save('token', response.data.token, {maxAge: (remember ? 1296000 : 86400), path: "/login"});
-            let data = jwt_decode(response.data.token);
-            disptch({
+            await cookie.save('token', response.data.token, {maxAge: (remember ? 1296000 : 86400), path: "/"});
+            let data = await jwt_decode(response.data.token);
+            await dispatch({
                 type: "SET_SHOP_ID",
                 payload: data.shopId
             });

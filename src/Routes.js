@@ -16,7 +16,7 @@ const Routes = (props) => {
         let token = cookie.load("token");
         if (!token) {
             setTimeout(() => {
-                // history.push("/login");
+                history.push("/login");
             }, 1000);
         } else {
             dispatch({

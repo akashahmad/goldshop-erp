@@ -8,13 +8,13 @@ import EditCustomer from '../../Components/modalButton(editcustomer)/editcustome
 import Print from '../../Components/Print(Popup)/print'
 import Delete from '../../Components/Delete(Popup)/delete'
 export default (props) => {
-    let {loader} = props;
-    const [editCustomer, setEditCustomer] = useState(false)
-    const [printModel, setPrintModel] = useState(false)
-    const [deleteModel, setDeleteModel] = useState(false)
+    let {loader, shopId} = props;
+    const [editCustomer, setEditCustomer] = useState(false);
+    const [printModel, setPrintModel] = useState(false);
+    const [deleteModel, setDeleteModel] = useState(false);
     return (
         <div>
-            {!true ? <div style={{display: "flex"}}>
+            {!loader ? <div style={{display: "flex"}}>
                 <Section1 />
                 <Section2 setEditCustomer={setEditCustomer} setPrintModel={setPrintModel}
                           setDeleteModel={setDeleteModel}/>

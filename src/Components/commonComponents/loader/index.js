@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import Style from "./style";
+import React, {Component} from "react"
+import loaderGif from '../../../assets/images/loader.gif'
 class Loader extends Component {
     render() {
         return (
@@ -8,10 +8,11 @@ class Loader extends Component {
                 width: "100%",
                 height: "100vh",
                 background: "#f0f8fc",
-                backgroundImage:"url('/src/assets/images/loader.gif')",
-                backgroundRepeat:"noRepeat",
-                backgroundPosition:"center",
-                zIndex: 9999}}/>
+                backgroundImage: "url(" + loaderGif + ")",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                zIndex: 9999
+            }}/>
         );
     }
 }
