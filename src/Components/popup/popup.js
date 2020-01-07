@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Style from './style'
 import Datepicker from 'react-datepicker';
-import '../../assects/style/common.css'
+import '../../assets/style/common.css'
 import "react-datepicker/dist/react-datepicker.css";
-import Dateicon from '../../assects/images/dateicon.png'
+import Dateicon from '../../assets/images/dateicon.png'
 
 export default ()=>{
     const [hide,setHide]=useState(false);

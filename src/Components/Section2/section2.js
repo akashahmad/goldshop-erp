@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import Style from './Style'
 import Section3 from '../Section3/section3'
-import Image1 from '../../assects/images/magnifying-glass.png'
-import Image2 from '../../assects/images/layer-6.png'
+import Image1 from '../../assets/images/magnifying-glass.png'
+import Image2 from '../../assets/images/layer-6.png'
 import axios from 'axios'
 import {userAuthapiPath} from '../../Config'
 

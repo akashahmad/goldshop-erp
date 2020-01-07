@@ -3,7 +3,7 @@ import { Modal, Button, CloseButton } from 'react-bootstrap'
 import DatePicker from 'react-datepicker'
 import Style from './style'
 import axios from 'axios'
-import '../../assects/style/common.css'
+import '../../assets/style/common.css'
 import { userAuthapiPath } from '../../Config'
 import { withRouter } from 'react-router-dom'
 

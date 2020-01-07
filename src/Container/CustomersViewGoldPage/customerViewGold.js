@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Section1 from '../../Components/Section1/section1'
 import CustomerDetailInfo from '../../Components/customerDetails(customerInfo)/customerDetails'
-import '../../assects/style/common.css'
+import '../../assets/style/common.css'
 import data from '../Homepage/data.json'
 import AddGoldModalComponent from '../../Components/modalButton(addgold)/addgold'
 import EditCustomerInfoModalComponent from '../../Components/modalButton(editcustomer)/editcustomer'

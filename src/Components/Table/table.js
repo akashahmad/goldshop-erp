@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Style from './Style'
-import '../../assects/style/common.css'
+import '../../assets/style/common.css'
 
 export default () => {
 

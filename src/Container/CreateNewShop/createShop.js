@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import StyleShop from './style'
-import manIcon from '../../assects/images/manicon.png'
+import manIcon from '../../assets/images/manicon.png'
 // import SignUp from '../../Components/signUpHeader/signUpHeader'
 
 import { userAuthapiPath } from '../../Config'
@@ -8,8 +8,8 @@ import  axios from 'axios'
 
 // create Shop header 
 import Style from '../../Components/Notification/Style'
-import Image1 from '../../assects/images/magnifying-glass.png'
-import Image2 from '../../assects/images/layer-6.png'
+import Image1 from '../../assets/images/magnifying-glass.png'
+import Image2 from '../../assets/images/layer-6.png'
 // ------------------
 
 

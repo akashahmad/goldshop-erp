@@ -3,7 +3,7 @@ import { Modal, Button, CloseButton } from 'react-bootstrap'
 import Datepicker from 'react-date-picker'
 import "react-datepicker/dist/react-datepicker.css";
 import Style from './style'
-import '../../assects/style/common.css'
+import '../../assets/style/common.css'
 import { withRouter } from 'react-router-dom'
 import Axios from 'axios'
 import { userAuthapiPath } from '../../Config'
@@ -84,7 +84,7 @@ const Table = (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm">Date</label>
                             </div>
                             <div>
-                                <Datepicker className="input-of-modal input-modal-addmoney" iconSource={require('../../assects/images/dateicon.png')} value={startDate} onChange={handleChange}></Datepicker>
+                                <Datepicker className="input-of-modal input-modal-addmoney" iconSource={require('../../assets/images/dateicon.png')} value={startDate} onChange={handleChange}></Datepicker>
                                 {/* <span><img className="calender-icon" src={Calender}/></span> */}
                             </div>
                             <div>
