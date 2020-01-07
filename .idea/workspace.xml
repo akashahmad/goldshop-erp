@@ -2,17 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="353c4cb4-9786-464f-855d-aafa144cf2c3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/images/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/commonComponents/loader/index.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/commonComponents/loader/style.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Container/Homepage/Container.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Container/SignUp/signup.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Container/signin/Container.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Routes.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RoutesContainer.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/store/index.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Components/SignUp/signup.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/Container/signup/signup.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/assects/style/style.css" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Components/SignUp/signup.js" afterPath="$PROJECT_DIR$/src/Container/SignUp/signup.js" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/Components/SignUp/style.js" afterPath="$PROJECT_DIR$/src/Container/SignUp/style.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Container/signup/style.js" afterPath="$PROJECT_DIR$/src/Components/commonComponents/loader/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Container/signup/style.js" afterPath="$PROJECT_DIR$/src/assets/style/style.css" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/assects/images/108267f09dfde2e169d464dfcc9f60d1.jpg" afterPath="$PROJECT_DIR$/src/assets/images/108267f09dfde2e169d464dfcc9f60d1.jpg" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/assects/images/2019-12-10.png" afterPath="$PROJECT_DIR$/src/assets/images/2019-12-10.png" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/assects/images/Group30.png" afterPath="$PROJECT_DIR$/src/assets/images/Group30.png" />
@@ -132,19 +135,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Container.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Container/signin/Container.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="25" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/commonComponents/loader/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
@@ -152,6 +143,16 @@
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assets/style/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -265,6 +266,7 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/Components/commonComponents/loader/style.js" />
         <option value="$PROJECT_DIR$/src/Components/commonComponents/loader/index.js" />
+        <option value="$PROJECT_DIR$/src/assets/style/style.css" />
       </list>
     </option>
   </component>
@@ -544,12 +546,12 @@
       <workItem from="1577769810360" duration="1713000" />
       <workItem from="1577877970544" duration="6959000" />
       <workItem from="1577971789519" duration="1347000" />
-      <workItem from="1578425282612" duration="7217000" />
+      <workItem from="1578425282612" duration="7328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52351000" />
+    <option name="totallyTimeSpent" value="52462000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="692" extended-state="1" />
@@ -592,13 +594,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Container/SignUp/style.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1005,6 +1000,14 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/style/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
