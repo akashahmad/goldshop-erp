@@ -21,6 +21,7 @@ const Table = (props) => {
     const [phone, setPhone] = useState("");
     let id = match.params && match.params.id ? match.params.id : "";
     console.log(id)
+
     const handleSubmit = (id) => {   
         // let newList = [...list];
         let token = localStorage.getItem("token");
@@ -42,8 +43,7 @@ const Table = (props) => {
             console.log(Response.data);
         })
     }
-        //  updateList(newList);
-        setfullName("")
+
        
       };
 
