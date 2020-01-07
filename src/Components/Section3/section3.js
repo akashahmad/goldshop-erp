@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import Style from './Style'
 import axios from 'axios'
 import ReactPaginate from "react-paginate";
-import { userAuthapiPath } from '../../Config'
+import {apiPath} from '../../Config'
 import Delete from '../../Components/Delete(Popup)/delete'
 export default (props) => {
 
-    let { setEditCustomer, setPrintModel, setDeleteModel } = props;
+    let {setEditCustomer, setPrintModel, setDeleteModel} = props;
     const [pageCount, setPageCount] = useState(1);
-    const [currentPage, setCurrentPage] = useState(1);
     const [show, setShow] = useState("");
 
     const [fullName, setfullName] = useState("");
@@ -17,27 +16,12 @@ export default (props) => {
 
     // get all customers
     const handleRemoveItem = (id) => {
-
-        console.log(id)
-        let token = localStorage.getItem("token");
-        if (token) {
-            let header = {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            };
-            // window.confirm("");
-            axios.delete(userAuthapiPath + "/api/customers/" + id, header).then(res => {
-                setCustomers(customers => customers.filter(item => item.id !== id))
-                console.log(res)
-                console.log(res.data)
-                console.log(id)
-
-
-            })
-
-        }
-
+        axios.delete(apiPath + "/api/customers/" + id).then(res => {
+            setCustomers(customers => customers.filter(item => item.id !== id))
+            console.log(res)
+            console.log(res.data)
+            console.log(id)
+        })
     }
 
     const [customers, setCustomers] = useState([]);
@@ -54,45 +38,24 @@ export default (props) => {
     };
 
     const nextCourses = (page) => {
-        let token = localStorage.getItem("token");
-        if (token) {
-            let header = {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            };
-
-            axios.get(userAuthapiPath + `/api/customers?page=${page}&limit=10`, header).then(response => {
-                setCustomers(response.data.customers);
-                setPageCount(response.data.totalPages);
-                setCurrentPage(response.data.currentPage);
-            })
-        }
+        axios.get(apiPath + `/api/customers?page=${page}&limit=10`).then(response => {
+            setCustomers(response.data.customers);
+            setPageCount(response.data.totalPages);
+        })
     };
 
-    const handleSubmit = (id) => {   
-        // let newList = [...list];
-        let token = localStorage.getItem("token");
-        console.log(token);
-        if (token) {
-            let header = {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            };
-            let payload={
-                fullName:fullName
-            }
+    const handleSubmit = (id) => {
+        let payload = {
+            fullName: fullName
+        }
 
-        axios.put(userAuthapiPath + '/api/customers/'+id, payload, header).then(Response => {
+        axios.put(apiPath + '/api/customers/' + id, payload).then(Response => {
             console.log(id)
             console.log(Response.data);
         })
-    }
         //  updateList(newList);
         setfullName("")
-       
-      };
+    };
 
     return (
 
@@ -109,60 +72,63 @@ export default (props) => {
 
                 {
                     customers ? customers.map((single, index) => <tr key={single.id}
-                        className="section3-table-rows fnt-poppins">
+                                                                     className="section3-table-rows fnt-poppins">
                         <td>{single.fullName}</td>
                         <td>{single.address}</td>
                         <td>{single.phone}</td>
                         {/* <input placeholder="enter name" value={fullName} onChange={(e) => setfullName(e.target.value)}></input>
-                        <button onClick={()=>handleSubmit(single.id)}>save</button> */}
+                         <button onClick={()=>handleSubmit(single.id)}>save</button> */}
                         <td>
                             {
                                 show && show === single.id &&
                                 <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
-                                    <li><Link to={"/customertransaction/" + single.id} className="link-model-on-action-buttons">View</Link>
+                                    <li><Link to={"/customertransaction/" + single.id}
+                                              className="link-model-on-action-buttons">View</Link>
                                     </li>
-                                    <li><Link to={"/home/" + single.id} className="link-model-on-action-buttons" onClick={() => {
-                                        setEditCustomer(true)
-                                    }}>Edit</Link></li>
+                                    <li><Link to={"/home/" + single.id} className="link-model-on-action-buttons"
+                                              onClick={() => {
+                                                  setEditCustomer(true)
+                                              }}>Edit</Link></li>
                                     <li><Link className="link-model-on-action-buttons" onClick={() => {
                                         setPrintModel(true)
                                     }}>Print</Link></li>
-                                    <li><Link to={"/home/" + single.id} className="link-model-on-action-buttons" onClick={() => {
-                                        setDeleteModel(true)
-                                    }}>Delete</Link></li>
+                                    <li><Link to={"/home/" + single.id} className="link-model-on-action-buttons"
+                                              onClick={() => {
+                                                  setDeleteModel(true)
+                                              }}>Delete</Link></li>
                                 </div>
 
                             }
                             {/* <button onClick={()=>HandleRemoveItem(single.id)}>delete</button> */}
                             <div className="action-div">
                                 <button type="button" className="doted-button"
-                                    onClick={() => {
-                                        // console.log("show", show);
-                                        // console.log("show", single.id);
-                                        setShow(show === single.id ? "" : single.id)
-                                    }}>
-                                    <span class="dot" />
-                                    <span className="dot" />
-                                    <span className="dot" />
+                                        onClick={() => {
+                                            // console.log("show", show);
+                                            // console.log("show", single.id);
+                                            setShow(show === single.id ? "" : single.id)
+                                        }}>
+                                    <span class="dot"/>
+                                    <span className="dot"/>
+                                    <span className="dot"/>
                                 </button>
                             </div>
 
                         </td>
                     </tr>) : <h1>Loader ....</h1>}
             </table>
-            <ReactPaginate previousLabel={<span className="fa fa-chevron-right "  > &#60; </span>}
-                nextLabel={<span className="fa fa-chevron-right "  > > </span>}
-                breakLabel={". . ."}
-                breakClassName={"break-me"}
-                pageCount={pageCount}
-                marginPagesDisplayed={2}
-                pageRangeDisplayed={5}
-                onPageChange={handlePageClick}
-                containerClassName={"digit-icons main"}
-                subContainerClassName={"container column"}
-                activeClassName={"p-one"} />
+            <ReactPaginate previousLabel={<span className="fa fa-chevron-right "> &#60; </span>}
+                           nextLabel={<span className="fa fa-chevron-right "> > </span>}
+                           breakLabel={". . ."}
+                           breakClassName={"break-me"}
+                           pageCount={pageCount}
+                           marginPagesDisplayed={2}
+                           pageRangeDisplayed={5}
+                           onPageChange={handlePageClick}
+                           containerClassName={"digit-icons main"}
+                           subContainerClassName={"container column"}
+                           activeClassName={"p-one"}/>
             <Style />
-            <Delete customers={customers} setCustomers={setCustomers} />
+            <Delete customers={customers} setCustomers={setCustomers}/>
         </div>
     )
 }

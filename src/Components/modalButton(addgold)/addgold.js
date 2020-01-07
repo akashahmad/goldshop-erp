@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Style from './style'
 import '../../assets/style/common.css'
 import Axios from 'axios';
-import { userAuthapiPath } from '../../Config'
+import { apiPath } from '../../Config'
 import { withRouter } from 'react-router-dom';
 
 const Table = (props) => {
@@ -45,27 +45,16 @@ const Table = (props) => {
     const Addgold = (event) => {
         event.preventDefault();
         let customerId = match.params && match.params.id?match.params.id:"";
-        console.log("passing id",customerId);
-        let token = localStorage.getItem("token");
-        console.log(token);
-        if (token) {
-            let header = {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            };
 
         let payload = {
             customerId:customerId , billNo: billNo, particular: particular, status: status, purity: purity, grossWeight: grossWeight,
             pureWeight: pureWeight, transactionDate: transactionDate,
         }
 
-        Axios.post(userAuthapiPath + '/api/gold', payload, header).then(Response => {
+        Axios.post(apiPath + '/api/gold', payload).then(Response => {
             console.log(Response.data);
             
         })
-
-    }
 
     }
 

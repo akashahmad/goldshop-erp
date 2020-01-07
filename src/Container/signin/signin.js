@@ -7,7 +7,7 @@ import Logo from '../../assets/images/Group30.png';
 import {Form} from 'react-bootstrap';
 import axios from 'axios';
 import cookie from 'react-cookies'
-import {userAuthapiPath} from '../../Config'
+import {apiPath} from '../../Config'
 import '../../assets/style/style.css'
 
 const Login = (props) => {
@@ -19,7 +19,7 @@ const Login = (props) => {
     const userAuthentication = e => {
         e.preventDefault();
         let payLoad = {email: email, password: password};
-        axios.post(userAuthapiPath + "/api/login", payLoad).then(async response => {
+        axios.post(apiPath + "/api/login", payLoad).then(async response => {
             await localStorage.setItem("age", remember ? 1296000 : 86400);
             await cookie.save('token', response.data.token, {maxAge: (remember ? 1296000 : 86400), path: "/"});
             let data = await jwt_decode(response.data.token);

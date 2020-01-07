@@ -7,7 +7,7 @@ import Image4 from '../../assets/images/printer.png'
 import {Link,withRouter } from 'react-router-dom'
 import Table from '../../Components/Customertransactiontable/customerTransactionTable'
 import Axios from 'axios'
-import { userAuthapiPath } from '../../Config'
+import { apiPath } from '../../Config'
 
 
 const Table2=(props)=>{
@@ -25,15 +25,7 @@ const Table2=(props)=>{
  const [getPhone,setGetPhone] =useState([]);
  let id= match.params && match.params.id;
  useEffect(()=>{
-
-    let token=localStorage.getItem("token");
-    if(token){
-        let header = {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        };
-        Axios.get(userAuthapiPath+`/api/customerCall/${id}`,header).then(response=>{
+        Axios.get(apiPath+`/api/customerCall/${id}`).then(response=>{
         //    console.log(setGetName(response.data.customerInfo.fullName));
         //   console.log(response.data.customerInfo);
         //    console.log(response.data.customerInfo.phone);
@@ -42,8 +34,7 @@ const Table2=(props)=>{
            setGetPhone(response.data.customerInfo.phone);
             setShowData(response.data.customerInfo);
         })
-    }
- },[])
+ },[]);
 
     return(
 <>

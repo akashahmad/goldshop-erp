@@ -1,1 +1,1 @@
-export const userAuthapiPath = "https://gold-wholesaler-microservice.herokuapp.com";
+export const apiPath = "https://gold-wholesaler-microservice.herokuapp.com";

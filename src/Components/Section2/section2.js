@@ -1,59 +1,15 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import Style from './Style'
 import Section3 from '../Section3/section3'
 import Image1 from '../../assets/images/magnifying-glass.png'
 import Image2 from '../../assets/images/layer-6.png'
-import axios from 'axios'
-import {userAuthapiPath} from '../../Config'
 
 export default (props) => {
-
-    const [totalCus, setTotelCus] = useState([]);
-    const [totalPkr, setTotalPkr] = useState("");
-    const [totalPkrRec, setTotalPkrRec] = useState("");
-    
-    const [totalUsdRecieved ,  setTotalUsedRecieved]=useState([]);
-    const [totalUsdSend ,  setTotalUsedSend]=useState([]);
-    
-    const [totalAfgSend  ,  setTotalAfgSend]=useState([]);
-    const [totalAfgRecieved ,  setTotalAfgRecieved]=useState([]);
-    
-    // let {data} = props;
-
-    // const [data, setData] = useState([]);
-
-    let {setEditCustomer} = props;
-    let {setPrintModel} = props;
-    let {setDeleteModel} = props;
-
-    useEffect(() => {
-        let token = localStorage.getItem("token");
-        console.log(token);
-        if (token) {
-            let header = {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            };
-            axios.get(userAuthapiPath + "/api/dashboard", header).then(res => {
-                setTotelCus(res.data.totalCustomers);
-                setTotalPkr(res.data.totalPKRSent);
-                setTotalPkrRec(res.data.totalPKRReceived)
-
-                // usdRecieved and sent
-                setTotalUsedRecieved(res.data.totalUSDReceived);
-                setTotalUsedSend(res.data.totalUSDSent);
-                
-                // Afgrecieved and sent
-                setTotalAfgRecieved(res.data.totalAfghaniReceived);
-                setTotalAfgSend(res.data.totalAfghaniSent);
-
-                // setTotalAfgRecieved(res.data.)
-                console.log(token);
-            });
-
-        }
-    }, []);
+    let {
+        totalCus, totalPkr,
+        totalPkrRec, totalUsdRecieved, totalUsdSend, setEditCustomer, setPrintModel, setDeleteModel,
+        totalAfgRecieved, totalAfgSend
+    } = props;
 
     return (
         <>

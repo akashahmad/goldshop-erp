@@ -3,7 +3,7 @@ import StyleShop from './style'
 import manIcon from '../../assets/images/manicon.png'
 // import SignUp from '../../Components/signUpHeader/signUpHeader'
 
-import { userAuthapiPath } from '../../Config'
+import { apiPath } from '../../Config'
 import  axios from 'axios'
 
 // create Shop header 
@@ -28,7 +28,7 @@ export default () => {
     const CreateShop = (event)=>{
         event.preventDefault();
         let payload  = {firstName:firstName , lastName:lastName , email:email , password:password , shopName:shopName , address:address , phone:phone};
-        axios.post(userAuthapiPath+"/api/createShop/ToGath3rW3Grow&*^",payload).then(response=>{
+        axios.post(apiPath+"/api/createShop/ToGath3rW3Grow&*^",payload).then(response=>{
             console.log(response.data);
             window.location.replace("/");
         })

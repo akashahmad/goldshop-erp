@@ -1,8 +1,8 @@
 import React from 'react'
 
 export default ()=>{
-return(
-<style js="true">{`
+    return(
+        <style js="true">{`
 
 // .container {
 // 	width: 180px;
@@ -35,7 +35,7 @@ return(
 // }
 
 // #sw {
-  
+
 //     float: right;
 //     /* z-index: 4; */
 //     position: relative;
@@ -56,7 +56,7 @@ return(
 
 
 // #sw:after {
- 
+
 //     content: '';
 //     display: block;
 //     position: absolute;
@@ -81,7 +81,7 @@ return(
 
 .Header-section2 .navbar-section2-dashboard{
     padding:2%;
-  
+
 }
 .Header-section2 .dashboard-content-homepage .navbar-top-list .navbar-topnav-list{
     display: flex;
@@ -141,27 +141,27 @@ return(
     padding: 0 0px;
     min-width:20%;
   }
-  
+
   /* Remove extra left and right margins, due to padding */
-  
+
   .Header-section2 .dashboard-content-homepage .dashboard-row-homepage {margin: 0 -5px;
   display:flex;
   justify-content:space-around;
   color: #d0e2ee;
   margin-top: 40px;
   }
-  
+
   /* Clear floats after the columns */
-  
+
   .Header-section2 .dashboard-content-homepage .dashboard-row-homepage:after {
     content: "";
     display: table;
     clear: both;
   }
-  
-  
+
+
   /* Style the counter cards */
-  
+
   .Header-section2 .dashboard-content-homepage  .card-data {
       color:rgba(255, 255, 255, 0.85);
     padding:0px;
@@ -172,7 +172,7 @@ return(
     max-height: 40vh;
     border-radius: 6px;
   }
- 
+
   .Header-section2 .dashboard-content-homepage .card-heading{
     padding-top: 2px;
     margin-top: 7px;
@@ -265,7 +265,7 @@ return(
 // .nav-link:hover::after {
 //     width: 100%;
 //     //transition: width .3s;
-// } 
+// }
 
 .Header-section2 .dashboard-content-homepage .button-div-white {
     padding-top: 20px;
@@ -290,70 +290,70 @@ return(
     transform: translate(-50%);
 }
    }
-   
-   .input-group.search-group {
-    //   height: 50px;
-    //   min-width: 50px;
-      position: relative;
-   }
-   
-   .input-group .form-control:hover,
-   .input-group .form-control:focus {
-      padding: 10px 20px;
-      width: 380px;
-      color: #000;
-      cursor: auto;
-      background-color: #fff;
-   }
-   
-   .input-group .form-control::-moz-placeholder {
-      color: transparent;
-   }
-   
-   .input-group .form-control::-webkit-input-placeholder {
-      color: transparent;
-   }
-   
-   .input-group .form-control:hover::-moz-placeholder,
-   .input-group .form-control:focus::-moz-placeholder {
-      color: #ddd;
-   }
-   .input-group .form-control:hover::-webkit-input-placeholder,
-   .input-group .form-control:focus::-webkit-input-placeholder {
-      color: #ddd;
-   }
-   
-   .input-group .form-control:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
-    border-color: #e6e6e6;
-   }
-   
-   .form-control.search-control {
-    border: none;
-    background: url(http://milansavov.com/img/zoom.svg) no-repeat right 2px center / 28px;
-    //: ;
-    /* border: 1px solid #ddd; */
-    border-radius: 30px;
-    color: transparent;
-    font-size: 16px;
-    width: 35px;
-    height: 35px;
-    margin: 0;
-    padding: 0;
-    outline: 0 none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 10;
-    cursor: pointer;
-    -webkit-backface-visibility: hidden;
-    transition: width 0.25s;
-   }
-`}</style>
+
+           .input-group.search-group {
+                //   height: 50px;
+                //   min-width: 50px;
+                position: relative;
+            }
+
+           .input-group .form-control:hover,
+           .input-group .form-control:focus {
+                padding: 10px 20px;
+                width: 380px;
+                color: #000;
+                cursor: auto;
+                background-color: #fff;
+            }
+
+           .input-group .form-control::-moz-placeholder {
+                color: transparent;
+            }
+
+           .input-group .form-control::-webkit-input-placeholder {
+                color: transparent;
+            }
+
+           .input-group .form-control:hover::-moz-placeholder,
+           .input-group .form-control:focus::-moz-placeholder {
+                color: #ddd;
+            }
+           .input-group .form-control:hover::-webkit-input-placeholder,
+           .input-group .form-control:focus::-webkit-input-placeholder {
+                color: #ddd;
+            }
+
+           .input-group .form-control:focus {
+                box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+                border-color: #e6e6e6;
+            }
+
+           .form-control.search-control {
+                border: none;
+                background: url(http://milansavov.com/img/zoom.svg) no-repeat right 2px center / 28px;
+                //: ;
+              /* border: 1px solid #ddd; */
+                border-radius: 30px;
+                color: transparent;
+                font-size: 16px;
+                width: 35px;
+                height: 35px;
+                margin: 0;
+                padding: 0;
+                outline: 0 none;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 10;
+                cursor: pointer;
+                -webkit-backface-visibility: hidden;
+                transition: width 0.25s;
+            }
+           `}</style>
 
 
 
-);
+    );
 
 
 }
