@@ -6,80 +6,33 @@ import { withRouter } from 'react-router-dom'
 
 
 const Table =(props)=>{
+    
+
+    let {customers , setCustomers}=props;
+    // console.log(customers);
+    
     let { match } =props;
+    console.log(match.params && match.params.id);
+
     let {deleteModel,setDeleteModel}=props;
    
-    // console.log("dhdhhdd",handleRemoveItem)
-
-    // const [hide,setHide]=useState(false);
-
-    // const openPopup=()=>{
-    //     setHide(true);
-    // }
-    const [customers, setCustomers] = useState([]);
-
-   useEffect(() => {
-        nextCourses(1);
-    }, []);
-
-    const handlePageClick = (page) => {
-        nextCourses(page.selected + 1);
-    };
-
-    const nextCourses = (page) => {
+    let customerid = match.params && match.params.id;
+    const HandleRemoveItem = () => {
+        
         let token = localStorage.getItem("token");
-        if (token) {
+        if (token){
             let header = {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             };
 
-            axios.get(userAuthapiPath + `/api/customers?page=${page}&limit=5`, header).then(response => {
-                setCustomers(response.data.customers);
-                // setPageCount(response.data.totalPages);
-                // setCurrentPage(response.data.currentPage);
-            })
-        }
-    };
-
-
-
-    // const deleteCustomer =()=>{
-
-    //     let token = localStorage.getItem("token");
-    //     if(token)
-    //     {
-    //         let header = {
-    //             headers : {
-    //                 Authorization : `Bearer ${token}`
-    //             }
-    //         }
-    //         axios.delete(userAuthapiPath,'api/customers/',id,header).then(Response=>{
-    //         setCustomers(customers=>customers.filter(single=>single.id!==id));
-    //         console.log(Response.data.customers);                
-    //         })
-    //     } 
-    // }
-    let customerid = match.params && match.params.id?match.params.id:"";
-    const HandleRemoveItem = (id) => {
-  
-        console.log(id)
-        let token = localStorage.getItem("token");
-        if (token) {
-            let header = {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            };
-            axios.delete(userAuthapiPath+"/api/customers/"+id,header).then (res=>{
-            setCustomers(customers => customers.filter(customers => customers.id !== id));
+            axios.delete(userAuthapiPath+"/api/customers/"+customerid,header).then (res=>{
+            setCustomers(customer => customer.filter(single => single.id !== customerid));
             console.log(res.customers);
-                
-            
         
               })
-    
+
           }
     }
 

@@ -7,6 +7,7 @@ import axios from 'axios'
 import {userAuthapiPath} from '../../Config'
 
 export default (props) => {
+
     const [totalCus, setTotelCus] = useState([]);
     const [totalPkr, setTotalPkr] = useState("");
     const [totalPkrRec, setTotalPkrRec] = useState("");
@@ -44,8 +45,8 @@ export default (props) => {
                 setTotalUsedSend(res.data.totalUSDSent);
                 
                 // Afgrecieved and sent
-                setTotalAfgRecieved(res.data.totalCustomers);
-                setTotalAfgSend(res.data.totalCustomers);
+                setTotalAfgRecieved(res.data.totalAfghaniReceived);
+                setTotalAfgSend(res.data.totalAfghaniSent);
 
                 // setTotalAfgRecieved(res.data.)
                 console.log(token);

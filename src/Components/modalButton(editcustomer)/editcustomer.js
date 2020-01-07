@@ -3,14 +3,25 @@ import {Modal,Button, CloseButton} from 'react-bootstrap'
 import DatePicker from 'react-datepicker'
 import Style from './style'
 import '../../assects/style/common.css'
+import {withRouter} from 'react-router-dom'
 
-export default(props)=>{
+const Table =(props)=>{
+    
     let {editCustomer,setEditCustomer} = props;
     const [show, setShow] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-  
+      
+    let { match } = props;
+    // console.log(match.params && match.params.id);
+    
+    const Edit = () =>{
+
+    }
+
+    // axios.put(apiPath+"/tags/"+id, data).then(res => {
+    // })
     
     return(
         <>
@@ -67,3 +78,5 @@ export default(props)=>{
         </>
     );
 }
+
+export default withRouter(Table);

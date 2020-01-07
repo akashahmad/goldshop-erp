@@ -50,7 +50,7 @@ export default () => {
           <Route path={"/addcustomer"} component={Addcustomer}/>
           <Route path={"/customerDetails"} component={CustomerDetails}/>
           <Route path={"/info"} component={CustomerDetailsInfo}/>
-          <Route path={"/delete"} component={Delete}/>
+          <Route path={"/delete/:id"} component={Delete}/>
           <Route path={"/table"} component={Table}/>
           <Route path={"/translate"} component={TRanslator}/>
           <Route path={"/popup"} component={Popup}/>

@@ -48,7 +48,6 @@ export default (props) => {
 
     const handlePageClick = (page) => {
         console.log(page);
-        
         nextCourses(page.selected + 1);
         
     };
@@ -70,7 +69,7 @@ export default (props) => {
         }
     };
  
-const HandleRemoveItem = (id) => {
+    const HandleRemoveItem = (id) => {
         console.log(id)
         let token = localStorage.getItem("token");
         if (token) {
@@ -80,15 +79,14 @@ const HandleRemoveItem = (id) => {
                 }
             };
             if(window.confirm("Are You Sure You Want to Delete")){
-            axios.delete(userAuthapiPath+"/api/customers/"+id,header).then (res=>{
-            setCustomers(customers => customers.filter(item => item.id !== id))
-            console.log(res)
-            console.log(res.data)
-            console.log(id)
+            // axios.delete(userAuthapiPath+"/api/customers/"+id,header).then (res=>{
+            // setCustomers(customers => customers.filter(item => item.id !== id))
+            // console.log(res)
+            // console.log(res.data)
+            // console.log(id)
             
-        
-              }    )
-    
+            //   }    )
+                
           }
         
     }
@@ -120,18 +118,20 @@ const HandleRemoveItem = (id) => {
                             <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
                                 <li><Link to={"/customertransaction/"+single.id} className="link-model-on-action-buttons">View</Link>
                                 </li>
-                                <li><Link className="link-model-on-action-buttons" onClick={() => {
+                                <li><Link to={"/editmoney/"+single.id} className="link-model-on-action-buttons" onClick={() => {
                                     setEditCustomer(true)
                                 }}>Edit</Link></li>
                                 <li><Link className="link-model-on-action-buttons" onClick={() => {
                                     setPrintModel(true)
                                 }}>Print</Link></li>
-                                <li><Link className="link-model-on-action-buttons" onClick={() => {
+                                <li><Link to={"/home/"+single.id
+                                } className="link-model-on-action-buttons" onClick={() => {
                                   setDeleteModel(true)
                                 }}>Delete</Link></li>
                             </div>
                         }
-<button onClick={()=>HandleRemoveItem(single.id)}>delete</button>
+                    
+                    <button onClick={()=>HandleRemoveItem(single.id)}>delete</button>
                         <div className="action-div">
                             <button type="button" className="doted-button"
                                     onClick={() => {
@@ -160,7 +160,8 @@ const HandleRemoveItem = (id) => {
                            subContainerClassName={"container column"}
                            activeClassName={"p-one"}/>
             <Style />
-            <Delete handlePageClick={()=>handleRemoveItem()} />
+            <Delete setCustomers={setCustomers} setDeleteModel={setDeleteModel} />
+
         </div>
     )
 }
