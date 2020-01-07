@@ -92,12 +92,15 @@ export default () => {
           }
           /> */}
 
-          <Route path={"/home"} render={() =>
+          <Route exact path={"/home"} render={() =>
             localStorage.getItem("token") ? <Home /> : <Redirect to={{ pathname: "/" }} />
 
           } />
+          
+          <Route path={"/home/:id"} render={() =>
+            localStorage.getItem("token") ? <Home /> : <Redirect to={{ pathname: "/" }} />
 
-
+          } />
           <Route path={"/createshop"} component={CreateShop}/>
 
 
