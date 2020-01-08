@@ -15,10 +15,6 @@ const Table = (props) => {
     const [show, setShow] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const handleClose = () => setShow(false);
-    // const [modal, setModal] = useState(false);
-    // const openModal = () => {
-    //     setModal(true);
-    // }
     const handleChange = date => {
         setStartDate(date);
     }

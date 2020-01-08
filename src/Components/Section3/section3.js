@@ -5,6 +5,7 @@ import axios from 'axios'
 import ReactPaginate from "react-paginate";
 import {apiPath} from '../../Config'
 import Delete from '../DeletePopup/delete'
+
 export default (props) => {
     let {setEditCustomer, setPrintModel, setDeleteModel, setSelectedId} = props;
     const [pageCount, setPageCount] = useState(1);
