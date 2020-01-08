@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import Style from './Style'
 import axios from 'axios'
 import ReactPaginate from "react-paginate";
 import {apiPath} from '../../Config'
 import Delete from '../DeletePopup/delete'
 
-export default (props) => {
-    let {setEditCustomer, setPrintModel, setDeleteModel, setSelectedId, customers, setCustomers} = props;
+const EditCustomer = (props) => {
+    let {history, setEditCustomer, setPrintModel, setDeleteModel, setSelectedId, customers, setCustomers} = props;
     const [pageCount, setPageCount] = useState(1);
     const [show, setShow] = useState("");
+    const [hoverId, setHoverId] = useState("");
     useEffect(() => {
         nextCourses(1);
     }, []);
@@ -32,11 +33,29 @@ export default (props) => {
                     <th>Actions</th>
                 </tr>
                 {
-                    customers ? customers.map((single, index) => <tr key={single.id}
-                                                                     className="section3-table-rows fnt-poppins">
-                        <td>{single.fullName}</td>
-                        <td>{single.address}</td>
-                        <td>{single.phone}</td>
+                    customers ? customers.map((single, index) => <tr key={index}
+                                                                     className={"section3-table-rows fnt-poppins " + (hoverId && hoverId === single.id ? "hovers" : "")}>
+                        <td onClick={() => {
+                            history.push("/customer-money-details/" + single.id);
+                            setEditCustomer(true)
+                        }}
+                            onMouseEnter={() => setHoverId(single.id)}
+                            onMouseLeave={() => setHoverId("")}
+                        >{single.fullName}</td>
+                        <td onClick={() => {
+                            history.push("/customer-money-details/" + single.id);
+                            setEditCustomer(true)
+                        }}
+                            onMouseEnter={() => setHoverId(single.id)}
+                            onMouseLeave={() => setHoverId("")}
+                        >{single.address}</td>
+                        <td onClick={() => {
+                            history.push("/customer-money-details/" + single.id);
+                            setEditCustomer(true)
+                        }}
+                            onMouseEnter={() => setHoverId(single.id)}
+                            onMouseLeave={() => setHoverId("")}
+                        >{single.phone}</td>
                         {/* <input placeholder="enter name" value={fullName} onChange={(e) => setfullName(e.target.value)}></input>
                          <button onClick={()=>handleSubmit(single.id)}>save</button> */}
                         <td>
@@ -46,10 +65,11 @@ export default (props) => {
                                     <li><Link to={"/customer-money-details/" + single.id}
                                               className="link-model-on-action-buttons">View</Link>
                                     </li>
-                                    <li><Link to={"/customer/" + single.id} className="link-model-on-action-buttons"
+                                    <li><div className="link-model-on-action-buttons"
                                               onClick={() => {
+                                                  setSelectedId(single.id);
                                                   setEditCustomer(true)
-                                              }}>Edit</Link></li>
+                                              }}>Edit</div></li>
                                     <li><Link className="link-model-on-action-buttons" onClick={() => {
                                         setPrintModel(true)
                                     }}>Print</Link></li>
@@ -66,6 +86,7 @@ export default (props) => {
                                 <button type="button" className="doted-button"
                                         onClick={() => {
                                             setShow(show === single.id ? "" : single.id)
+                                            setEditCustomer(false)
                                         }}>
                                     <span className="dot"/>
                                     <span className="dot"/>
@@ -90,4 +111,6 @@ export default (props) => {
             <Style />
         </div>
     )
-}
+};
+
+export  default withRouter(EditCustomer);

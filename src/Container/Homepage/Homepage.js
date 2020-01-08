@@ -55,9 +55,11 @@ export default (props) => {
                           setSelectedId={setSelectedId}
                           customers={customers} setCustomers={setCustomers}
                 />
-                <EditCustomer editCustomer={editCustomer} setEditCustomer={setEditCustomer}/>
+                <EditCustomer selectedId={selectedId} customers={customers} setSelectedId={setSelectedId} editCustomer={editCustomer}
+                                  setEditCustomer={setEditCustomer} setCustomers={setCustomers}/>
                 <Delete totalCus={totalCus} setTotalCus={setTotalCus} selectedId={selectedId} deleteModel={deleteModel}
-                        setDeleteModel={setDeleteModel} customers={customers} setCustomers={setCustomers}/>
+                        setDeleteModel={setDeleteModel} customers={customers} setCustomers={setCustomers}
+                        setSelectedId={setSelectedId}/>
                 <Print printModel={printModel} setPrintModel={setPrintModel}/>
             </div > : <Loader/>}
         </div>
