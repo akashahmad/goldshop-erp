@@ -93,9 +93,9 @@ const Table2=(props)=>{
 </div>
                 <div className="section-customer-navbottom">
                     <div className="section-customer-bottom-link">
-                        <div><Link to={"/customertransaction/"+id} className="link-of-models">View Money</Link></div>
+                        <div><Link to={"/customer-money-details/"+id} className="link-of-models">View Money</Link></div>
                    
-                    <div className="link-view-Gold"><Link to={"/viewgold/"+id} className="link-of-models">View Gold</Link></div>
+                    <div className="link-view-Gold"><Link to={"/customer-money-details/"+id} className="link-of-models">View Gold</Link></div>
                     </div>
                  <div className="section-customerdetail-right "> 
                        <div className="first-section-customer-detail"><a>View Transactions:</a>

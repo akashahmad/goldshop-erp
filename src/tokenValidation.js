@@ -12,7 +12,7 @@ export const checktoken = () => {
     };
 
     if (token) {
-        axios.get(apiPath + "/admin/validate-token", header).then(res => {
+        axios.get(apiPath + "/api/validate-token", header).then(res => {
             if (res.status === 401) {
             }
         }).catch(err => {

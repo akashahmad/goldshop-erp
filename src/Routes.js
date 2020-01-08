@@ -27,13 +27,14 @@ const Routes = (props) => {
     }, [location.pathname]);
     return (
         <Switch>
-            <Route path={"/customerpage"} component={CustomerPage}/>
-            <Route path={"/notificationpage"} component={NotificationPage}/>
-            <Route path={"/customertransaction/:id"} component={CustomerTransaction}/>
-            <Route path={"/viewgold/:id"} component={ViewGold}/>
+            <Route path={"/customers"} component={CustomerPage}/>
+            <Route path={"/notification-page"} component={NotificationPage}/>
+            <Route path={"/customer-money-details/:id"} component={CustomerTransaction}/>
+            <Route path={"/customer-gold-details/:id"} component={ViewGold}/>
             <Route path={"/dashboard"} component={Home }/>
-            <Route path={"/home/:id"} component={Home}/>
-            <Route path={"/createshop"} component={CreateShop}/>
+            <Route path={"/customer/:id"} component={Home}/>
+            <Route path={"/create-shop"} component={CreateShop}/>
+            <Route path={"/"} exact component={Home }/>
         </Switch>
     );
 }

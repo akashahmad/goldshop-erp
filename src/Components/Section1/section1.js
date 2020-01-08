@@ -12,7 +12,7 @@ const SideNavigation = (props) => {
 
     // navigation active handler
     const currentActive = (value) => {
-        if (location === "/home" && value === "dashboard") {
+        if (location === "/dashboard" && value === "dashboard") {
             return "active"
         } else {
             return location.indexOf(value) === -1 ? "" : "active"
@@ -37,7 +37,7 @@ const SideNavigation = (props) => {
             </div>
 
             <ul class="list-unstyled components ">
-                <Link to={"/home"}>
+                <Link to={"/dashboard"}>
                     <li >
 
                         <div className={"image-div " + currentActive("dashboard")}>
@@ -51,7 +51,7 @@ const SideNavigation = (props) => {
 
                 </Link>
 
-                <Link to={"/customerpage"}>
+                <Link to={"/customers"}>
                     <li className="cus fnt-poppins">
                         <div className={"image-div " + currentActive("customer")}><img className="image_icon"
                                                                                        src={currentActive("customer") === "active" ? require('../../assets/images/customersActive.jpg') : require('../../assets/images/customer.png')}
@@ -71,7 +71,7 @@ const SideNavigation = (props) => {
                             <a href="#" className="sidenav-setting fnt-poppins">Setting</a></div>
                     </li>
                 </Link>
-                <Link to={"/notificationpage"}>
+                <Link to={"/notification-page"}>
                     <li>
                         <div className={"image-div " + currentActive("notifica")}><img className="image_icon"
                                                                                        src={currentActive("notifica") === "active" ? require('../../assets/images/bellblue.jpg') : require('../../assets/images/bell.png')}

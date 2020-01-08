@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import Section1 from '../../Components/Section1/section1'
-import CustomerDetailInfo from '../../Components/customerDetails(customerInfo)/customerDetails'
+import CustomerDetailInfo from '../../Components/customerDetailsCustomerInfo/customerDetails'
 import '../../assets/style/common.css'
 import data from '../Homepage/data.json'
-import AddGoldModalComponent from '../../Components/modalButton(addgold)/addgold'
-import EditCustomerInfoModalComponent from '../../Components/modalButton(editcustomer)/editcustomer'
+import AddGoldModalComponent from '../../Components/modalButtonAddGold/addgold'
+import EditCustomerInfoModalComponent from '../../Components/modalButtonEditCustomer/editcustomer'
 import PrintPopUpModalComponent from '../../Components/Print(Popup)/print'
-import DeletePopupModalComponent from '../../Components/Delete(Popup)/delete'
-import EditGoldInfoModalComponent from '../../Components/modalButton(editgoldinfo)/editgold'
+import DeletePopupModalComponent from '../../Components/DeletePopup/delete'
+import EditGoldInfoModalComponent from '../../Components/modalButtonEditGoldInfo/editgold'
 export default () => {
     const [editGold,setEditGold]=useState(false)
     const [deleteModel,setDeleteModel]=useState(false)

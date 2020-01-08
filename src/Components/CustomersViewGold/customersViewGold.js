@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Style from './style'
-// import CustomerDetailsInfo from '../customerDetails(customerInfo)/customerDetails'
+// import CustomerDetailsInfo from '../customerDetailsCustomerInfo/customerDetails'
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 import {apiPath} from '../../Config'
@@ -90,11 +90,11 @@ const Table = (props) => {
                                  <li onClick={()=>{setDeleteModel(true)}}>Delete</li> */}
 
 
-                                <li><Link to={"/viewgold/" + single.id} className="link-model-on-action-buttons"
+                                <li><Link to={"/customer-money-details/" + single.id} className="link-model-on-action-buttons"
                                           onClick={() => {
                                               setEditGold(true)
                                           }}> Edit</Link></li>
-                                <li><Link to={"/viewgold/" + single.id} className="link-model-on-action-buttons"
+                                <li><Link to={"/customer-money-details/" + single.id} className="link-model-on-action-buttons"
                                           onClick={() => {
                                               setDeleteModel(true)
                                           }}>Delete</Link></li>

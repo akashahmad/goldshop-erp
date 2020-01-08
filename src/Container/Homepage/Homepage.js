@@ -6,12 +6,13 @@ import Loader from '../../Components/commonComponents/loader'
 import Section1 from '../../Components/Section1/section1'
 import Section2 from '../../Components/Section2/section2'
 import '../../assets/style/common.css'
-import EditCustomer from '../../Components/modalButton(editcustomer)/editcustomer'
+import EditCustomer from '../../Components/modalButtonEditCustomer/editcustomer'
 import Print from '../../Components/Print(Popup)/print'
-import Delete from '../../Components/Delete(Popup)/delete'
+import Delete from '../../Components/DeletePopup/delete'
 export default (props) => {
     let {loader, shopId} = props;
     const [editCustomer, setEditCustomer] = useState(false);
+    const [innerLoader, setInnerLoader] = useState(true);
     const [printModel, setPrintModel] = useState(false);
     const [deleteModel, setDeleteModel] = useState(false);
     const [totalCus, setTotelCus] = useState([]);
@@ -34,11 +35,12 @@ export default (props) => {
             // Afgrecieved and sent
             setTotalAfgRecieved(res.data.totalAfghaniReceived);
             setTotalAfgSend(res.data.totalAfghaniSent);
+            setInnerLoader(false)
         });
     }, []);
     return (
         <div>
-            {!loader ? <div style={{display: "flex"}}>
+            {!loader && !innerLoader ? <div style={{display: "flex"}}>
                 <Section1 />
                 <Section2 setEditCustomer={setEditCustomer} setPrintModel={setPrintModel}
                           setDeleteModel={setDeleteModel}

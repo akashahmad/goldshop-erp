@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Section1 from '../../Components/Section1/section1'
-import CustomerTransaction from '../../Components/customerDetails(viewTransaction)/customerDetails'
-import AddMoneyModal from '../../Components/modalButton(addmoney)/addmoney'
+import CustomerTransaction from '../../Components/customerDetailsViewTransaction/customerDetails'
+import AddMoneyModal from '../../Components/modalButtonAddMoney/addmoney'
 import data from '../Homepage/data.json'
-import EditMoneyInfoModal from '../../Components/modalButton(editmoneyinfo)/editmoneyinfo'
-import DeletePopUpModal from '../../Components/Delete(Popup)/delete'
+import EditMoneyInfoModal from '../../Components/modalButtonEditMoneyInfo/editmoneyinfo'
+import DeletePopUpModal from '../../Components/DeletePopup/delete'
 
 export default (props)=>{
 const [addmoney,setAddMoney]=useState(false);

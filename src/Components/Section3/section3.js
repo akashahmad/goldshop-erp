@@ -4,7 +4,7 @@ import Style from './Style'
 import axios from 'axios'
 import ReactPaginate from "react-paginate";
 import {apiPath} from '../../Config'
-import Delete from '../../Components/Delete(Popup)/delete'
+import Delete from '../DeletePopup/delete'
 export default (props) => {
 
     let {setEditCustomer, setPrintModel, setDeleteModel} = props;
@@ -82,17 +82,17 @@ export default (props) => {
                             {
                                 show && show === single.id &&
                                 <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
-                                    <li><Link to={"/customertransaction/" + single.id}
+                                    <li><Link to={"/customer-money-details/" + single.id}
                                               className="link-model-on-action-buttons">View</Link>
                                     </li>
-                                    <li><Link to={"/home/" + single.id} className="link-model-on-action-buttons"
+                                    <li><Link to={"/customer/" + single.id} className="link-model-on-action-buttons"
                                               onClick={() => {
                                                   setEditCustomer(true)
                                               }}>Edit</Link></li>
                                     <li><Link className="link-model-on-action-buttons" onClick={() => {
                                         setPrintModel(true)
                                     }}>Print</Link></li>
-                                    <li><Link to={"/home/" + single.id} className="link-model-on-action-buttons"
+                                    <li><Link to={"/customer/" + single.id} className="link-model-on-action-buttons"
                                               onClick={() => {
                                                   setDeleteModel(true)
                                               }}>Delete</Link></li>

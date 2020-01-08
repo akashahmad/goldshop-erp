@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
 import {withRouter} from 'react-router-dom';
 import Stylejs from './style';
-import jwt_decode from "jwt-decode";
 import Logo from '../../assets/images/Group30.png';
 import {Form} from 'react-bootstrap';
 import axios from 'axios';
@@ -11,7 +10,7 @@ import {apiPath} from '../../Config'
 import '../../assets/style/style.css'
 
 const Login = (props) => {
-    let {history, dispatch} = props;
+    let {history} = props;
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [remember, setRemember] = useState(false);
@@ -22,11 +21,6 @@ const Login = (props) => {
         axios.post(apiPath + "/api/login", payLoad).then(async response => {
             await localStorage.setItem("age", remember ? 1296000 : 86400);
             await cookie.save('token', response.data.token, {maxAge: (remember ? 1296000 : 86400), path: "/"});
-            let data = await jwt_decode(response.data.token);
-            await dispatch({
-                type: "SET_SHOP_ID",
-                payload: data.shopId
-            });
             await history.push("/dashboard");
             await setEmail("");
             await setPassword("");
@@ -84,7 +78,7 @@ const Login = (props) => {
                         </div>
                         <div className="checkbox-data fnt-poppins ml-4 mt-5">
                             Dont have an account?
-                            <Link to="/createshop" className="ml-3">SignUp</Link>
+                            {/*<Link to="/signup-admin" className="ml-3">SignUp</Link>*/}
                         </div>
                     </form>
                 </div>

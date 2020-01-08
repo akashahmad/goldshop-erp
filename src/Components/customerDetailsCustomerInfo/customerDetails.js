@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import Style from '../customerDetails(viewTransaction)/Style'
+import Style from '../customerDetailsViewTransaction/Style'
 import Image1 from '../../assets/images/magnifying-glass.png'
 import Image2 from '../../assets/images/layer-6.png'
 import Image3 from '../../assets/images/Layer 6.png'
@@ -91,9 +91,9 @@ const Table2 = (props) => {
                     </div>
                     <div className="section-customer-navbottom">
                         <div className="section-customer-bottom-link">
-                            <div><Link to={"/customertransaction/" + id} className="link-of-models">View Money</Link></div>
+                            <div><Link to={"/customer-money-details/" + id} className="link-of-models">View Money</Link></div>
 
-                            <div className="link-view-Gold"><Link to={"/viewgold/" + id} className="link-of-models">View Gold</Link></div>
+                            <div className="link-view-Gold"><Link to={"/customer-money-details/" + id} className="link-of-models">View Gold</Link></div>
                         </div>
 
                         <div className="section-customerdetail-right ">
