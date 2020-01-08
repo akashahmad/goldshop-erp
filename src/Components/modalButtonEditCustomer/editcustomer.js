@@ -15,14 +15,13 @@ const Table = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-
     const [fullName, setfullName] = useState("");
     const [address, setAddress] = useState("");
     const [phone, setPhone] = useState("");
     let id = match.params && match.params.id ? match.params.id : "";
     console.log(id)
 
-    const handleSubmit = (id) => {
+    const handleSubmit = () => {
         let payload = {
             fullName: fullName,
             address: address,
@@ -33,8 +32,6 @@ const Table = (props) => {
             console.log(Response.data);
         })
     };
-
-
     return (
         <>
         {
@@ -90,18 +87,15 @@ const Table = (props) => {
                                 </button>
                                 <button className="btn-blue ml-2"
                                         onClick={() => {
-                                            handleSubmit(id)
+                                            handleSubmit()
                                         }}
                                 >Update
                                 </button>
                             </div>
                         </form>
                     </div>
-
                 </div>
-
             </div>}
-
         <Style />
 
         </>

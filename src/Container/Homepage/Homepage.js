@@ -52,8 +52,9 @@ export default (props) => {
                           totalAfgSend={totalAfgSend}
                           totalAfgRecieved={totalAfgRecieved}
                           setSelectedId={setSelectedId}
+                     
                 />
-                <EditCustomer editCustomer={editCustomer} setEditCustomer={setEditCustomer}/>
+                <EditCustomer  editCustomer={editCustomer} setEditCustomer={setEditCustomer}/>
                 <Delete selectedId={selectedId} deleteModel={deleteModel} setDeleteModel={setDeleteModel}/>
                 {/* print model */}
                 <Print printModel={printModel} setPrintModel={setPrintModel}/>
