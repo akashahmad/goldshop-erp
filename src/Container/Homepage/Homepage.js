@@ -12,6 +12,7 @@ import Delete from '../../Components/DeletePopup/delete'
 export default (props) => {
     let {loader, shopId} = props;
     const [editCustomer, setEditCustomer] = useState(false);
+    const [selectedId, setSelectedId] = useState("");
     const [innerLoader, setInnerLoader] = useState(true);
     const [printModel, setPrintModel] = useState(false);
     const [deleteModel, setDeleteModel] = useState(false);
@@ -50,9 +51,10 @@ export default (props) => {
                           totalUsdSend={totalUsdSend}
                           totalAfgSend={totalAfgSend}
                           totalAfgRecieved={totalAfgRecieved}
+                          setSelectedId={setSelectedId}
                 />
                 <EditCustomer editCustomer={editCustomer} setEditCustomer={setEditCustomer}/>
-                <Delete deleteModel={deleteModel} setDeleteModel={setDeleteModel}/>
+                <Delete selectedId={selectedId} deleteModel={deleteModel} setDeleteModel={setDeleteModel}/>
                 {/* print model */}
                 <Print printModel={printModel} setPrintModel={setPrintModel}/>
             </div > : <Loader/>}

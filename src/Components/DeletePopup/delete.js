@@ -3,23 +3,13 @@ import Style from './style'
 import axios from 'axios'
 import {apiPath} from '../../Config'
 import {withRouter} from 'react-router-dom'
-
-
 const Table = (props) => {
-
-    let {customers, setCustomers} = props;
-    let {match} = props;
+    let {customers, setCustomers, selectedId} = props;
     let {deleteModel, setDeleteModel} = props;
-
-    let id = match.params && match.params.id ? match.params.id : "";
-    console.log(customers)
-
-    const HandleRemoveItem = (id) => {
-        axios.delete(apiPath + "/api/customers/" + id).then(res => {
-            setCustomers(customers => customers.filter(item => item.id !== id))
-            console.log(res)
-            console.log(res.data)
-            console.log(id)
+    const HandleRemoveItem = () => {
+        axios.delete(apiPath + "/api/customers/" + selectedId).then(res => {
+            setCustomers(customers => customers.filter(item => item.id !== setDeleteModel));
+            setDeleteModel(false);
         })
     };
     return (
@@ -36,7 +26,7 @@ const Table = (props) => {
                     </div>
 
                     <div className="close-button-of-header fnt-poppins">
-                        <span class="close" onClick={() => setDeleteModel(false)}>&times;</span>
+                        <span className="close" onClick={() => setDeleteModel(false)}>&times;</span>
                     </div>
 
 
@@ -49,7 +39,7 @@ const Table = (props) => {
 
                         <div className="yes-button">
                             <button className="btn-blue confirm-popup-of-delete-method fnt-poppins"
-                                    onClick={() => HandleRemoveItem(id)}
+                                    onClick={() => HandleRemoveItem()}
                             >Yes
                             </button>
                         </div>

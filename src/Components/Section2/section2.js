@@ -8,7 +8,7 @@ export default (props) => {
     let {
         totalCus, totalPkr,
         totalPkrRec, totalUsdRecieved, totalUsdSend, setEditCustomer, setPrintModel, setDeleteModel,
-        totalAfgRecieved, totalAfgSend
+        totalAfgRecieved, totalAfgSend, setSelectedId
     } = props;
 
     return (
@@ -30,7 +30,7 @@ export default (props) => {
                                         </form>
                                     </a>
                                 </li>
-                                <div className="vertical-line-inside-navbar"></div>
+                                <div className="vertical-line-inside-navbar"/>
                                 <li className="nav-item text-navbar-top">
                                     <a className="nav-link fnt-poppins" href="#">Ahmed Wali</a>
                                 </li>
@@ -117,7 +117,7 @@ export default (props) => {
                 </nav>
 
             </div>
-            <Section3 setEditCustomer={setEditCustomer} setPrintModel={setPrintModel}
+            <Section3 setSelectedId={setSelectedId} setEditCustomer={setEditCustomer} setPrintModel={setPrintModel}
                       setDeleteModel={setDeleteModel}/>
             <Style />
         </div>

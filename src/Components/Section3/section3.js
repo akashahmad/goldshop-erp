@@ -6,70 +6,31 @@ import ReactPaginate from "react-paginate";
 import {apiPath} from '../../Config'
 import Delete from '../DeletePopup/delete'
 export default (props) => {
-
-    let {setEditCustomer, setPrintModel, setDeleteModel} = props;
+    let {setEditCustomer, setPrintModel, setDeleteModel, setSelectedId} = props;
     const [pageCount, setPageCount] = useState(1);
     const [show, setShow] = useState("");
-
-    const [fullName, setfullName] = useState("");
-    const [getId, setGetId] = useState([]);
-
-    // get all customers
-    const handleRemoveItem = (id) => {
-        axios.delete(apiPath + "/api/customers/" + id).then(res => {
-            setCustomers(customers => customers.filter(item => item.id !== id))
-            console.log(res)
-            console.log(res.data)
-            console.log(id)
-        })
-    }
-
     const [customers, setCustomers] = useState([]);
-
     useEffect(() => {
         nextCourses(1);
     }, []);
-
     const handlePageClick = (page) => {
-        console.log(page);
-
         nextCourses(page.selected + 1);
-
     };
-
     const nextCourses = (page) => {
         axios.get(apiPath + `/api/customers?page=${page}&limit=10`).then(response => {
             setCustomers(response.data.customers);
             setPageCount(response.data.totalPages);
         })
     };
-
-    const handleSubmit = (id) => {
-        let payload = {
-            fullName: fullName
-        }
-
-        axios.put(apiPath + '/api/customers/' + id, payload).then(Response => {
-            console.log(id)
-            console.log(Response.data);
-        })
-        //  updateList(newList);
-        setfullName("")
-    };
-
     return (
-
         <div className="container-fluid section3-table">
             <table className="section3-table-inner">
                 <tr className="section3-table-head fnt-poppins">
-
                     <th>Name</th>
                     <th>Address</th>
                     <th>Contact Number</th>
                     <th>Actions</th>
                 </tr>
-
-
                 {
                     customers ? customers.map((single, index) => <tr key={single.id}
                                                                      className="section3-table-rows fnt-poppins">
@@ -94,6 +55,7 @@ export default (props) => {
                                     }}>Print</Link></li>
                                     <li><Link to={"/customer/" + single.id} className="link-model-on-action-buttons"
                                               onClick={() => {
+                                                  setSelectedId(single.id);
                                                   setDeleteModel(true)
                                               }}>Delete</Link></li>
                                 </div>
@@ -103,11 +65,9 @@ export default (props) => {
                             <div className="action-div">
                                 <button type="button" className="doted-button"
                                         onClick={() => {
-                                            // console.log("show", show);
-                                            // console.log("show", single.id);
                                             setShow(show === single.id ? "" : single.id)
                                         }}>
-                                    <span class="dot"/>
+                                    <span className="dot"/>
                                     <span className="dot"/>
                                     <span className="dot"/>
                                 </button>
@@ -128,7 +88,6 @@ export default (props) => {
                            subContainerClassName={"container column"}
                            activeClassName={"p-one"}/>
             <Style />
-            <Delete customers={customers} setCustomers={setCustomers}/>
         </div>
     )
 }
