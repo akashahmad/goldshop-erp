@@ -4,11 +4,14 @@ import axios from 'axios'
 import {apiPath} from '../../Config'
 import {withRouter} from 'react-router-dom'
 const Table = (props) => {
-    let {customers, setCustomers, selectedId} = props;
+    let {customers, setCustomers, selectedId, totalCus, setTotalCus} = props;
     let {deleteModel, setDeleteModel} = props;
     const HandleRemoveItem = () => {
         axios.delete(apiPath + "/api/customers/" + selectedId).then(res => {
-            setCustomers(customers => customers.filter(item => item.id !== setDeleteModel));
+            console.log(totalCus);
+            let newtotalCus = parseInt(totalCus)-1;
+            setTotalCus(newtotalCus);
+            setCustomers(customers => customers.filter(item => item.id !== selectedId));
             setDeleteModel(false);
         })
     };

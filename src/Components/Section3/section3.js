@@ -6,10 +6,9 @@ import ReactPaginate from "react-paginate";
 import {apiPath} from '../../Config'
 import Delete from '../DeletePopup/delete'
 export default (props) => {
-    let {setEditCustomer, setPrintModel, setDeleteModel, setSelectedId} = props;
+    let {setEditCustomer, setPrintModel, setDeleteModel, setSelectedId, customers, setCustomers} = props;
     const [pageCount, setPageCount] = useState(1);
     const [show, setShow] = useState("");
-    const [customers, setCustomers] = useState([]);
     useEffect(() => {
         nextCourses(1);
     }, []);

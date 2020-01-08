@@ -8,7 +8,7 @@ export default (props) => {
     let {
         totalCus, totalPkr,
         totalPkrRec, totalUsdRecieved, totalUsdSend, setEditCustomer, setPrintModel, setDeleteModel,
-        totalAfgRecieved, totalAfgSend, setSelectedId
+        totalAfgRecieved, totalAfgSend, setSelectedId, customers, setCustomers
     } = props;
 
     return (
@@ -118,7 +118,7 @@ export default (props) => {
 
             </div>
             <Section3 setSelectedId={setSelectedId} setEditCustomer={setEditCustomer} setPrintModel={setPrintModel}
-                      setDeleteModel={setDeleteModel}/>
+                      setDeleteModel={setDeleteModel} customers={customers} setCustomers={setCustomers}/>
             <Style />
         </div>
         </>)

@@ -13,10 +13,11 @@ export default (props) => {
     let {loader, shopId} = props;
     const [editCustomer, setEditCustomer] = useState(false);
     const [selectedId, setSelectedId] = useState("");
+    const [customers, setCustomers] = useState([]);
     const [innerLoader, setInnerLoader] = useState(true);
     const [printModel, setPrintModel] = useState(false);
     const [deleteModel, setDeleteModel] = useState(false);
-    const [totalCus, setTotelCus] = useState([]);
+    const [totalCus, setTotalCus] = useState([]);
     const [totalPkr, setTotalPkr] = useState("");
     const [totalPkrRec, setTotalPkrRec] = useState("");
     const [totalUsdRecieved, setTotalUsedRecieved] = useState([]);
@@ -25,7 +26,7 @@ export default (props) => {
     const [totalAfgRecieved, setTotalAfgRecieved] = useState([]);
     useEffect(() => {
         axios.get(apiPath + "/api/dashboard").then(res => {
-            setTotelCus(res.data.totalCustomers);
+            setTotalCus(res.data.totalCustomers);
             setTotalPkr(res.data.totalPKRSent);
             setTotalPkrRec(res.data.totalPKRReceived)
 
@@ -52,9 +53,11 @@ export default (props) => {
                           totalAfgSend={totalAfgSend}
                           totalAfgRecieved={totalAfgRecieved}
                           setSelectedId={setSelectedId}
+                          customers={customers} setCustomers={setCustomers}
                 />
                 <EditCustomer editCustomer={editCustomer} setEditCustomer={setEditCustomer}/>
-                <Delete selectedId={selectedId} deleteModel={deleteModel} setDeleteModel={setDeleteModel}/>
+                <Delete totalCus={totalCus} setTotalCus={setTotalCus} selectedId={selectedId} deleteModel={deleteModel}
+                        setDeleteModel={setDeleteModel} customers={customers} setCustomers={setCustomers}/>
                 {/* print model */}
                 <Print printModel={printModel} setPrintModel={setPrintModel}/>
             </div > : <Loader/>}
