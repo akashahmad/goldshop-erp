@@ -1,6 +1,5 @@
-import React, {useState} from 'react'
-import {Modal, Button, CloseButton} from 'react-bootstrap'
-import DatePicker from 'react-datepicker'
+import React, {useState, useEffect} from 'react'
+import {CloseButton} from 'react-bootstrap'
 import Style from './style'
 import axios from 'axios'
 import '../../assets/style/common.css'
@@ -8,39 +7,44 @@ import {apiPath} from '../../Config'
 import {withRouter} from 'react-router-dom'
 
 const Table = (props) => {
-    let {match} = props;
-    let {editCustomer, setEditCustomer} = props;
-    const [show, setShow] = useState(false);
-    const [startDate, setStartDate] = useState(new Date());
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-
+    let {editCustomer, setEditCustomer, selectedId, customers, setCustomers, setSelectedId} = props;
     const [fullName, setfullName] = useState("");
     const [address, setAddress] = useState("");
     const [phone, setPhone] = useState("");
-    let id = match.params && match.params.id ? match.params.id : "";
-    console.log(id)
-
-    const handleSubmit = (id) => {
+    const handleSubmit = async (event) => {
+        event.preventDefault();
         let payload = {
             fullName: fullName,
             address: address,
-            phone: phone
+            phone: phone,
         };
-        axios.put(apiPath + '/api/customers/' + id, payload).then(Response => {
-            console.log(id)
-            console.log(Response.data);
+        axios.put(apiPath + '/api/customers/' + selectedId, payload).then((res) => {
+            let duplicateCustomers = [...customers];
+            duplicateCustomers.forEach((sin) => {
+                if (sin.id === selectedId) {
+                    sin.fullName = fullName;
+                    sin.address = address;
+                    sin.phone = phone;
+                }
+            });
+            setEditCustomer(false);
+            setfullName("");
+            setAddress("");
+            setPhone("");
+            setSelectedId("")
         })
     };
-
-
+    useEffect(() => {
+        let customer = customers && customers.find(sin => sin.id === selectedId);
+        setfullName(customer && customer.fullName);
+        setAddress(customer && customer.address);
+        setPhone(customer && customer.phone)
+    }, [selectedId]);
     return (
         <>
         {
             editCustomer && <div className="modal-editcustomer">
                 <div className="modal-content">
-
                     <div className="model-header mt-5">
                         <div className="d-flex flex-column ml-4">
                             <CloseButton className="modalCross" variant="secondary" onClick={() => {
@@ -50,36 +54,37 @@ const Table = (props) => {
 
                         </div>
                     </div>
-
                     <div className="modal-body-editcustomer">
-                        <form>
+                        <form onSubmit={(event) => {
+                            handleSubmit(event)
+                        }}>
                             <div>
                                 <label className="model-Money-Label fnt-poppin font-sm">Name</label>
                             </div>
                             <div>
-                                <input placeholder="Jhon Doe" className="input-of-modal input-modal-editcustomer"
+                                <input className="input-of-modal input-modal-editcustomer"
                                        type="text"
-                                       value={fullName} onChange={(e) => setfullName(e.target.value)}
-                                ></input>
+                                       value={fullName ? fullName : ""} onChange={(e) => setfullName(e.target.value)}
+                                />
                             </div>
                             <div>
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Address</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-editcustomer" placeholder="Abbottabad"
+                                <input className="input-of-modal input-modal-editcustomer"
                                        type="text"
-                                       value={address} onChange={(e) => setAddress(e.target.value)}
-                                ></input>
+                                       value={address ? address : ""} onChange={(e) => setAddress(e.target.value)}
+                                />
                             </div>
 
                             <div>
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Phone</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-editcustomer" placeholder="0300-1234567"
+                                <input className="input-of-modal input-modal-editcustomer"
                                        type="number"
-                                       value={phone} onChange={(e) => setPhone(e.target.value)}
-                                ></input>
+                                       value={phone ? phone : null} onChange={(e) => setPhone(e.target.value)}
+                                />
                             </div>
 
 
@@ -89,22 +94,16 @@ const Table = (props) => {
                                 }}>Cancel
                                 </button>
                                 <button className="btn-blue ml-2"
-                                        onClick={() => {
-                                            handleSubmit(id)
-                                        }}
+                                        type="submit"
                                 >Update
                                 </button>
                             </div>
                         </form>
                     </div>
-
                 </div>
-
             </div>}
-
         <Style />
-
         </>
     );
-}
+};
 export default withRouter(Table);

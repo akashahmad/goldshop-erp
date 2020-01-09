@@ -32,7 +32,6 @@ const Routes = (props) => {
             <Route path={"/customer-money-details/:id"} component={CustomerTransaction}/>
             <Route path={"/customer-gold-details/:id"} component={ViewGold}/>
             <Route path={"/dashboard"} component={Home }/>
-            <Route path={"/customer/:id"} component={Home}/>
             <Route path={"/create-shop"} component={CreateShop}/>
             <Route path={"/"} exact component={Home }/>
         </Switch>
