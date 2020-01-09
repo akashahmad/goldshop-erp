@@ -4,20 +4,18 @@ import {Link, withRouter} from 'react-router-dom';
 import axios from 'axios'
 import {apiPath} from '../../Config'
 import ReactPaginate from "react-paginate";
-
+import Loader from '../../Components/commonComponents/loader/index'
 
 const Table = (props) => {
     let {match} = props;
-    console.log(match.params && match.params.id);
-    let {setDeleteModel} = props;
+    let {setDeleteModel,setSelectedId,viewMoney,setViewMoney} = props;
     let {setEditMoney} = props;
     let {data} = props;
     let customers = data ? (data.customers ? data.customers : "") : "";
     const [show, setShow] = useState("");
-
+    const [innerLoader,setInnerLoader]=useState(true);
 
     // axios.get value of view money
-    const [viewMoney, setViewMoney] = useState([]);
     const [pageCount, setPageCount] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -30,11 +28,13 @@ const Table = (props) => {
     };
 
     const nextCourses = (page) => {
+        setInnerLoader(true)
         let id = match.params && match.params.id ? match.params.id : "";
         axios.get(apiPath + `/api/money/${id}/?page=${page}&limit=5`).then(response => {
             setViewMoney(response.data.money);
             setPageCount(response.data.totalPages);
             setCurrentPage(response.data.currentPage);
+            setInnerLoader(false)
         })
     };
 
@@ -51,7 +51,7 @@ const Table = (props) => {
 
     return (
         <>
-
+{ !innerLoader ?
         <div className="container-fluid section3-table">
             <table className="section3-table-inner">
                 <tr className="section3-table-head fnt-poppins">
@@ -80,10 +80,12 @@ const Table = (props) => {
                             <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
 
                                 <li ><Link className="link-model-on-action-buttons" onClick={() => {
+                                    setSelectedId(single.id);
                                     setEditMoney(true)
                                 }}> Edit</Link></li>
                                 <li><Link className="link-model-on-action-buttons" onClick={() => {
-                                    setDeleteModel(true)
+                                      setSelectedId(single.id);
+                                     setDeleteModel(true)
                                 }}>Delete</Link></li>
 
                             </div>
@@ -100,8 +102,6 @@ const Table = (props) => {
 
                     </td>
                 </tr>) : <h1>Loader ....</h1>}
-
-
             </table>
             <ReactPaginate previousLabel={<span className="fa fa-chevron-right "> &#60; </span>}
                            nextLabel={<span className="fa fa-chevron-right "> > </span>}
@@ -116,6 +116,7 @@ const Table = (props) => {
                            activeClassName={"p-one"}/>
             <Style />
         </div>
+        : <Loader/>}
         </>
     )
 }

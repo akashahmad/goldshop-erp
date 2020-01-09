@@ -9,6 +9,7 @@ import Delete from '../../Components/DeletePopup/delete'
 import Print from '../../Components/Print(Popup)/print'
 import EditCustomer from '../../Components/modalButtonEditCustomer/editcustomer'
 export default () => {
+    const [ customers, setCustomers]=useState("");
     const [editCustomer,setEditCustomer]=useState(false)
     const [printModel,setPrintModel]=useState(false)
     const [deleteModel,setDeleteModel]=useState(false)
@@ -17,7 +18,10 @@ export default () => {
         <>
             <div style={{ display: "flex" }}>
                 <Section1 />
-                <Section4 setAddCustomer={setAddCustomer} data={data} setEditCustomer={setEditCustomer} setPrintModel={setPrintModel} setDeleteModel={setDeleteModel}/>
+                <Section4 setAddCustomer={setAddCustomer} data={data} setEditCustomer={setEditCustomer} 
+                setPrintModel={setPrintModel} setDeleteModel={setDeleteModel}
+                customers={customers} setCustomers={setCustomers}
+                />
                 <AddCustomer addCustomer={addCustomer} setAddCustomer={setAddCustomer}/> 
                 <Delete deleteModel={deleteModel} setDeleteModel={setDeleteModel}/>
                 <Print printModel={printModel} setPrintModel={setPrintModel} />

@@ -79,9 +79,7 @@ const EditCustomer = (props) => {
                                                   setDeleteModel(true)
                                               }}>Delete</Link></li>
                                 </div>
-
                             }
-                            {/* <button onClick={()=>HandleRemoveItem(single.id)}>delete</button> */}
                             <div className="action-div">
                                 <button type="button" className="doted-button"
                                         onClick={() => {
@@ -93,7 +91,6 @@ const EditCustomer = (props) => {
                                     <span className="dot"/>
                                 </button>
                             </div>
-
                         </td>
                     </tr>) : <h1>Loader ....</h1>}
             </table>
