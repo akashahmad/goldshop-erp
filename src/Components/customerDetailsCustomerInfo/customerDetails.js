@@ -14,7 +14,7 @@ const Table2 = (props) => {
     let { match } = props;
     let id = match.params && match.params.id;
     let { setDeleteModel } = props;
-    let { setEditGold } = props;
+    let { setEditGold,viewGold,setViewGold,setSelectedId ,selectedId} = props;
     let { setAddGold } = props;
     let { data } = props
     const[showData,setShowData]=useState([]);
@@ -91,9 +91,9 @@ const Table2 = (props) => {
                     </div>
                     <div className="section-customer-navbottom">
                         <div className="section-customer-bottom-link">
-                            <div><Link to={"/customer-money-details/" + id} className="link-of-models">View Money</Link></div>
+                            <div><Link to={"/customer-money-details/"+id} className="link-of-models">View Money</Link></div>
 
-                            <div className="link-view-Gold"><Link to={"/customer-money-details/" + id} className="link-of-models">View Gold</Link></div>
+                            <div className="link-view-Gold"><Link to={"/customer-gold-details/"+id} className="link-of-models">View Gold</Link></div>
                         </div>
 
                         <div className="section-customerdetail-right ">
@@ -109,7 +109,9 @@ const Table2 = (props) => {
                     </div>
                 </div>
                 <Style />
-                <Table data={data} setEditGold={setEditGold} setDeleteModel={setDeleteModel} />
+                <Table data={data} setEditGold={setEditGold} setDeleteModel={setDeleteModel}
+                viewGold={viewGold} setViewGold={setViewGold} setSelectedId={setSelectedId}
+                />
             </div>
         </>
     )

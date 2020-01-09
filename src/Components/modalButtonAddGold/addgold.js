@@ -11,7 +11,7 @@ import { withRouter } from 'react-router-dom';
 const Table = (props) => {
 
     let {match}=props;
-
+    // let id = match.params && 
     let { addgold, setAddGold } = props;
     // const [show, setShow] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
@@ -34,14 +34,9 @@ const Table = (props) => {
     const [grossWeight, setGrossweight] = useState("");
     const [pureWeight, setPureweight] = useState("");
     const [transactionDate, setTransactiondate] = useState("");
-    // const [pureWeightSend,setPureweightSend]=useState("");
-    // const[totalPureWeight,setTotalPureWeight]=useState("");
-    const[customerId,setCustomerId]=useState("");
-    // let token = localStorage.getItem("token");
-    // console.log(token);
 
-    // const [addGold , setAddgold]=useState("")
-  
+    const[customerId,setCustomerId]=useState("");
+
     const Addgold = (event) => {
         event.preventDefault();
         let customerId = match.params && match.params.id?match.params.id:"";
@@ -53,6 +48,7 @@ const Table = (props) => {
 
         Axios.post(apiPath + '/api/gold', payload).then(Response => {
             console.log(Response.data);
+          
             
         })
 

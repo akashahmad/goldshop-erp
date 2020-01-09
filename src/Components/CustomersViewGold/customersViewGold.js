@@ -11,16 +11,14 @@ import {withRouter} from 'react-router-dom';
 const Table = (props) => {
 
     const {match} = props
-
-    let {setEditGold} = props;
+    let id=match.params && match.params.id?match.params.id:"";
+    let {setEditGold,viewGold,setViewGold,setSelectedId} = props;
     let {setDeleteModel} = props;
     let {setPrintModel} = props;
     let {setEditCustomer} = props;
     let {data} = props;
     let customers = data ? (data.customers ? data.customers : "") : "";
     const [show, setShow] = useState("");
-
-    const [viewGold, setViewGold] = useState([]);
     const [pageCount, setPageCount] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -90,12 +88,14 @@ const Table = (props) => {
                                  <li onClick={()=>{setDeleteModel(true)}}>Delete</li> */}
 
 
-                                <li><Link to={"/customer-money-details/" + single.id} className="link-model-on-action-buttons"
+                                <li><Link to={"/customer-gold-details/" + id} className="link-model-on-action-buttons"
                                           onClick={() => {
+                                              setSelectedId(single.id)
                                               setEditGold(true)
                                           }}> Edit</Link></li>
-                                <li><Link to={"/customer-money-details/" + single.id} className="link-model-on-action-buttons"
+                                <li><Link to={"/customer-gold-details/" + id} className="link-model-on-action-buttons"
                                           onClick={() => {
+                                            setSelectedId(single.id);
                                               setDeleteModel(true)
                                           }}>Delete</Link></li>
                             </div>

@@ -8,39 +8,41 @@ import {Link,withRouter } from 'react-router-dom'
 import Table from '../../Components/Customertransactiontable/customerTransactionTable'
 import Axios from 'axios'
 import { apiPath } from '../../Config'
+import Loader from '../../Components/commonComponents/loader/index'
+
 
 
 const Table2=(props)=>{
-    const {match} =props;
+    const {match } =props;
    
-    let {setDeleteModel}=props;
+    let { setDeleteModel,setSelectedId,viewMoney,setViewMoney,selectedId}=props;
     let {setEditMoney}=props;
     let {setAddMoney}=props;
     let {data}=props;
 
     const[showData,setShowData]=useState([]);
-
+  
  const [getName,setGetName] =useState([]);
  const [getAddress,setGetAddress] =useState([]);
  const [getPhone,setGetPhone] =useState([]);
+ const [innerLoader, setInnerLoader] = useState(true);
+
  let id= match.params && match.params.id;
  useEffect(()=>{
         Axios.get(apiPath+`/api/customerCall/${id}`).then(response=>{
-        //    console.log(setGetName(response.data.customerInfo.fullName));
-        //   console.log(response.data.customerInfo);
-        //    console.log(response.data.customerInfo.phone);
            setGetName(response.data.customerInfo.fullName);
            setGetAddress(response.data.customerInfo.address);
            setGetPhone(response.data.customerInfo.phone);
             setShowData(response.data.customerInfo);
+            setInnerLoader(false)
         })
  },[]);
 
     return(
 <>
 
-<div className="container-fluid Header-section2">
-        <div className="container-fluid dashboard-content-homepage">
+{ !innerLoader ?<div className="container-fluid Header-section2">
+<div className="container-fluid dashboard-content-homepage">
 
             <nav class="navbar-section2-dashboard navbar-expand-lg ">
                 <div class="container-fluid navbar-top">
@@ -78,9 +80,9 @@ const Table2=(props)=>{
 
   </ul>
   <ul>
-    <li>{getName}</li>
-    <li>{getAddress}</li>
-    <li>{getPhone}</li>
+        <li>{getName}</li>
+        <li>{getAddress}</li>
+        <li>{getPhone}</li>
 
         </ul>
     <ul className="container-fluid image-div2">
@@ -95,7 +97,7 @@ const Table2=(props)=>{
                     <div className="section-customer-bottom-link">
                         <div><Link to={"/customer-money-details/"+id} className="link-of-models">View Money</Link></div>
                    
-                    <div className="link-view-Gold"><Link to={"/customer-money-details/"+id} className="link-of-models">View Gold</Link></div>
+                    <div className="link-view-Gold"><Link to={"/customer-gold-details/"+id} className="link-of-models">View Gold</Link></div>
                     </div>
                  <div className="section-customerdetail-right "> 
                        <div className="first-section-customer-detail"><a>View Transactions:</a>
@@ -120,8 +122,9 @@ const Table2=(props)=>{
 </div>
 
 <Style/>
-<Table  data={data} setEditMoney={setEditMoney} setDeleteModel={setDeleteModel}/>
-</div>
+<Table  data={data} setEditMoney={setEditMoney} setDeleteModel={setDeleteModel}
+ setSelectedId={setSelectedId} viewMoney={viewMoney} setViewMoney={setViewMoney}/>
+</div> : <Loader/>}
 </>
 
 

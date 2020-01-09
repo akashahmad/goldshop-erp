@@ -6,7 +6,7 @@ import Section3 from '../../Components/Section3/section3'
 
 
 export default (props) => {
-    let {setEditCustomer} = props;
+    let {setEditCustomer,customers,setCustomers} = props;
     let {setPrintModel} = props;
     let {setDeleteModel} = props;
     let {setAddCustomer} = props;
@@ -54,7 +54,9 @@ export default (props) => {
                 </div>
             </div>
             <Section3 data={data} setEditCustomer={setEditCustomer} setPrintModel={setPrintModel}
-                      setDeleteModel={setDeleteModel}/>
+                      setDeleteModel={setDeleteModel} customers={customers}
+                      setCustomers={setCustomers}
+                      />
             <Style />
         </div>)
 }
