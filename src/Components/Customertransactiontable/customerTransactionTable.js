@@ -5,7 +5,6 @@ import axios from 'axios'
 import {apiPath} from '../../Config'
 import ReactPaginate from "react-paginate";
 import Loader from '../../Components/commonComponents/loader/index'
-
 const Table = (props) => {
     let {match} = props;
     let {setDeleteModel,setSelectedId,viewMoney,setViewMoney} = props;
@@ -14,11 +13,9 @@ const Table = (props) => {
     let customers = data ? (data.customers ? data.customers : "") : "";
     const [show, setShow] = useState("");
     const [innerLoader,setInnerLoader]=useState(true);
-
     // axios.get value of view money
     const [pageCount, setPageCount] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
-
     useEffect(() => {
         nextCourses(1);
     }, []);
@@ -26,7 +23,6 @@ const Table = (props) => {
     const handlePageClick = (page) => {
         nextCourses(page.selected + 1);
     };
-
     const nextCourses = (page) => {
         setInnerLoader(true)
         let id = match.params && match.params.id ? match.params.id : "";
@@ -37,18 +33,6 @@ const Table = (props) => {
             setInnerLoader(false)
         })
     };
-
-
-    // axios .delete
-
-    // const deleteTransaction = (id) => {
-    //     window.confirm("Are You Sure You Want to Delete Data");
-    //     axios.delete(apiPath + '/api/money/' + id).then(response => {
-    //         setViewMoney(viewMoney => viewMoney.filter(single => single.id !== id))
-    //     })
-    // }
-
-
     return (
         <>
 { !innerLoader ?

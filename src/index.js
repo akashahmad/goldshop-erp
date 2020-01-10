@@ -8,7 +8,6 @@ import {checktoken} from "./tokenValidation";
 
 requestInterceptor();
 checktoken();
-
 ReactDOM.render(
     <BrowserRouter>
         <App/>

@@ -78,7 +78,7 @@ const Table = (props) => {
                             <label className="model-Money-Label fnt-poppin font-sm mt-4">Bill Number</label>
                         </div>
                         <div>
-                            <input className="input-of-modal input-modal-addmoney" value={billNo} placeholder="0001"
+                            <input required className="input-of-modal input-modal-addmoney" value={billNo} placeholder="0001"
                                    type="number"
                                    onChange={event => {
                                        setBillNo(event.target.value);
@@ -134,7 +134,7 @@ const Table = (props) => {
 
                         <div className="d-flex flex-column">
                             <label className="model-Money-Label fnt-poppin font-sm mt-4">Amount </label>
-                            <input className="input-of-modal input-modal-addmoney" value={amount} placeholder="$00.00"
+                            <input required className="input-of-modal input-modal-addmoney" value={amount} placeholder="$00.00"
                                    type="number"
                                    onChange={event => {
                                        setAmount(event.target.value);
@@ -145,7 +145,7 @@ const Table = (props) => {
 
                         <div className="d-flex flex-column">
                             <label className="model-Money-Label fnt-poppin font-sm mt-4">Status</label>
-                            <input className="input-of-modal input-modal-addmoney" value={status}
+                            <input required className="input-of-modal input-modal-addmoney" value={status}
                                    placeholder="Send or Recieved" type="text"
                                    onChange={event => {
                                        setStatus(event.target.value);
@@ -155,7 +155,7 @@ const Table = (props) => {
 
                         <div className="d-flex flex-column">
                             <label className="model-Money-Label fnt-poppin font-sm mt-4">Currency</label>
-                            <input className="input-of-modal input-modal-addmoney" value={currency}
+                            <input required className="input-of-modal input-modal-addmoney" value={currency}
                                    placeholder="USD , AFG , PKR" type="text"
                                    onChange={event => {
                                        setCurrency(event.target.value);
@@ -197,7 +197,7 @@ const Table = (props) => {
 
                         <div className="d-flex flex-column">
                             <label className="model-Money-Label fnt-poppin font-sm mt-4">Details</label>
-                            <textarea className="input-postbody-modal" value={detail} placeholder="" type="textarea"
+                            <textarea required className="input-postbody-modal" value={detail} placeholder="" type="textarea"
                                       onChange={event => {
                                           setDetail(event.target.value);
                                       }}

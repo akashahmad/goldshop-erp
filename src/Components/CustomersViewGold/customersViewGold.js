@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import Style from './style'
-// import CustomerDetailsInfo from '../customerDetailsCustomerInfo/customerDetails'
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 import {apiPath} from '../../Config'
 import ReactPaginate from "react-paginate";
 import {withRouter} from 'react-router-dom';
-
+import Loader from '../../Components/commonComponents/loader'
 
 const Table = (props) => {
 
@@ -21,6 +20,7 @@ const Table = (props) => {
     const [show, setShow] = useState("");
     const [pageCount, setPageCount] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
+    const [innerLoader , setInnerLoader] =useState(true);
 
     useEffect(() => {
         nextCourses(1);
@@ -40,20 +40,14 @@ const Table = (props) => {
             setPageCount(response.data.totalPages);
             setCurrentPage(response.data.currentPage);
             console.log(response.data.gold);
+            setInnerLoader(false);
         })
     };
 
-// <...Axios delete ...?
-//     const deleteTransaction = (id) => {
-        // window.confirm("Are You Sure You Want to Delete Data");
-        // axios.delete(apiPath + '/api/money/' + id).then(response => {
-        //     setViewGold(viewGold => viewGold.filter(single => single.id !== id))
-        // })
-    // };
 
     return (
         <>
-        {/* <div><CustomerDetailsInfo/></div> */}
+        {!innerLoader ?
         <div className="container-fluid section3-table">
             <table className="section3-table-inner">
                 <tr className="section3-table-head fnt-poppins">
@@ -82,11 +76,7 @@ const Table = (props) => {
                             show && show === single.id &&
                             <div className="main-div-of-section3-table-popup back-image-of-popup fnt-poppins">
 
-                                {/* <li>View</li>
-                                 <li onClick={()=>{setEditCustomer(true)}}>Edit</li>
-                                 <li onClick={()=>{setPrintModel(true)}}>Print</li>
-                                 <li onClick={()=>{setDeleteModel(true)}}>Delete</li> */}
-
+                                
 
                                 <li><Link to={"/customer-gold-details/" + id} className="link-model-on-action-buttons"
                                           onClick={() => {
@@ -124,8 +114,8 @@ const Table = (props) => {
                            containerClassName={"digit-icons main"}
                            subContainerClassName={"container column"}
                            activeClassName={"p-one"}/>
-            <Style />
-        </div>
+                     <Style />
+                    </div> : <Loader/> }
 
 
         </>
