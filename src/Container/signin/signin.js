@@ -15,6 +15,7 @@ const Login = (props) => {
     const [password, setPassword] = useState("");
     const [remember, setRemember] = useState(false);
     const [error, setError] = useState("");
+    
     const userAuthentication = e => {
         e.preventDefault();
         let payLoad = {email: email, password: password};
@@ -34,9 +35,7 @@ const Login = (props) => {
                 }
             });
     };
-
     return (
-
         <div className="Container-fluid login-background-color">
             <div className="login">
 
@@ -51,20 +50,20 @@ const Login = (props) => {
                               userAuthentication(event)
                           }}>
                         <h2 className="Sign-in fnt-poppins">Sign in</h2>
-                        <Form.Control className="input-text flirt fnt-poppins" type="text" value={email} name="User"
-                                      placeholder="User name"
+                        <Form.Control className="input-text flirt fnt-poppins" type="email" value={email} name="User"
+                                      placeholder="Email" required
                                       onChange={(event) => {
                                           setEmail(event.target.value)
                                       }}
                         />
-
+                      
+      
                         <Form.Control className="input-text signin-input fnt-poppins" type="password" value={password}
-                                      name="password" placeholder="Password"
+                                      name="password" placeholder="Password" required
                                       onChange={(event) => {
                                           setPassword(event.target.value)
                                       }}
                         />
-
                         <div className="custom-control custom-checkbox signin-checkbox">
                             <input id="checked" className="custom-control-input" checked={remember}
                                    onChange={() => setRemember(!remember)} type="checkbox"/>

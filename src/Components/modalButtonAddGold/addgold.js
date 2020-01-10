@@ -83,7 +83,7 @@ const Table = (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Bill Number</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addgold" value={billNo} placeholder="0001" type="number"
+                                <input required className="input-of-modal input-modal-addgold" value={billNo} placeholder="0001" type="number"
                                     onChange={event => {
                                         setBillNo(event.target.value);
                                     }}
@@ -94,7 +94,7 @@ const Table = (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Description</label>
                             </div>
                             <div>
-                                <textarea className="input-postbody-modal" value={particular} placeholder="Description"
+                                <textarea required className="input-postbody-modal" value={particular} placeholder="Description"
                                     onChange={event => {
                                         setParticular(event.target.value);
                                     }}
@@ -132,7 +132,7 @@ const Table = (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Status</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addgold" value={status} placeholder="status" type="text"
+                                <input required className="input-of-modal input-modal-addgold" value={status} placeholder="status" type="text"
                                     onChange={event => {
                                         setStatus(event.target.value);
                                     }}
@@ -142,7 +142,7 @@ const Table = (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Purity</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addgold" value={purity} placeholder="18.5" type="number"
+                                <input required className="input-of-modal input-modal-addgold" value={purity} placeholder="18.5" type="number"
                                     onChange={event => {
                                         setPurity(event.target.value);
                                     }}
@@ -152,7 +152,7 @@ const Table = (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Gross Weight</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addgold" value={grossWeight} placeholder="1579" type="number"
+                                <input required className="input-of-modal input-modal-addgold" value={grossWeight} placeholder="1579" type="number"
                                     onChange={event => {
                                         setGrossweight(event.target.value);
                                     }}
@@ -163,7 +163,7 @@ const Table = (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Pure Weight</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addgold" value={pureWeight} placeholder="" type="text"
+                                <input required className="input-of-modal input-modal-addgold" value={pureWeight} placeholder="" type="text"
                                 onChange={event=>{
                                     setPureweight(event.target.value);
                                 }}

@@ -8,7 +8,6 @@ export default ()=>{
           }
           .section3-table-head{
             background-color: #f8f9fd;
-          
           }
           .section3-table .section3-table-inner {
               background-color: #f8f9fd;

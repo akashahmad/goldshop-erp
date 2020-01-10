@@ -7,11 +7,12 @@ import '../../assets/style/common.css'
 import { withRouter } from 'react-router-dom'
 import Axios from 'axios';
 import { apiPath } from '../../Config';
+import customer from '../../Container/CustomerPage/customer';
 
 const Customers = (props) => {
 
     let { match } = props;
-    let { addCustomer, setAddCustomer } = props;
+    let { addCustomer, setAddCustomer,customers, setCustomers } = props;
     const [startDate, setStartDate] = useState(new Date());
     const handleChange = date => {
         setStartDate(date);
@@ -33,8 +34,7 @@ const Customers = (props) => {
         }
 
         Axios.post(apiPath + "/api/customers/", payload).then(Response => {
-             console.log(Response.data.data);
-                
+            setAddCustomer(false); 
         })
     }
 
@@ -56,7 +56,7 @@ const Customers = (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm">Customer Name</label>
                             </div>
                             <div>
-                                <input placeholder="Name" className="input-of-modal input-modal-addcustomer" type="text"
+                                <input placeholder="Name" required className="input-of-modal input-modal-addcustomer" type="text"
                                 value={fullName}
                                 onChange={event=>{
                                     setFullName(event.target.value);
@@ -68,7 +68,7 @@ const Customers = (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Phone Number</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addcustomer" placeholder="Phone Number" type="number"
+                                <input required className="input-of-modal input-modal-addcustomer" placeholder="Phone Number" type="number"
                                 value={phone}
                                 onChange={event=>{
                                     setPhone(event.target.value);
@@ -80,7 +80,7 @@ const Customers = (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Address</label>
                             </div>
                             <div>
-                                <input className="input-of-modal input-modal-addcustomer" placeholder="Address" type="text" 
+                                <input required className="input-of-modal input-modal-addcustomer" placeholder="Address" type="text" 
                                 value={address}
                                 onChange={event=>{
                                     setAddress(event.target.value);

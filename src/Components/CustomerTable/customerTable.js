@@ -1,19 +1,19 @@
 import React, {useState, useEffect} from 'react'
 import {Link, withRouter} from 'react-router-dom'
-import Style from './Style'
+import Style from '../Section3/Style'
 import axios from 'axios'
 import ReactPaginate from "react-paginate";
 import {apiPath} from '../../Config'
 import Delete from '../DeletePopup/delete'
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Loader from '../../Components/commonComponents/loader'
+
 const EditCustomer = (props) => {
     let {history, setEditCustomer, setPrintModel, setDeleteModel, setSelectedId, customers, setCustomers} = props;
     const [pageCount, setPageCount] = useState(1);
     const [show, setShow] = useState("");
     const [hoverId, setHoverId] = useState("");
-    const handleClickAway=()=>{
-        setShow(false);
-    }
+    const [innerLoader , setInnerLoader]=useState(true);
+
     useEffect(() => {
         nextCourses(1);
     }, []);
@@ -24,12 +24,13 @@ const EditCustomer = (props) => {
         axios.get(apiPath + `/api/customers?page=${page}&limit=10`).then(response => {
             setCustomers(response.data.customers);
             setPageCount(response.data.totalPages);
+            setInnerLoader(false);
         })
     };
     return (
-       
+        <>
+         {!innerLoader ? 
         <div className="container-fluid section3-table">
-            
             <table className="section3-table-inner">
                 <tr className="section3-table-head fnt-poppins">
                     <th>Name</th>
@@ -78,7 +79,7 @@ const EditCustomer = (props) => {
                                     <li><Link className="link-model-on-action-buttons" onClick={() => {
                                         setPrintModel(true)
                                     }}>Print</Link></li>
-                                    <li><Link to={"/dashboard"} className="link-model-on-action-buttons"
+                                    <li><Link to={"/customers"} className="link-model-on-action-buttons"
                                               onClick={() => {
                                                   setSelectedId(single.id);
                                                   setDeleteModel(true)
@@ -110,9 +111,9 @@ const EditCustomer = (props) => {
                            containerClassName={"digit-icons main"}
                            subContainerClassName={"container column"}
                            activeClassName={"p-one"}/>
-            <Style />
-        </div>
-     
+            <Style /> 
+        </div> : <Loader/> }
+        </>
     )
 };
 

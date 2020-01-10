@@ -26,31 +26,25 @@ const SideNavigation = (props) => {
             path: "/login"
         });
         localStorage.removeItem("age");
-        history.push("/");
+        history.push("/login");
     };
     return (
         // <div class="wrapper">
-
         <nav id="sidebar" className="sidebar">
             <div class="sidebar-header">
                 <h3 className="logo-section1 fnt-poppins">LOGO</h3>
             </div>
-
             <ul class="list-unstyled components ">
                 <Link to={"/dashboard"}>
                     <li >
-
                         <div className={"image-div " + currentActive("dashboard")}>
 
                             <img className="image_icon "
                                  src={currentActive("dashboard") === "active" ? require('../../assets/images/dashboardBlue.png') : require('../../assets/images/dashboard.png')}
                                  alt=""/>
                             <a href="#" className="fnt-poppins ">DashBoard</a></div>
-
                     </li>
-
                 </Link>
-
                 <Link to={"/customers"}>
                     <li className="cus fnt-poppins">
                         <div className={"image-div " + currentActive("customer")}><img className="image_icon"
@@ -62,11 +56,11 @@ const SideNavigation = (props) => {
                 </Link>
 
 
-                <Link to={"/signup"}>
+                <Link to={"/create-shop"}>
                     <li>
-                        <div className={"image-div " + currentActive("sign")}>
+                        <div className={"image-div " + currentActive("create-shop")}>
                             <img className="image_icon"
-                                 src={currentActive("sign") === "active" ? require('../../assets/images/settingBlue.png') : require('../../assets/images/setting.png')}
+                                 src={currentActive("create-shop") === "active" ? require('../../assets/images/settingBlue.png') : require('../../assets/images/setting.png')}
                                  alt=""/>
                             <a href="#" className="sidenav-setting fnt-poppins">Setting</a></div>
                     </li>
@@ -84,9 +78,9 @@ const SideNavigation = (props) => {
 
                 <li>
                     <div className="image-div-logout"><img className="image_icon" src={Image5} alt=""/>
-                        <a href="#" className="sidenav-setting fnt-poppins" onClick={() => {
+                    <Link to={"/login"} className="sidenav-setting fnt-poppins" onClick={() => {
                             logout()
-                        }}>Log Out</a></div>
+                        }}>Log Out</Link></div>
                 </li>
             </ul>
             <Style />

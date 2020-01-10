@@ -1,179 +1,257 @@
-import React, {useState} from 'react'
-import Style from './style'
+import React, { useState } from 'react'
+import StyleShop from './style'
 import manIcon from '../../assets/images/manicon.png'
-import SignUp from '../../Components/signUpHeader/signUpHeader'
+// import SignUp from '../../Components/signUpHeader/signUpHeader'
+
+import { apiPath } from '../../Config'
+import  axios from 'axios'
+
+// create Shop header 
+import Style from '../../Components/Notification/Style'
+import Image1 from '../../assets/images/magnifying-glass.png'
+import Image2 from '../../assets/images/layer-6.png'
+// ------------------
+
+
 export default () => {
-    var sectionStyle = {
-        width: "123px",
-        height: "140px",
-        backgroundImage: `url(${manIcon})`,
-        backgroundRepeat: 'no-repeat'
-    };
-    const [file, setFile] = useState();
-    const imageUpload = (event) => {
-        setFile(URL.createObjectURL(event.target.files[0]))
-    };
+
+
+    const [ firstName , setFirstname ] =useState("");
+    const [ lastName , setLastname ] =useState("");
+    const [ email , setEmail] =useState("");
+    const [ password ,setPassword ] = useState("");
+    const [ shopName , setShopName ] = useState(""); 
+    const [ address ,setAddress ] =useState("");
+    const [ phone , setPhone ] =useState("");
+    const [logo , setLogo ] =useState("");
+
+    const CreateShop = (event)=>{
+        event.preventDefault();
+        let payload  = {firstName:firstName , lastName:lastName , email:email , password:password , shopName:shopName , address:address , phone:phone};
+        axios.post(apiPath+"/api/createShop/ToGath3rW3Grow&*^",payload).then(response=>{
+            console.log(response.data);
+            window.location.replace("/");
+        })
+    }
+
+
     return (
-        <div className="container-fluid d-flex flex-column" style={{padding: 0}}>
-            <SignUp/>
-            <div className="main-div-of-signup">
-                <div className="container-of-signup  display-row-left-right">
+        <>
+            {/* // ----------------------Header Starts Here------------------------------- */}
 
-                    {/* left portion of manIcon and button */}
 
-                    <div className="left-part-os-signup">
-                        <div className="images-portion-of-left-side">
-                            <div style={ sectionStyle }>
-                                <img src={file} style={{width: '125px', height: '140px'}}/>
-                            </div>
-                        </div>
-                        <div className="btn-left-sdie">
-                            <label htmlFor="files" className=" btn-white-model">Upload</label>
-                            <input id="files" style={{visibility: 'hidden'}} type="file"
-                                   onChange={(e) => imageUpload(e)}/>
-                        </div>
-                    </div>
+            <div className="container-fluid Notification-customers">
+                <div className="container-fluid notification-inner-content">
 
-                    {/* right portion of form  */}
+                    <nav class="navbar-section2-dashboard navbar-expand-lg ">
+                        <div class="container-fluid notification-navbar-top">
 
-                    <div className="right-portion-of-form-of-signup">
-
-                        {/* right side of heading  */}
-
-                        <div className="rightside-heading-signup">
-                            <h4>User Infromation</h4>
                         </div>
 
-                        {/*  right side of form  */}
+                    </nav>
+                    <div className="div-customer">
+                        <div className="customer_heading-create-shop fnt-poppins">Create New Shop</div>
 
-                        <form>
-
-                            <div className="username-and-phoneNumber">
-
-                                {/* inputs of name and phone */}
-
-                                <div className="username-label-input">
-                                    <div className="font-sm">
-                                        <label>User Name</label>
-                                    </div>
-
-                                    <div>
-                                        <input className="input-of-signup font-sm" placeholder="Name"/>
-                                    </div>
-                                </div>
-
-                                <div className="phone-label-input">
-                                    <div className="font-sm">
-                                        <label>Phone Number</label>
-                                    </div>
-
-                                    <div className="phone-div-signup">
-                                        <input className="input-of-signup font-sm" placeholder="Phone"/>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            {/* ends here name and phone       */}
-
-                            {/* email and password starts here    */}
-
-
-                            <div className="email-and-password">
-
-                                {/* inputs of email and password */}
-
-                                <div className="email-label-input">
-                                    <div className="font-sm">
-                                        <label>Email</label>
-                                    </div>
-
-                                    <div>
-                                        <input className="input-of-signup font-sm" placeholder="Email"/>
-                                    </div>
-                                </div>
-
-                                <div className="password-label-input">
-                                    <div className="font-sm">
-                                        <label>Password</label>
-                                    </div>
-
-                                    <div className="">
-                                        <input className="input-of-signup font-sm" placeholder="Password"/>
-                                    </div>
-                                </div>
-
-                            </div>
-                            {/* inputs of email and password ends here */}
-
-                            {/* confrim Password starts here    */}
-
-                            <div className="confirm-password font-sm">
-                                <div>
-                                    <label>Confirm Password</label>
-                                </div>
-
-                                <div>
-                                    <input className="input-of-signup font-sm" placeholder="Confirm Password"/>
-                                </div>
-                            </div>
-
-                            {/* confirm password ends here */}
-
-                            {/* shop information heading     */}
-                            <div className="shop-information-heading">
-                                <h4>Shop Information</h4>
-                            </div>
-
-                            {/* shop information heading ends here */}
-
-
-                            {/* shop name and shop address starts here    */}
-
-                            <div className="shop-and-address">
-
-                                {/* inputs of shop Name  and Adderess */}
-
-                                <div className="shop-label-input">
-                                    <div className="font-sm">
-                                        <label>Shop Name</label>
-                                    </div>
-
-                                    <div>
-                                        <input className="input-of-signup font-sm" placeholder="Shop Name"/>
-                                    </div>
-                                </div>
-
-                                <div className="Address-label-input">
-                                    <div className="font-sm">
-                                        <label>Address</label>
-                                    </div>
-
-                                    <div className="font-sm">
-                                        <input className="input-of-signup" placeholder="Address"/>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div className="buttons-of-signup">
-                                <div className="mr-5">
-                                    <button className="btn-white-model font-sm">Cancel</button>
-                                </div>
-
-                                <div className="button-margin-of-signup-second">
-                                    <button className="btn-blue font-sm">Save</button>
-                                </div>
-                            </div>
-
-                        </form>
                     </div>
 
                 </div>
+
+                <Style />
+
             </div>
 
 
-            <Style/>
-        </div>
+
+            {/* // -----------------------ENDS HERE---------------------------------- */}
+
+
+
+            <div className="container-fluid d-flex flex-column" style={{ padding: 0 }}>
+                <div className="main-div-of-signup">
+                    <div className="container-of-signup  display-row-left-right">
+
+                        {/* left portion of manIcon and button */}
+
+                        <div className="left-part-os-signup">
+                            <div className="images-portion-of-left-side">
+                                <img src={manIcon} />
+                            </div>
+
+                            <div className="btn-left-sdie">
+                                <button className="btn-white-model">Upload</button>
+                            </div>
+                        </div>
+
+                        {/* right portion of form  */}
+
+                        <div className="right-portion-of-form-of-signup">
+
+                            {/* right side of heading  */}
+
+                            <div className="rightside-heading-signup">
+                                <h4>Admin Infromation</h4>
+                            </div>
+
+                            {/*  right side of form  */}
+
+                            <form onSubmit={event=>CreateShop(event)}>
+
+                                <div className="username-and-phoneNumber">
+
+                                    {/* inputs of name and phone */}
+
+                                    <div className="username-label-input">
+                                        <div className="font-sm">
+                                            <label>First Name</label>
+                                        </div>
+
+                                        <div>
+                                            <input required value={firstName} className="input-of-signup font-sm" placeholder="First Name" onChange={event=>{
+                                                setFirstname(event.target.value);
+                                            }} />
+                                        </div>
+                                    </div>
+
+                                    <div className="phone-label-input">
+                                        <div className="font-sm">
+                                            <label>Last Name</label>
+                                        </div>
+
+                                        <div className="phone-div-signup">
+                                            <input required value={lastName} className="input-of-signup font-sm" placeholder="Last Name" onChange={event=>{
+                                                setLastname(event.target.value);
+                                            }} />
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                {/* ends here name and phone       */}
+
+                                {/* email and password starts here    */}
+
+
+                                <div className="email-and-password">
+
+                                    {/* inputs of email and password */}
+
+                                    <div className="email-label-input">
+                                        <div className="font-sm">
+                                            <label>Email</label>
+                                        </div>
+
+                                        <div>
+                                            <input required value={email} className="input-of-signup font-sm" placeholder="Email" onChange={event=>{
+                                                setEmail(event.target.value);
+                                            }}/>
+                                        </div>
+                                    </div>
+
+                                    <div className="password-label-input">
+                                        <div className="font-sm">
+                                            <label>Password</label>
+                                        </div>
+
+                                        <div className="">
+                                            <input required value={password} className="input-of-signup font-sm" placeholder="Password" onChange={event=>{
+                                                setPassword(event.target.value);
+                                            }}/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {/* inputs of email and password ends here */}
+
+
+                                {/* shop information heading     */}
+                                <div className="shop-information-heading">
+                                    <h4>Shop Information</h4>
+                                </div>
+
+                                {/* shop information heading ends here */}
+
+
+                                {/* shop name and shop address starts here    */}
+
+                                <div className="shop-and-address">
+
+                                    {/* inputs of shop Name  and Adderess */}
+
+                                    <div className="shop-label-input">
+                                        <div className="font-sm">
+                                            <label>Shop Name</label>
+                                        </div>
+
+                                        <div>
+                                            <input required  value={shopName} className="input-of-signup font-sm" placeholder="Shop Name" onChange={event=>{
+                                                setShopName(event.target.value);
+                                            }}/>
+                                        </div>
+                                    </div>
+
+                                    <div className="Address-label-input">
+                                        <div className="font-sm">
+                                            <label>Address</label>
+                                        </div>
+
+                                        <div className="font-sm">
+                                            <input required value={address} className="input-of-signup" placeholder="Address" onChange={event=>{
+                                                setAddress(event.target.value);
+                                            }}/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                    {/* phone and logo starts here */}
+                                <div className="shop-and-address">
+
+                                    {/* inputs of shop Name  and Adderess */}
+
+                                    <div className="shop-label-input">
+                                        <div className="font-sm">
+                                            <label>Phone</label>
+                                        </div>
+
+                                        <div>
+                                            <input required value={phone} className="input-of-signup font-sm" placeholder="Phone" onChange={event=>{
+                                                setPhone(event.target.value);
+                                            }}/>
+                                        </div>
+                                    </div>
+
+                                    {/* <div className="Address-label-input">
+                                        <div className="font-sm">
+                                            <label>Address</label>
+                                        </div>
+
+                                        <div className="font-sm">
+                                            <input className="input-of-signup" placeholder="Address" />
+                                        </div>
+                                    </div> */}
+
+                                </div>
+
+                                <div className="buttons-of-signup">
+                                    <div className="mr-5">
+                                        <button className="btn-white-model font-sm">Cancel</button>
+                                    </div>
+
+                                    <div className="button-margin-of-signup-second">
+                                        <button type="submit" className="btn-blue font-sm">Save</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <StyleShop />
+            </div>
+        </>
     );
 }
