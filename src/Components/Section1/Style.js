@@ -16,13 +16,13 @@ return(
 
 #sidebar {
     background-color: #f8f9fd;
-
     min-width: 300px;
     max-width: 300px;
     color: black;
     transition: all 0.3s;
 }
 .logo-section1{
+    
     font-weight: 700;
    font-size:36px;
     color: rgba(39, 159, 221, 0.78);
@@ -33,7 +33,7 @@ return(
 
 
 #sidebar .sidebar-header {
-    margin-top:49px;
+    padding-top:49px;
     text-align:center;
    
     
@@ -75,7 +75,8 @@ return(
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-  }
+    max-height:10vh;
+}
   .image-div-logout {
     margin-left: 1%;
     border-left:5px solid transparent;
@@ -104,10 +105,13 @@ return(
 .sidenav-customer{
 margin-left:-7px;
 }
-// .active, .image-div:hover {
-//     background-color: #666;
-//     color: white;
-//   }
+.section-background-color {
+      min-height: 100%;
+      background-color: #f8f9fd;
+      max-height: 140%;
+      max-height: 120%;
+  
+    }
 #sidebar .list-unstyled li .active a{
     color: #1e93ce!important;
 }

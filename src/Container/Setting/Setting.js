@@ -60,7 +60,7 @@ export default () => {
 
                                         <div className="username-label-input">
                                             <div className="font-sm">
-                                                <label>User Name</label>
+                                                <label>First Name</label>
                                             </div>
 
                                             <div>
@@ -70,17 +70,17 @@ export default () => {
 
                                         <div className="phone-label-input">
                                             <div className="font-sm">
-                                                <label>Phone Number</label>
+                                                <label>Last Name</label>
                                             </div>
 
                                             <div className="phone-div-signup">
-                                                <input className="input-of-signup font-sm" placeholder="Phone" required />
+                                                <input className="input-of-signup font-sm" placeholder="text" required />
                                             </div>
                                         </div>
 
 
                                     </div>
-                                    {/* ends here name and phone       */}
+                                    {/* ends here first name and  Last Name       */}
 
                                     {/* email and password starts here    */}
 
@@ -112,21 +112,8 @@ export default () => {
                                     </div>
                                     {/* inputs of email and password ends here */}
 
-                                    {/* confrim Password starts here    */}
 
-                                    <div className="confirm-password font-sm">
-                                        <div>
-                                            <label>Confirm Password</label>
-                                        </div>
-
-                                        <div>
-                                            <input className="input-of-signup font-sm" placeholder="Confirm Password" required />
-                                        </div>
-                                    </div>
-
-                                    {/* confirm password ends here */}
-
-                                    {/* shop information heading     */}
+                                    {/* shop information heading */}
                                     <div className="shop-information-heading">
                                         <h4>Shop Information</h4>
                                     </div>
@@ -159,7 +146,27 @@ export default () => {
                                                 <input className="input-of-signup" placeholder="Address" required />
                                             </div>
                                         </div>
+
                                     </div>
+
+                                {/* phone and logo starts here */}
+                                <div className="shop-and-address">
+
+                                    {/* inputs of shop Name  and Adderess */}
+
+                                    <div className="shop-label-input">
+                                        <div className="font-sm">
+                                            <label>Phone</label>
+                                        </div>
+
+                                        <div>
+                                            <input required className="input-of-signup font-sm" placeholder="Phone"/>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
                                     <div className="buttons-of-signup">
                                         <div className="mr-5">
                                             <button className="btn-white-model font-sm">Cancel</button>
@@ -175,6 +182,8 @@ export default () => {
 
                         </div>
                     </div>
+
+
                     <Style />
                 </div>
             </div>

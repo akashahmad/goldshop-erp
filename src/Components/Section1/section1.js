@@ -29,8 +29,10 @@ const SideNavigation = (props) => {
         history.push("/login");
     };
     return (
-        // <div class="wrapper">
+
+        <div className="section-background-color">
         <nav id="sidebar" className="sidebar no-print">
+
             <div class="sidebar-header">
                 <h3 className="logo-section1 fnt-poppins">LOGO</h3>
             </div>
@@ -86,7 +88,7 @@ const SideNavigation = (props) => {
             <Style />
         </nav>
 
-        // </div>
+        </div>
 
 
     );

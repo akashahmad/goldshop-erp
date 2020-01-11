@@ -66,8 +66,9 @@ input[type=number]::-webkit-inner-spin-button {
     border: 1px solid #888;
     width: 37%;
     float: right;
-    margin-top: -6%;
-}
+    margin-top: -7%;
+    min-height: 100vh;
+  }
 
 /* The Close Button */
 .close {

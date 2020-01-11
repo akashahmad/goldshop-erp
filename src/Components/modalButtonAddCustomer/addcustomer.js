@@ -12,7 +12,7 @@ import customer from '../../Container/CustomerPage/customer';
 const Customers = (props) => {
 
     let { match } = props;
-    let { addCustomer, setAddCustomer,customers, setCustomers } = props;
+    let { addCustomer, setAddCustomer, customers , setCustomers , setSelectedId } = props;
     const [startDate, setStartDate] = useState(new Date());
     const handleChange = date => {
         setStartDate(date);
@@ -24,6 +24,7 @@ const Customers = (props) => {
 
 
     const AddCustomers = (event) => {
+        
         event.preventDefault();
         let id = match.params && match.params.id ? match.params.id : "";
         let payload = {
@@ -34,7 +35,9 @@ const Customers = (props) => {
         }
 
         Axios.post(apiPath + "/api/customers/", payload).then(Response => {
+            setSelectedId("");
             setAddCustomer(false); 
+            
         })
     }
 
@@ -68,11 +71,14 @@ const Customers = (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Phone Number</label>
                             </div>
                             <div>
-                                <input required className="input-of-modal input-modal-addcustomer" placeholder="Phone Number" type="number" minLength="7"
+
+                                <input required className="input-of-modal input-modal-addcustomer"  placeholder="Phone Number"  type="number"
+
                                 value={phone}
                                 onChange={event=>{
                                     setPhone(event.target.value);
                                 }}
+
                                 />
                             </div>
 

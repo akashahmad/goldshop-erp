@@ -25,7 +25,7 @@ export default () => {
                     viewGold={viewGold} setViewGold={setViewGold}
                     setSelectedId={setSelectedId} selectedId={selectedId}
                 />
-                <AddGoldModalComponent addgold={addgold} setAddGold={setAddGold} />
+                <AddGoldModalComponent setSelectedId={setSelectedId} addgold={addgold} setAddGold={setAddGold} />
                 <PrintPopUpModalComponent printModel={printModel} setPrintModel={setPrintModel} />
                 <DeletePopupModalComponent viewGold={viewGold} setViewGold={setViewGold} setSelectedId={setSelectedId}
                     selectedId={selectedId} deleteModel={deleteModel}

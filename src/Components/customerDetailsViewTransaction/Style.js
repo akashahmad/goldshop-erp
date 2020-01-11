@@ -164,6 +164,17 @@ return(
     background: #1e93ce;
 }
 
+.Customer-header-data{
+    width:max-content;
+}
+
+.view-money-active-button {
+        border-bottom: 4px solid white;
+        padding: 3px;
+}
+
+
+
 `}</style>
 
 

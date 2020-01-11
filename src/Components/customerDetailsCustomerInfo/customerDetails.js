@@ -2,7 +2,6 @@ import React,{useEffect,useState} from 'react'
 import Style from '../customerDetailsViewTransaction/Style'
 import Image1 from '../../assets/images/magnifying-glass.png'
 import Image2 from '../../assets/images/layer-6.png'
-import Image3 from '../../assets/images/Layer 6.png'
 import Image4 from '../../assets/images/printer.png'
 import { Link, withRouter } from 'react-router-dom'
 import Table from '../../Components/CustomersViewGold/customersViewGold'
@@ -78,15 +77,12 @@ className="person-image-navbar" src={Image2} alt="" />
 
                             </ul>
                             <ul>
-                                <li>{getName}</li>
-                                <li>{getAddress}</li>
-                                <li>{getPhone}</li>
+                                <li className="Customer-header-data">{getName}</li>
+                                <li className="Customer-header-data">{getAddress}</li>
+                                <li className="Customer-header-data">{getPhone}</li>
                             </ul>
                             <ul className="container-fluid image-div2">
                                 <li className="image-div d-flex ">
-                                    <div
-className="image1-customer"><img className="customer-image-icons1"
-src={Image3} alt="" /></div>
                                     <div
 className="image-customer"><img className="customer-image-icons2"
 src={Image4} alt="" /></div></li>
@@ -103,7 +99,7 @@ to={"/customer-money-details/"+id} className="link-of-models">View
 Money</Link></div>
 
                             <div className="link-view-Gold"><Link
-to={"/customer-gold-details/"+id} className="link-of-models">View
+to={"/customer-gold-details/"+id} className="link-of-models view-money-active-button">View
 Gold</Link></div>
                         </div>
 

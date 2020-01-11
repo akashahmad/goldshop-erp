@@ -11,12 +11,8 @@ import { withRouter } from 'react-router-dom';
 const Table = (props) => {
 
     let {match}=props;
-    // let id = match.params && 
-    let { addgold, setAddGold } = props;
-    // const [show, setShow] = useState(false);
+    let { addgold, setAddGold , setSelectedId } = props;
     const [startDate, setStartDate] = useState(new Date());
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
     const handleChange = date => {
         setStartDate(date);
     }
@@ -47,8 +43,6 @@ const Table = (props) => {
         }
 
         Axios.post(apiPath + '/api/gold', payload).then(Response => {
-            console.log(Response.data);
-          
             
         })
 

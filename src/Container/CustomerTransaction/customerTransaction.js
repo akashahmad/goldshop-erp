@@ -12,6 +12,8 @@ export default (props) => {
     const [addmoney, setAddMoney] = useState(false);
     const [editmoney, setEditMoney] = useState(false);
     const [deleteModel, setDeleteModel] = useState(false);
+ 
+
     return (
         <div>
             
@@ -25,7 +27,9 @@ export default (props) => {
                 <EditMoneyInfoModal editmoney={editmoney} setEditMoney={setEditMoney} selectedId={selectedId}
                     viewMoney={viewMoney} setViewMoney={setViewMoney} setSelectedId={setSelectedId}
                 />
-                <DeletePopUpModal viewMoney={viewMoney} setViewMoney={setViewMoney} selectedId={selectedId} setSelectedId={setSelectedId} deleteModel={deleteModel} setDeleteModel={setDeleteModel} />
+                <DeletePopUpModal viewMoney={viewMoney} setViewMoney={setViewMoney} selectedId={selectedId}
+                                  setSelectedId={setSelectedId} deleteModel={deleteModel} 
+                                  setDeleteModel={setDeleteModel} />
             </div>
         </div>
     );

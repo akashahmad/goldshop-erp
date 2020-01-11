@@ -61,7 +61,7 @@ export default () => {
                           customers={customers} setCustomers={setCustomers}
                           setAddCustomer={setAddCustomer} addCustomer={addCustomer}
                 />
-                <AddCustomer addCustomer={addCustomer} setAddCustomer={setAddCustomer}
+                <AddCustomer setSelectedId={setSelectedId} addCustomer={addCustomer} setAddCustomer={setAddCustomer}
                  customers={customers} setCustomers={setCustomers}/> 
                 <Delete totalCus={totalCus} setTotalCus={setTotalCus} selectedId={selectedId} deleteModel={deleteModel}
                         setDeleteModel={setDeleteModel} customers={customers} setCustomers={setCustomers}
