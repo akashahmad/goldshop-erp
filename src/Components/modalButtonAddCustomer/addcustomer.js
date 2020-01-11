@@ -68,7 +68,7 @@ const Customers = (props) => {
                                 <label className="model-Money-Label fnt-poppin font-sm mt-4">Phone Number</label>
                             </div>
                             <div>
-                                <input required className="input-of-modal input-modal-addcustomer" placeholder="Phone Number" type="number"
+                                <input required className="input-of-modal input-modal-addcustomer" placeholder="Phone Number" type="number" minLength="7"
                                 value={phone}
                                 onChange={event=>{
                                     setPhone(event.target.value);
