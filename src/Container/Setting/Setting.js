@@ -74,7 +74,7 @@ export default () => {
                                     </div>
 
                                     <div className="phone-div-signup">
-                                        <input className="input-of-signup font-sm" placeholder="Phone" required/>
+                                        <input className="input-of-signup font-sm" placeholder="Phone" required  />
                                     </div>
                                 </div>
 

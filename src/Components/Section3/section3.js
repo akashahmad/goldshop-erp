@@ -1,16 +1,22 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect,useRef } from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import Style from './Style'
 import axios from 'axios'
 import ReactPaginate from "react-paginate";
 import {apiPath} from '../../Config'
 import Delete from '../DeletePopup/delete'
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+// import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import UseOutSideClick from '../../useOutsideClick'
 const EditCustomer = (props) => {
+    const ref = useRef();
     let {history, setEditCustomer, setPrintModel, setDeleteModel, setSelectedId, customers, setCustomers} = props;
     const [pageCount, setPageCount] = useState(1);
     const [show, setShow] = useState("");
     const [hoverId, setHoverId] = useState("");
+    UseOutSideClick(ref, () => {
+        if (show) setShow(false);
+      });
+    
     const handleClickAway=()=>{
         setShow(false);
     }
@@ -70,11 +76,11 @@ const EditCustomer = (props) => {
                                     <li><Link to={"/customer-money-details/" + single.id}
                                               className="link-model-on-action-buttons">View</Link>
                                     </li>
-                                    <li><div className="link-model-on-action-buttons"
+                                    <li><Link  className="link-model-on-action-buttons"><div 
                                               onClick={() => {
                                                   setSelectedId(single.id);
                                                   setEditCustomer(true)
-                                              }}>Edit</div></li>
+                                              }}>Edit</div></Link></li>
                                     <li><Link className="link-model-on-action-buttons" onClick={() => {
                                         setPrintModel(true)
                                     }}>Print</Link></li>
@@ -85,7 +91,7 @@ const EditCustomer = (props) => {
                                               }}>Delete</Link></li>
                                 </div>
                             }
-                            <div className="action-div">
+                            <div className="action-div" ref={ref}>
                                 <button type="button" className="doted-button"
                                         onClick={() => {
                                             setShow(show === single.id ? "" : single.id)
