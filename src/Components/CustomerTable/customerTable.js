@@ -41,7 +41,7 @@ const EditCustomer = (props) => {
                     <th>Name</th>
                     <th>Address</th>
                     <th>Contact Number</th>
-                    <th>Actions</th>
+                    <th className="no-print">Actions</th>
                 </tr>
                 {
                     customers ? customers.map((single, index) => <tr key={index}
@@ -91,7 +91,7 @@ const EditCustomer = (props) => {
                                               }}>Delete</Link></li>
                                 </div>
                             }
-                            <div className="action-div" ref={ref}>
+                            <div className="action-div no-print" ref={ref}>
                                 <button type="button" className="doted-button"
                                         onClick={() => {
                                             setShow(show === single.id ? "" : single.id)
@@ -105,6 +105,7 @@ const EditCustomer = (props) => {
                         </td>
                     </tr>) : <h1>Loader ....</h1>}
             </table>
+            <div className="no-print">
             <ReactPaginate previousLabel={<span className="fa fa-chevron-right "> &#60; </span>}
                            nextLabel={<span className="fa fa-chevron-right "> > </span>}
                            breakLabel={". . ."}
@@ -115,7 +116,7 @@ const EditCustomer = (props) => {
                            onPageChange={handlePageClick}
                            containerClassName={"digit-icons main"}
                            subContainerClassName={"container column"}
-                           activeClassName={"p-one"}/>
+                           activeClassName={"p-one"}/></div>
             <Style /> 
         </div> : <Loader/> }
         </>

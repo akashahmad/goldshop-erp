@@ -38,15 +38,15 @@ let {printModel,setPrintModel}=props;
                                     <div className="yes-button">
                                         <button className="btn-blue confirm-popup-of-print-method fnt-poppins"
                                         onClick={()=>window.print() && setPrintModel(false)}
-                                        >Print Money</button>
+                                        >Print</button>
                                     </div>
 
-                                    <div className=" no-button ml-4 border-of-no-button">
+                                    {/* <div className=" no-button ml-4 border-of-no-button">
                                         <button className="btn-white-model confirm-popup-of-print-method fnt-poppins">Print Gold</button>
                                     </div>
                                     <div className=" no-button ml-4 border-of-no-button">
                                         <button className="btn-white-model confirm-popup-of-print-method fnt-poppins">Print Main</button>
-                                    </div>
+                                    </div> */}
                             </div>
                             </div>
                         </div>

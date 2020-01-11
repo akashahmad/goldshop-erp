@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import cookie from "react-cookies";
 import Signin from './Container/signin/Container'
-import SignupAdmin from './Container/signup/signup';
+import SignupAdmin from './Container/SignUp/signup';
 import Routes from './RoutesContainer'
 import {Provider} from './store';
 import 'bootstrap/dist/css/bootstrap.min.css'

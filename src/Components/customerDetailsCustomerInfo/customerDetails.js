@@ -36,7 +36,7 @@ const Table2 = (props) => {
     return (
         <>
             {!innerLoader ?  <div className="container-fluid Header-section2">
-                <div className="container-fluid dashboard-content-homepage">
+                <div className="container-fluid dashboard-content-homepage no-print">
 
                     <nav class="navbar-section2-dashboard navbar-expand-lg ">
                         <div class="container-fluid navbar-top">
@@ -83,9 +83,9 @@ className="person-image-navbar" src={Image2} alt="" />
                             </ul>
                             <ul className="container-fluid image-div2">
                                 <li className="image-div d-flex ">
-                                    <div
-className="image-customer"><img className="customer-image-icons2"
-src={Image4} alt="" /></div></li>
+                                   <Link> <div
+className="image-customer" onClick={()=>window.print()}><img className="customer-image-icons2"
+src={Image4} alt="" /></div></Link></li>
                             </ul>
                         </div>
 

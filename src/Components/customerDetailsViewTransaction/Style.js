@@ -172,7 +172,13 @@ return(
         border-bottom: 4px solid white;
         padding: 3px;
 }
-
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
 
 
 `}</style>

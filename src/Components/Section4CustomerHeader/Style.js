@@ -72,7 +72,13 @@ return(
     margin-top: 48px;
     margin-left: -18px;
 }
-
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
 `}</style>
 
 

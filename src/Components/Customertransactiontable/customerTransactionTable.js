@@ -1,11 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect,useRef} from 'react'
 import Style from './style'
 import {Link, withRouter} from 'react-router-dom';
 import axios from 'axios'
 import {apiPath} from '../../Config'
 import ReactPaginate from "react-paginate";
 import Loader from '../../Components/commonComponents/loader/index'
+import UseOutSideClick from '../../useOutsideClick'
 const Table = (props) => {
+    const ref = useRef();
     let {match} = props;
     let {setDeleteModel,setSelectedId,viewMoney,setViewMoney} = props;
     let {setEditMoney} = props;
@@ -16,6 +18,10 @@ const Table = (props) => {
     // axios.get value of view money
     const [pageCount, setPageCount] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
+    UseOutSideClick(ref, () => {
+        if (show) setShow(false);
+      });
+    
     useEffect(() => {
         nextCourses(1);
     }, []);
@@ -46,7 +52,7 @@ const Table = (props) => {
                     <th>Currency</th>
                     <th>Detail</th>
                     <th>Transaction Date</th>
-                    <th>Action</th>
+                    <th className="no-print">Action</th>
 
                 </tr>
                 {viewMoney ? viewMoney.map((single, index) => <tr key={single.id}
@@ -75,7 +81,7 @@ const Table = (props) => {
                             </div>
                         }
 
-                        <div className="action-div">
+                        <div className="action-div no-print" ref={ref}>
                             <button type="button" className="doted-button"
                                     onClick={() => setShow(show === single.id ? "" : single.id)}><span
                                 class="dot"></span>
@@ -87,6 +93,7 @@ const Table = (props) => {
                     </td>
                 </tr>) : <h1>Loader ....</h1>}
             </table>
+            <div className="no-print">
             <ReactPaginate previousLabel={<span className="fa fa-chevron-right "> &#60; </span>}
                            nextLabel={<span className="fa fa-chevron-right "> > </span>}
                            breakLabel={". . ." }
@@ -97,7 +104,7 @@ const Table = (props) => {
                            onPageChange={handlePageClick}
                            containerClassName={"digit-icons main"}
                            subContainerClassName={"container column"}
-                           activeClassName={"p-one"}/>
+                           activeClassName={"p-one"}/></div>
             <Style />
         </div>
         : <Loader/>}

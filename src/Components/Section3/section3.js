@@ -38,7 +38,7 @@ const EditCustomer = (props) => {
                     <th>Name</th>
                     <th>Address</th>
                     <th>Contact Number</th>
-                    <th>Actions</th>
+                    <th className="no-print">Actions</th>
                 </tr>
                 {
                     customers ? customers.map((single, index) => <tr key={index}
@@ -88,7 +88,7 @@ const EditCustomer = (props) => {
                                               }}>Delete</Link></li>
                                 </div>
                             }
-                            <div className="action-div" ref={ref}>
+                            <div className="action-div no-print" ref={ref}>
                                 <button type="button" className="doted-button"
                                         onClick={() => {
                                             setShow(show === single.id ? "" : single.id)
