@@ -17,9 +17,6 @@ const EditCustomer = (props) => {
         if (show) setShow(false);
       });
     
-    const handleClickAway=()=>{
-        setShow(false);
-    }
     useEffect(() => {
         nextCourses(1);
     }, []);
@@ -105,6 +102,7 @@ const EditCustomer = (props) => {
                         </td>
                     </tr>) : <h1>Loader ....</h1>}
             </table>
+            <div className="no-print">
             <ReactPaginate previousLabel={<span className="fa fa-chevron-right "> &#60; </span>}
                            nextLabel={<span className="fa fa-chevron-right "> > </span>}
                            breakLabel={". . ."}
@@ -116,6 +114,7 @@ const EditCustomer = (props) => {
                            containerClassName={"digit-icons main"}
                            subContainerClassName={"container column"}
                            activeClassName={"p-one"}/>
+                           </div>
             <Style />
         </div>
      

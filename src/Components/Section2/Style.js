@@ -349,6 +349,7 @@ export default ()=>{
                 -webkit-backface-visibility: hidden;
                 transition: width 0.25s;
             }
+            
            `}</style>
 
 

@@ -30,7 +30,7 @@ const SideNavigation = (props) => {
     };
     return (
         // <div class="wrapper">
-        <nav id="sidebar" className="sidebar">
+        <nav id="sidebar" className="sidebar no-print">
             <div class="sidebar-header">
                 <h3 className="logo-section1 fnt-poppins">LOGO</h3>
             </div>

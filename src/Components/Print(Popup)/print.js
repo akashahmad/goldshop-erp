@@ -14,7 +14,7 @@ let {printModel,setPrintModel}=props;
     return(
         <>
                 
-                   {printModel &&  <div className="main-div-of-print-model">
+                   {printModel &&  <div className="main-div-of-print-model no-print">
                             { /* Model Header  */}
                            
                             <div class="modal-content d-flex model-header">
@@ -33,10 +33,12 @@ let {printModel,setPrintModel}=props;
                                     </div>
                             </div>
 
-                            <div className="print-model-popup-button">
+                            <div className="print-model-popup-button ">
                                     
                                     <div className="yes-button">
-                                        <button className="btn-blue confirm-popup-of-print-method fnt-poppins">Print Money</button>
+                                        <button className="btn-blue confirm-popup-of-print-method fnt-poppins"
+                                        onClick={()=>window.print() && setPrintModel(false)}
+                                        >Print Money</button>
                                     </div>
 
                                     <div className=" no-button ml-4 border-of-no-button">
@@ -49,7 +51,6 @@ let {printModel,setPrintModel}=props;
                             </div>
                         </div>
                     }
-
                     <div>
                     <Style/>
                     </div>

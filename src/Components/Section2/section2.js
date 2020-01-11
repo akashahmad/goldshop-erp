@@ -13,8 +13,8 @@ export default (props) => {
 
     return (
         <>
-        <div className="container-fluid Header-section2">
-            <div className="container-fluid dashboard-content-homepage">
+        <div className="container-fluid Header-section2 ">
+            <div className="container-fluid dashboard-content-homepage no-print">
 
                 <nav className="navbar-section2-dashboard navbar-expand-lg ">
                     <div className="container-fluid navbar-top">
