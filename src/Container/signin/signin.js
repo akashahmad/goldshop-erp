@@ -77,7 +77,7 @@ const Login = (props) => {
                         </div>
                         <div className="checkbox-data fnt-poppins ml-4 mt-5">
                             Dont have an account?
-                            {/*<Link to="/signup-admin" className="ml-3">SignUp</Link>*/}
+                            <Link to="/signup-admin" className="ml-3">SignUp</Link>
                         </div>
                     </form>
                 </div>

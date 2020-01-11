@@ -118,6 +118,11 @@ export default ()=>{
   font-size: 14px;
   cursor: pointer;
 }
+.view-money-active-button {
+  border-bottom: 4px solid white;
+  padding: 3px;
+}
+
 
         `}</style>
     );

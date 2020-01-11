@@ -15,10 +15,8 @@ import Loader from '../../Components/commonComponents/loader/index'
 const Table2=(props)=>{
     const {match } =props;
    
-    let { setDeleteModel,setSelectedId,viewMoney,setViewMoney,selectedId}=props;
-    let {setEditMoney}=props;
-    let {setAddMoney}=props;
-    let {data}=props;
+    let {data , setAddMoney , setEditMoney, setDeleteModel,setSelectedId,viewMoney,setViewMoney,selectedId}=props;
+    
 
     const[showData,setShowData]=useState([]);
   
@@ -34,7 +32,7 @@ const Table2=(props)=>{
            setGetAddress(response.data.customerInfo.address);
            setGetPhone(response.data.customerInfo.phone);
             setShowData(response.data.customerInfo);
-            setInnerLoader(false)
+            setInnerLoader(false);
         })
  },[]);
 
@@ -97,11 +95,12 @@ const Table2=(props)=>{
 </div>
                 <div className="section-customer-navbottom">
                     <div className="section-customer-bottom-link">
-                        <div><Link to={"/customer-money-details/"+id} className="link-of-models">View Money</Link></div>
+                        <div><Link to={"/customer-money-details/"+id} className="link-of-models view-money-active-button">View Money</Link></div>
                    
                     <div className="link-view-Gold"><Link to={"/customer-gold-details/"+id} className="link-of-models">View Gold</Link></div>
                     </div>
                  <div className="section-customerdetail-right "> 
+
                        {/* <div className="first-section-customer-detail"><a>View Transactions:</a>
                    </div> */}
                    {/* <div>

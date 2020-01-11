@@ -99,7 +99,7 @@ to={"/customer-money-details/"+id} className="link-of-models">View
 Money</Link></div>
 
                             <div className="link-view-Gold"><Link
-to={"/customer-gold-details/"+id} className="link-of-models">View
+to={"/customer-gold-details/"+id} className="link-of-models view-money-active-button">View
 Gold</Link></div>
                         </div>
 

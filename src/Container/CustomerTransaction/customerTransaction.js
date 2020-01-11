@@ -12,6 +12,8 @@ export default (props) => {
     const [addmoney, setAddMoney] = useState(false);
     const [editmoney, setEditMoney] = useState(false);
     const [deleteModel, setDeleteModel] = useState(false);
+ 
+
     return (
         <div>
             
