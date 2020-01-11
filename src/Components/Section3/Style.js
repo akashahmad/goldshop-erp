@@ -122,7 +122,13 @@ export default() => {
             cursor: pointer;
             box-shadow: 0px 4px 8px 2px #e8e8e8;
         }
-
+        @media print
+        {    
+            link-model-on-action-buttons
+            {
+                display: none !important;
+            }
+        }
 
             `}
 

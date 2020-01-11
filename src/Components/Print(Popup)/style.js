@@ -89,6 +89,14 @@ export default()=>{
         button.btn-white-model.confirm-popup-of-print-method.fnt-poppins {
             padding: 6px 30px 6px 30px;
         }
+        
+        @media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
 `}
         </style>
     );
