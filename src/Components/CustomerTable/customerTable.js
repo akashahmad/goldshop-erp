@@ -21,7 +21,7 @@ const EditCustomer = (props) => {
         nextCourses(page.selected + 1);
     };
     const nextCourses = (page) => {
-        axios.get(apiPath + `/api/customers?page=${page}&limit=10`).then(response => {
+        axios.get(apiPath + `/api/customers?page=${page}&limit=6`).then(response => {
             setCustomers(response.data.customers);
             setPageCount(response.data.totalPages);
             setInnerLoader(false);

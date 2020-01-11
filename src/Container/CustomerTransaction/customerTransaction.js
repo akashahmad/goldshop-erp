@@ -25,7 +25,9 @@ export default (props) => {
                 <EditMoneyInfoModal editmoney={editmoney} setEditMoney={setEditMoney} selectedId={selectedId}
                     viewMoney={viewMoney} setViewMoney={setViewMoney} setSelectedId={setSelectedId}
                 />
-                <DeletePopUpModal viewMoney={viewMoney} setViewMoney={setViewMoney} selectedId={selectedId} setSelectedId={setSelectedId} deleteModel={deleteModel} setDeleteModel={setDeleteModel} />
+                <DeletePopUpModal viewMoney={viewMoney} setViewMoney={setViewMoney} selectedId={selectedId}
+                                  setSelectedId={setSelectedId} deleteModel={deleteModel} 
+                                  setDeleteModel={setDeleteModel} />
             </div>
         </div>
     );

@@ -4,7 +4,7 @@ import manIcon from '../../assets/images/manicon.png'
 // import SignUp from '../../Components/signUpHeader/signUpHeader'
 
 import { apiPath } from '../../Config'
-import  axios from 'axios'
+import axios from 'axios'
 
 // create Shop header 
 import Style from '../../Components/Notification/Style'
@@ -16,19 +16,19 @@ import Image2 from '../../assets/images/layer-6.png'
 export default () => {
 
 
-    const [ firstName , setFirstname ] =useState("");
-    const [ lastName , setLastname ] =useState("");
-    const [ email , setEmail] =useState("");
-    const [ password ,setPassword ] = useState("");
-    const [ shopName , setShopName ] = useState(""); 
-    const [ address ,setAddress ] =useState("");
-    const [ phone , setPhone ] =useState("");
-    const [logo , setLogo ] =useState("");
+    const [firstName, setFirstname] = useState("");
+    const [lastName, setLastname] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [shopName, setShopName] = useState("");
+    const [address, setAddress] = useState("");
+    const [phone, setPhone] = useState("");
+    const [logo, setLogo] = useState("");
 
-    const CreateShop = (event)=>{
+    const CreateShop = (event) => {
         event.preventDefault();
-        let payload  = {firstName:firstName , lastName:lastName , email:email , password:password , shopName:shopName , address:address , phone:phone};
-        axios.post(apiPath+"/api/createShop/ToGath3rW3Grow&*^",payload).then(response=>{
+        let payload = { firstName: firstName, lastName: lastName, email: email, password: password, shopName: shopName, address: address, phone: phone };
+        axios.post(apiPath + "/api/createShop/ToGath3rW3Grow&*^", payload).then(response => {
             console.log(response.data);
             window.location.replace("/");
         })
@@ -94,7 +94,7 @@ export default () => {
 
                             {/*  right side of form  */}
 
-                            <form onSubmit={event=>CreateShop(event)}>
+                            <form onSubmit={event => CreateShop(event)}>
 
                                 <div className="username-and-phoneNumber">
 
@@ -106,7 +106,7 @@ export default () => {
                                         </div>
 
                                         <div>
-                                            <input required value={firstName} className="input-of-signup font-sm" placeholder="First Name" onChange={event=>{
+                                            <input required value={firstName} className="input-of-signup font-sm" placeholder="First Name" onChange={event => {
                                                 setFirstname(event.target.value);
                                             }} />
                                         </div>
@@ -118,7 +118,7 @@ export default () => {
                                         </div>
 
                                         <div className="phone-div-signup">
-                                            <input required value={lastName} className="input-of-signup font-sm" placeholder="Last Name" onChange={event=>{
+                                            <input required value={lastName} className="input-of-signup font-sm" placeholder="Last Name" onChange={event => {
                                                 setLastname(event.target.value);
                                             }} />
                                         </div>
@@ -141,9 +141,9 @@ export default () => {
                                         </div>
 
                                         <div>
-                                            <input required value={email} className="input-of-signup font-sm" placeholder="Email" onChange={event=>{
+                                            <input required value={email} className="input-of-signup font-sm" placeholder="Email" onChange={event => {
                                                 setEmail(event.target.value);
-                                            }}/>
+                                            }} />
                                         </div>
                                     </div>
 
@@ -153,9 +153,9 @@ export default () => {
                                         </div>
 
                                         <div className="">
-                                            <input required value={password} className="input-of-signup font-sm" placeholder="Password" onChange={event=>{
+                                            <input required value={password} className="input-of-signup font-sm" placeholder="Password" onChange={event => {
                                                 setPassword(event.target.value);
-                                            }}/>
+                                            }} />
                                         </div>
                                     </div>
 
@@ -183,9 +183,9 @@ export default () => {
                                         </div>
 
                                         <div>
-                                            <input required  value={shopName} className="input-of-signup font-sm" placeholder="Shop Name" onChange={event=>{
+                                            <input required value={shopName} className="input-of-signup font-sm" placeholder="Shop Name" onChange={event => {
                                                 setShopName(event.target.value);
-                                            }}/>
+                                            }} />
                                         </div>
                                     </div>
 
@@ -195,15 +195,15 @@ export default () => {
                                         </div>
 
                                         <div className="font-sm">
-                                            <input required value={address} className="input-of-signup" placeholder="Address" onChange={event=>{
+                                            <input required value={address} className="input-of-signup" placeholder="Address" onChange={event => {
                                                 setAddress(event.target.value);
-                                            }}/>
+                                            }} />
                                         </div>
                                     </div>
 
                                 </div>
 
-                                    {/* phone and logo starts here */}
+                                {/* phone and logo starts here */}
                                 <div className="shop-and-address">
 
                                     {/* inputs of shop Name  and Adderess */}
@@ -214,21 +214,12 @@ export default () => {
                                         </div>
 
                                         <div>
-                                            <input required value={phone} className="input-of-signup font-sm" placeholder="Phone" onChange={event=>{
+                                            <input required value={phone} className="input-of-signup font-sm" placeholder="Phone" onChange={event => {
                                                 setPhone(event.target.value);
-                                            }}/>
+                                            }} />
                                         </div>
                                     </div>
 
-                                    {/* <div className="Address-label-input">
-                                        <div className="font-sm">
-                                            <label>Address</label>
-                                        </div>
-
-                                        <div className="font-sm">
-                                            <input className="input-of-signup" placeholder="Address" />
-                                        </div>
-                                    </div> */}
 
                                 </div>
 

@@ -80,15 +80,17 @@ const Table2=(props)=>{
 
   </ul>
   <ul>
-        <li>{getName}</li>
-        <li>{getAddress}</li>
-        <li>{getPhone}</li>
+        <li className="Customer-header-data">{getName}</li>
+        <li className="Customer-header-data">{getAddress}</li>
+        <li className="Customer-header-data">{getPhone}</li>
 
         </ul>
     <ul className="container-fluid image-div2">
      <li className="image-div d-flex ">
-         <div className="image1-customer"><img className="customer-image-icons1" src={Image3} alt=""/></div>
-        <div className="image-customer"><img className="customer-image-icons2" src={Image4} alt=""/></div></li>
+    <Link>
+    <div className="image-customer"><img className="customer-image-icons2" src={Image4} alt=""/></div>
+    </Link>
+    </li>
     </ul>
     </div>
 
@@ -100,16 +102,16 @@ const Table2=(props)=>{
                     <div className="link-view-Gold"><Link to={"/customer-gold-details/"+id} className="link-of-models">View Gold</Link></div>
                     </div>
                  <div className="section-customerdetail-right "> 
-                       <div className="first-section-customer-detail"><a>View Transactions:</a>
-                   </div>
-                   <div>
+                       {/* <div className="first-section-customer-detail"><a>View Transactions:</a>
+                   </div> */}
+                   {/* <div>
                         <select className="dropdown-manu-customer-section">
                              <option value="volvo">PKR</option>
                                 <option value="saab">USD</option>
                              <option value="opel">AFGHANI</option>
                             
                             </select>
-                   </div> 
+                   </div>  */}
                    <div className="button-div-customerDetails">
                     <button className="btn-Wh" onClick={()=>{
                         setAddMoney(true)

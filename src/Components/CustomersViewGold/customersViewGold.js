@@ -36,10 +36,8 @@ const Table = (props) => {
         let id = match.params && match.params.id ? match.params.id : "";
         axios.get(apiPath + `/api/gold/${id}/?page=${page}&limit=5`).then(response => {
             setViewGold(response.data.gold);
-            console.log(response.data.gold);
             setPageCount(response.data.totalPages);
             setCurrentPage(response.data.currentPage);
-            console.log(response.data.gold);
             setInnerLoader(false);
         })
     };

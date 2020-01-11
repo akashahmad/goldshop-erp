@@ -163,6 +163,9 @@ return(
 
     background: #1e93ce;
 }
+.Customer-header-data{
+    width:max-content;
+}
 `}</style>
 
 

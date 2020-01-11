@@ -4,7 +4,7 @@ import axios from 'axios'
 import {apiPath} from '../../Config'
 import {withRouter} from 'react-router-dom'
 const Table = (props) => {
-    let { viewMoney, setViewMoney , selectedId, setSelectedId, deleteModel, setDeleteModel} = props;
+    let { viewMoney , setViewMoney , selectedId, setSelectedId, deleteModel, setDeleteModel} = props;
     const HandleRemoveItem = () => {
         axios.delete(apiPath + "/api/money/" + selectedId).then(res => {
             setSelectedId("");
